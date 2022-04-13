@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.util.List;
 
-@Controller
+@RestController
 public class PdfControl {
 
     private PdfService pdfService;

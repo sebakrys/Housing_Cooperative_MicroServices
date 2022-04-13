@@ -4,20 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="Gateway first init">
-      <change beforePath="$PROJECT_DIR$/../PDF/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PDF/pom.xml" afterDir="false" />
+    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="Fixed not working pdf bill generator service">
+      <change afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Controller/BuildingController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Controller/FlatChargesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Controller/FlatController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Entity/Building.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Entity/Flat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Entity/FlatCharges.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Repository/BuildingRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Repository/FlatChargesRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Repository/FlatRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Service/BuildingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Service/FlatChargesService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Service/FlatService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Validator/BuildingValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PDF/src/main/java/pl/skrys/pdf/PdfControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PDF/src/main/java/pl/skrys/pdf/PdfControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDF/src/main/java/pl/skrys/pdf/PdfServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PDF/src/main/java/pl/skrys/pdf/PdfServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PDF/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../PDF/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDF/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../PDF/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDF/target/classes/pl/skrys/pdf/PdfServiceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PDF/target/classes/pl/skrys/pdf/PdfServiceApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDF/target/classes/pl/skrys/pdf/PdfControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PDF/target/classes/pl/skrys/pdf/PdfControl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -56,11 +76,20 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="corretto-11" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../PDF" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Entity" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.5321839" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\STUDIA_informatyka\S2\NSAI\Projekt\BudMiesz\src\main\java\com\nsai\spoldzielnia\Entity" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.nsai.spoldzielnia.Controller" />
+      <recent name="com.nsai.spoldzielnia.Repository" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
@@ -69,7 +98,14 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.PdfService">
+  <component name="RunManager" selected="Spring Boot.BudMieszApplication">
+    <configuration name="BudMieszApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="BudMiesz" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.nsai.spoldzielnia.BudMieszApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="eurekaServer" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.nsai.spoldzielnia.EurekaServerApplication" />
@@ -99,6 +135,7 @@
       <item itemvalue="Spring Boot.PdfService" />
       <item itemvalue="Spring Boot.EurekaServerApplication" />
       <item itemvalue="Spring Boot.GatewayApplication" />
+      <item itemvalue="Spring Boot.BudMieszApplication" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

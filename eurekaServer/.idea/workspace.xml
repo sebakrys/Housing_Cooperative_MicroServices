@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="Eureca + pdf service added&#10;without eureca client">
-      <change beforePath="$PROJECT_DIR$/../PDF/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PDF/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDF/src/main/java/pl/skrys/pdf/PdfServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PDF/src/main/java/pl/skrys/pdf/PdfServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDF/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../PDF/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDF/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../PDF/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDF/target/classes/pl/skrys/pdf/PdfControl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDF/target/classes/pl/skrys/pdf/PdfService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDF/target/classes/pl/skrys/pdf/PdfServiceApplication.class" beforeDir="false" />
+    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="Pdf service as eureka client">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,7 +18,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="master" />
+        <entry key="$PROJECT_DIR$/.." value="pdf_service" />
       </map>
     </option>
     <option name="RECENT_COMMON_BRANCH" value="master" />
@@ -55,6 +51,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="jdk.selected.JAVA_MODULE" value="corretto-11" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -68,12 +65,19 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.PdfService">
+  <component name="RunManager" selected="Spring Boot.GatewayApplication">
     <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="eurekaServer" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.nsai.spoldzielnia.EurekaServerApplication" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="ALTERNATIVE_JRE_PATH" value="corretto-11" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.nsai.spoldzielnia.gateway.GatewayApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -90,6 +94,7 @@
     <list>
       <item itemvalue="Spring Boot.PdfService" />
       <item itemvalue="Spring Boot.EurekaServerApplication" />
+      <item itemvalue="Spring Boot.GatewayApplication" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -112,7 +117,7 @@
       <workItem from="1649840516863" duration="720000" />
       <workItem from="1649841325315" duration="644000" />
       <workItem from="1649841991331" duration="817000" />
-      <workItem from="1649842940469" duration="1735000" />
+      <workItem from="1649842940469" duration="2370000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit - Eureka">
       <created>1649598456859</created>
@@ -163,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649843556027</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Pdf service as eureka client">
+      <created>1649846337574</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1649846337574</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,6 +214,7 @@
     <MESSAGE value="pdf service added" />
     <MESSAGE value="pdf service added&#10;without eureca client" />
     <MESSAGE value="Eureca + pdf service added&#10;without eureca client" />
-    <option name="LAST_COMMIT_MESSAGE" value="Eureca + pdf service added&#10;without eureca client" />
+    <MESSAGE value="Pdf service as eureka client" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pdf service as eureka client" />
   </component>
 </project>

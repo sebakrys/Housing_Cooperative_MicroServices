@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="Eureca + pdf service added&#10;without eureca client" />
+    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="Eureca + pdf service added&#10;without eureca client">
+      <change beforePath="$PROJECT_DIR$/../PDF/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PDF/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDF/src/main/java/pl/skrys/pdf/PdfServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PDF/src/main/java/pl/skrys/pdf/PdfServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDF/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../PDF/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDF/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../PDF/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDF/target/classes/pl/skrys/pdf/PdfControl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDF/target/classes/pl/skrys/pdf/PdfService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDF/target/classes/pl/skrys/pdf/PdfServiceApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,7 +22,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="pdf_service" />
+        <entry key="$PROJECT_DIR$/.." value="master" />
       </map>
     </option>
     <option name="RECENT_COMMON_BRANCH" value="master" />
@@ -44,6 +53,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="project.structure.last.edited" value="Project" />
@@ -102,7 +112,7 @@
       <workItem from="1649840516863" duration="720000" />
       <workItem from="1649841325315" duration="644000" />
       <workItem from="1649841991331" duration="817000" />
-      <workItem from="1649842940469" duration="379000" />
+      <workItem from="1649842940469" duration="1735000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit - Eureka">
       <created>1649598456859</created>
@@ -146,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649843034434</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Eureca + pdf service added&#10;without eureca client">
+      <created>1649843556027</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1649843556027</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,7 +180,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="pdf_bill_service" />
+                        <option value="pdf_service" />
                       </list>
                     </value>
                   </entry>

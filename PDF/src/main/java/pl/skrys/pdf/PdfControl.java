@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 import javax.servlet.http.HttpServletResponse;
-//import javax.validation.Valid;
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -41,17 +41,17 @@ public class PdfControl {
         }*/
         //pdfService.generateRachunekPdf(flatCharge, user, ryczalt,  response);
         pdfService.generateRachunekPdf(year, month, ryczalt,
-         flatid,  buildingid,
-         street,  bNr,  fNr,  postalcode,  city,
-         fr,  fr_rate,
-         g,  g_rate,
-         og,  og_rate,
-         pr,  pr_rate,
-         sc,  sc_rate,
-         cw,  cw_rate,
-         zw,  zw_rate,
-         usr_names, otherLocators,
-         response);
+                flatid,  buildingid,
+                street,  bNr,  fNr,  postalcode,  city,
+                fr,  fr_rate,
+                g,  g_rate,
+                og,  og_rate,
+                pr,  pr_rate,
+                sc,  sc_rate,
+                cw,  cw_rate,
+                zw,  zw_rate,
+                usr_names, otherLocators,
+                response);
 
 
     }

@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="pdf service added&#10;without eureca client">
-      <change beforePath="$PROJECT_DIR$/../PDF" beforeDir="false" afterPath="$PROJECT_DIR$/../PDF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$" beforeDir="false" afterPath="$PROJECT_DIR$" afterDir="false" />
-    </list>
+    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="Eureca + pdf service added&#10;without eureca client" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -105,6 +102,7 @@
       <workItem from="1649840516863" duration="720000" />
       <workItem from="1649841325315" duration="644000" />
       <workItem from="1649841991331" duration="817000" />
+      <workItem from="1649842940469" duration="379000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit - Eureka">
       <created>1649598456859</created>
@@ -141,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649842107068</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Eureca + pdf service added&#10;without eureca client">
+      <created>1649843034434</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1649843034434</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,6 +184,7 @@
     <MESSAGE value="First Commit - Eureka" />
     <MESSAGE value="pdf service added" />
     <MESSAGE value="pdf service added&#10;without eureca client" />
-    <option name="LAST_COMMIT_MESSAGE" value="pdf service added&#10;without eureca client" />
+    <MESSAGE value="Eureca + pdf service added&#10;without eureca client" />
+    <option name="LAST_COMMIT_MESSAGE" value="Eureca + pdf service added&#10;without eureca client" />
   </component>
 </project>

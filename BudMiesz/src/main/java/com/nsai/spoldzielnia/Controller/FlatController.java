@@ -6,9 +6,11 @@ import com.nsai.spoldzielnia.Entity.Building;
 import com.nsai.spoldzielnia.Entity.Flat;
 import com.nsai.spoldzielnia.Entity.Flat;
 import com.nsai.spoldzielnia.Entity.FlatCharges;
+import com.nsai.spoldzielnia.Repository.FlatChargesRepository;
 import com.nsai.spoldzielnia.Repository.FlatRepository;
 import com.nsai.spoldzielnia.Repository.FlatRepository;
 import com.nsai.spoldzielnia.Service.BuildingService;
+import com.nsai.spoldzielnia.Service.FlatChargesService;
 import com.nsai.spoldzielnia.Service.FlatService;
 import com.nsai.spoldzielnia.Service.FlatService;
 import com.nsai.spoldzielnia.Validator.FlatValidator;
@@ -32,6 +34,8 @@ public class FlatController {
     private BuildingService buildingService;
 
     private final FlatRepository flatRepository;
+    @Autowired
+    private  FlatChargesService flatChargesService;
 
     private FlatValidator flatValidator = new FlatValidator();
 
@@ -107,7 +111,10 @@ public class FlatController {
         Flat tmpFlat = flatService.getFlat(id);
         if(tmpFlat==null)return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
 
-        return ResponseEntity.ok(tmpFlat.getFlatCharges());
+
+
+        //old return ResponseEntity.ok(tmpFlat.getFlatCharges());
+        return ResponseEntity.ok(flatChargesService.getAllFlatChargesFromFlat(id));
     }
 
 

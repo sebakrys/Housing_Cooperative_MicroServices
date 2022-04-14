@@ -34,6 +34,12 @@ public class FlatChargesService {
         return flatChargesRepository.findFirstByFlatIdOrderByDataDesc(flatId);
     }
 
+    @Transactional
+    public List<FlatCharges> getAllFlatChargesFromFlat(long flatId){
+        return flatChargesRepository.findAllByFlatIdOrderByDataDesc(flatId);
+    }
+
+
 
     @Transactional
     public FlatCharges addFlatCharges(FlatCharges flatCharges) {

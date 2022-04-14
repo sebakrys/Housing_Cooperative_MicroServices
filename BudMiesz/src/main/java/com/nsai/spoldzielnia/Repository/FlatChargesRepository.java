@@ -19,6 +19,8 @@ public interface FlatChargesRepository extends JpaRepository<FlatCharges, Long> 
     FlatCharges findById(long id);
     void deleteById(long id);
 
+    List<FlatCharges> findAllByFlatIdOrderByDataDesc(long flatID);
+
     FlatCharges findFirstByFlatIdOrderByDataDesc(long flatID);
     List<FlatCharges> findTop12ByFlatIdAndAcceptedOrderByDataDesc(long flatID, boolean accepted);
 

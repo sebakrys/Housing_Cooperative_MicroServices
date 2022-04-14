@@ -88,6 +88,14 @@ public class BuildingController {
                 .orElseGet(()->ResponseEntity.notFound().build());
     }
 
+    @GetMapping("/getBuildingFlats/{id}")
+    public ResponseEntity<List<Flat>> getBuildingFlatsById(@PathVariable Long id){
+        Building tmpBuilding = buildingService.getBuilding(id);
+        if(tmpBuilding==null)return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
+
+        return ResponseEntity.ok(tmpBuilding.getFlat());
+    }
+
 
     //DELETE
     @DeleteMapping("/deleteBuilding/{buildingId}")

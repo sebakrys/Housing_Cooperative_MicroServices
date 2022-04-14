@@ -1,6 +1,7 @@
 package com.nsai.spoldzielnia.Entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.List;
@@ -25,7 +26,7 @@ public class Building {
 
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "building")
-    @JsonIgnore
+    @JsonManagedReference
     private List<Flat> flat;
 
 

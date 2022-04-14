@@ -1,5 +1,6 @@
 package com.nsai.spoldzielnia.Entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -17,6 +18,7 @@ public class FlatCharges {
 
     @ManyToOne
     @JoinColumn(name="flat_id", nullable=false)
+    @JsonBackReference
     private Flat flat;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")

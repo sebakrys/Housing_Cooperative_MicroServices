@@ -12,6 +12,7 @@ import com.nsai.spoldzielnia.Service.BuildingService;
 import com.nsai.spoldzielnia.Service.FlatService;
 import com.nsai.spoldzielnia.Service.FlatService;
 import com.nsai.spoldzielnia.Validator.FlatValidator;
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -99,6 +100,14 @@ public class FlatController {
         return flatRepository.findById(id)
                 .map(ResponseEntity::ok)
                 .orElseGet(()->ResponseEntity.notFound().build());
+    }
+
+    @GetMapping("/getFlatFlatCharges/{id}")
+    public ResponseEntity<List<FlatCharges>> getFlatFlatChargesById(@PathVariable Long id) throws JsonProcessingException {
+        Flat tmpFlat = flatService.getFlat(id);
+        if(tmpFlat==null)return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
+
+        return ResponseEntity.ok(tmpFlat.getFlatCharges());
     }
 
 

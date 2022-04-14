@@ -1,5 +1,7 @@
 package com.nsai.spoldzielnia.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -22,7 +24,8 @@ public class Building {
     private String postalCode;
 
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "building")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "building")
+    @JsonIgnore
     private List<Flat> flat;
 
 

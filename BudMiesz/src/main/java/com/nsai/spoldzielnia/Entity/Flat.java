@@ -1,5 +1,6 @@
 package com.nsai.spoldzielnia.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
@@ -17,11 +18,14 @@ public class Flat {
 
     @ManyToOne
     @JoinColumn(name="building_id", nullable=false)
+    @JsonIgnore
     private Building building;
 
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @LazyCollection(LazyCollectionOption.FALSE)
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "flat")
+    //@LazyCollection(LazyCollectionOption.FALSE)
+    @JsonIgnore
     private List<FlatCharges> flatCharges;
 
     private String flatNumber;

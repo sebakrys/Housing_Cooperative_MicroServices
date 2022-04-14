@@ -1,5 +1,8 @@
 package com.nsai.spoldzielnia.Entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -16,7 +19,7 @@ public class FlatCharges {
     @JoinColumn(name="flat_id", nullable=false)
     private Flat flat;
 
-
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private Date data;
 
     private boolean accepted;

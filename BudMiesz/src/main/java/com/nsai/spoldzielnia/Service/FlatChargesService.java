@@ -36,15 +36,15 @@ public class FlatChargesService {
 
 
     @Transactional
-    public void addFlatCharges(FlatCharges flatCharges) {
+    public FlatCharges addFlatCharges(FlatCharges flatCharges) {
 
-        flatChargesRepository.save(flatCharges);
+        return flatChargesRepository.save(flatCharges);
     }
 
     @Transactional
-    public void editFlatCharges(FlatCharges flatCharges) {
+    public FlatCharges editFlatCharges(FlatCharges flatCharges) {
 
-        flatChargesRepository.save(flatCharges);
+        return flatChargesRepository.save(flatCharges);
     }
 
     @Transactional

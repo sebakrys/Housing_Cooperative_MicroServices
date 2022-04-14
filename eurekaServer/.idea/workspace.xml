@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="- added Flat CRUD&#10;- fixed update, delete problems">
-      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Controller/BuildingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Controller/BuildingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Controller/FlatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Controller/FlatController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Entity/Building.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Entity/Building.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Entity/Flat.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Entity/Flat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Entity/FlatCharges.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Entity/FlatCharges.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Repository/BuildingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Repository/BuildingRepository.java" afterDir="false" />
+    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="added:&#10;- get Flat's all flqatCharges&#10;- get Building's all Flats">
+      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Service/BuildingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Service/BuildingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Service/FlatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Service/FlatService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -149,7 +145,7 @@
       <workItem from="1649842940469" duration="5662000" />
       <workItem from="1649888502815" duration="144000" />
       <workItem from="1649890865162" duration="4717000" />
-      <workItem from="1649921142367" duration="8836000" />
+      <workItem from="1649921142367" duration="11093000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit - Eureka">
       <created>1649598456859</created>
@@ -235,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649926266167</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="added:&#10;- get Flat's all flqatCharges&#10;- get Building's all Flats">
+      <created>1649931581665</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1649931581665</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,6 +282,7 @@
     <MESSAGE value="Building, Flat, FlatCharges - service added&#10;- Building CRUD&#10;- missing Flat CRUD&#10;- missing FlatCharges CRUD" />
     <MESSAGE value="- added FlatCharges CRUD&#10;- missing Flat CRUD" />
     <MESSAGE value="- added Flat CRUD&#10;- fixed update, delete problems" />
-    <option name="LAST_COMMIT_MESSAGE" value="- added Flat CRUD&#10;- fixed update, delete problems" />
+    <MESSAGE value="added:&#10;- get Flat's all flqatCharges&#10;- get Building's all Flats" />
+    <option name="LAST_COMMIT_MESSAGE" value="added:&#10;- get Flat's all flqatCharges&#10;- get Building's all Flats" />
   </component>
 </project>

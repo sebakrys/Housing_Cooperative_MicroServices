@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Iterator;
 import java.util.List;
 
 @Service
@@ -62,11 +63,14 @@ public class BuildingService {
             //usuwanie zarzadców
             userService.removeUserBuilding(tempZarz, building);
         }*/
+        Building tmpBuilding = getBuilding(id);
 
-        List<Flat> buildingFlats = this.getBuilding(id).getFlat();
-        for (Flat f:
-                buildingFlats) {
-            flatService.removeFlat(f.getId());
+        List<Flat> buildingFlats = tmpBuilding.getFlat();
+        for (Iterator<Flat> f = buildingFlats.iterator(); f.hasNext();) {
+            Flat tmpFlat = f.next();
+            System.out.println("usuwanie Flat: "+tmpFlat.getId());
+            flatService.removeFlat(tmpFlat.getId());
+
         }
         buildingRepository.deleteById(id);
     }

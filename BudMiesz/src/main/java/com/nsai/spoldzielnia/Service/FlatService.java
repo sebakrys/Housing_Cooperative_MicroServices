@@ -4,27 +4,29 @@ import com.nsai.spoldzielnia.Entity.Building;
 import com.nsai.spoldzielnia.Entity.Flat;
 import com.nsai.spoldzielnia.Entity.FlatCharges;
 import com.nsai.spoldzielnia.Repository.BuildingRepository;
+import com.nsai.spoldzielnia.Repository.FlatChargesRepository;
 import com.nsai.spoldzielnia.Repository.FlatRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Iterator;
 import java.util.List;
 
 @Service
 public class FlatService {
 
+    @Autowired
     private FlatRepository flatRepository;
     //private BuildingRepository buildingRepository;
     //private BuildingService buildingService;
-    private FlatChargesService flatChargesService;
-
-
     @Autowired
-    public FlatService(FlatRepository flatRepository, FlatChargesService flatChargesService) {
-        this.flatRepository = flatRepository;
-        this.flatChargesService = flatChargesService;
-    }
+    private FlatChargesService flatChargesService;
+    @Autowired
+    private FlatChargesRepository flatChargesRepository;
+
+
+
 
     @Transactional
     public Flat addFlat(Flat flat) {
@@ -58,12 +60,12 @@ public class FlatService {
 
         //usuwanie podległych flatcharges
         List<FlatCharges> fChargesList = tempFlat.getFlatCharges();
-        for (FlatCharges fch:
-                fChargesList) {
-            flatChargesService.removeFlatCharges(fch.getId());
+        for (Iterator<FlatCharges> fch = fChargesList.iterator(); fch.hasNext();) {
+            FlatCharges tmpFlatCharges = fch.next();
+            System.out.println("usuwanie localCharges: "+tmpFlatCharges.getId());
+            flatChargesService.removeFlatCharges(tmpFlatCharges.getId());
         }
 
-        tempFlat.getBuilding().removeFlat(tempFlat);
         flatRepository.delete(tempFlat);
 
         System.out.println("mieszkania powinno byc usuniete service "+id);

@@ -1,0 +1,411 @@
+{
+	"info": {
+		"_postman_id": "f132af34-8b0c-4d8f-b105-d34b0e0bffb6",
+		"name": "Microservices Rozproszone",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "addBuilding gateway",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nazwa\":\"nazwa\" ,\r\n    \"city\":\"city\" ,\r\n    \"street\":\"poprawnaUlica\" ,\r\n    \"buildingNumber\":\"bNR\",\r\n    \"postalCode\":\"postalcode\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/building-flat-service/addNewBuilding",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"building-flat-service",
+						"addNewBuilding"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateBuilding gateway",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"2\",\r\n    \"nazwa\":\"nazwa\" ,\r\n    \"city\":\"city\" ,\r\n    \"street\":\"poprawnaUlica\" ,\r\n    \"buildingNumber\":\"bNR\",\r\n    \"postalCode\":\"postalcode\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/building-flat-service/updateBuilding",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"building-flat-service",
+						"updateBuilding"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBuildings gateway",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/building-flat-service/getBuildings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"building-flat-service",
+						"getBuildings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBuildingById gateway",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/building-flat-service/getBuilding/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"building-flat-service",
+						"getBuilding",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBuildingFlats gateway",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/building-flat-service/getBuildingFlats/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"building-flat-service",
+						"getBuildingFlats",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteBuilding gateway",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/building-flat-service/deleteBuilding/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"building-flat-service",
+						"deleteBuilding",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addFlat gateway",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"building\":{\r\n        \"id\":\"2\"} ,\r\n    \"flatNumber\":\"Numer Mieszkania2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/building-flat-service/addNewFlat",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"building-flat-service",
+						"addNewFlat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateFlat gateway",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"18\",\r\n    \"building\":{\r\n        \"id\":\"1\"} ,\r\n    \"flatNumber\":\"Numer Mieszkania update\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/building-flat-service/updateFlat",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"building-flat-service",
+						"updateFlat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllFlat gateway",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/building-flat-service/getAllFlat",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"building-flat-service",
+						"getAllFlat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getFlat gateway",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/building-flat-service/getFlat/18",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"building-flat-service",
+						"getFlat",
+						"18"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getFlatFlatCharges gateway",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/building-flat-service/getFlatFlatCharges/17",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"building-flat-service",
+						"getFlatFlatCharges",
+						"17"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteFlat gateway",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/building-flat-service/deleteFlat/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"building-flat-service",
+						"deleteFlat",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addFlatCharges gateway",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"flat\":{\r\n        \"id\":\"1\"} ,\r\n    \"data\":\"2022-04-14 22:22:22\" ,\r\n    \"accepted\":\"true\" ,\r\n    \"zaplacone\":\"false\",\r\n    \"prad\":\"10\",\r\n    \"gaz\":\"11\",\r\n    \"woda_ciepla\":\"12\",\r\n    \"woda_zimna\":\"13\",\r\n    \"scieki\":\"14\",\r\n    \"ogrzewanie\":\"15\",\r\n    \"funduszRemontowy\":\"16\",\r\n    \"prad_stawka\":\"17\",\r\n    \"gaz_stawka\":\"18\",\r\n    \"woda_ciepla_stawka\":\"19\",\r\n    \"woda_zimna_stawka\":\"20\",\r\n    \"scieki_stawka\":\"21\",\r\n    \"ogrzewanie_stawka\":\"22\",\r\n    \"funduszRemontowy_stawka\":\"23\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/building-flat-service/addNewFlatCharges",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"building-flat-service",
+						"addNewFlatCharges"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateFlatCharges gateway",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":10,\r\n    \"flat\":{\r\n        \"id\":\"1\"} ,\r\n    \"data\":\"2022-04-14 22:22:22\" ,\r\n    \"accepted\":\"true\" ,\r\n    \"zaplacone\":\"false\",\r\n    \"prad\":\"10\",\r\n    \"gaz\":\"11\",\r\n    \"woda_ciepla\":\"12\",\r\n    \"woda_zimna\":\"13\",\r\n    \"scieki\":\"14\",\r\n    \"ogrzewanie\":\"15\",\r\n    \"funduszRemontowy\":\"16\",\r\n    \"prad_stawka\":\"17\",\r\n    \"gaz_stawka\":\"18\",\r\n    \"woda_ciepla_stawka\":\"19\",\r\n    \"woda_zimna_stawka\":\"20\",\r\n    \"scieki_stawka\":\"21\",\r\n    \"ogrzewanie_stawka\":\"22\",\r\n    \"funduszRemontowy_stawka\":\"23\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/building-flat-service/updateFlatCharges",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"building-flat-service",
+						"updateFlatCharges"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllFlatCharges gateway",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/building-flat-service/getAllFlatCharges",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"building-flat-service",
+						"getAllFlatCharges"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getFlatCharges gateway",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/building-flat-service/getFlatCharges/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"building-flat-service",
+						"getFlatCharges",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteFlatCharges gateway",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/building-flat-service/deleteFlatCharges/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"building-flat-service",
+						"deleteFlatCharges",
+						"10"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

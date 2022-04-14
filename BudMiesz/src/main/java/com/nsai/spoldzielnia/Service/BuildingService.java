@@ -1,6 +1,7 @@
 package com.nsai.spoldzielnia.Service;
 
 import com.nsai.spoldzielnia.Entity.Building;
+import com.nsai.spoldzielnia.Entity.Flat;
 import com.nsai.spoldzielnia.Repository.BuildingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,10 +14,14 @@ public class BuildingService {
 
     private BuildingRepository buildingRepository;
 
+    private FlatService flatService;
+
     @Autowired
-    public BuildingService(BuildingRepository buildingRepository) {
+    public BuildingService(BuildingRepository buildingRepository, FlatService flatService) {
         this.buildingRepository = buildingRepository;
+        this.flatService = flatService;
     }
+
 
 
 
@@ -49,6 +54,20 @@ public class BuildingService {
 
     @Transactional
     public void removeBuilding(long id) {
+
+        /* TODO usuwanie zarządców
+        List<SpUserApp> zarzadcyBudynku = userService.getUserAppByBuilding(buildingId);
+        SpBuilding building = buildingService.getBuilding(buildingId);
+        for (SpUserApp tempZarz : zarzadcyBudynku) {
+            //usuwanie zarzadców
+            userService.removeUserBuilding(tempZarz, building);
+        }*/
+
+        List<Flat> buildingFlats = this.getBuilding(id).getFlat();
+        for (Flat f:
+                buildingFlats) {
+            flatService.removeFlat(f.getId());
+        }
         buildingRepository.deleteById(id);
     }
     

@@ -2,6 +2,7 @@ package com.nsai.spoldzielnia.Service;
 
 import com.nsai.spoldzielnia.Entity.Building;
 import com.nsai.spoldzielnia.Entity.Flat;
+import com.nsai.spoldzielnia.Entity.FlatCharges;
 import com.nsai.spoldzielnia.Repository.BuildingRepository;
 import com.nsai.spoldzielnia.Repository.FlatRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,34 +15,27 @@ import java.util.List;
 public class FlatService {
 
     private FlatRepository flatRepository;
-    private BuildingRepository buildingRepository;
-    private BuildingService buildingService;
+    //private BuildingRepository buildingRepository;
+    //private BuildingService buildingService;
     private FlatChargesService flatChargesService;
 
 
     @Autowired
-    public FlatService(FlatRepository flatRepository, BuildingRepository buildingRepository, BuildingService buildingService, FlatChargesService flatChargesService) {
+    public FlatService(FlatRepository flatRepository, FlatChargesService flatChargesService) {
         this.flatRepository = flatRepository;
-        this.buildingRepository = buildingRepository;
-        this.buildingService = buildingService;
         this.flatChargesService = flatChargesService;
     }
 
-
-
-
-
-
     @Transactional
-    public void addFlat(Flat flat) {
+    public Flat addFlat(Flat flat) {
 
-        flatRepository.save(flat);
+        return flatRepository.save(flat);
     }
 
     @Transactional
-    public void editFlat(Flat flat) {
+    public Flat editFlat(Flat flat) {
 
-        flatRepository.save(flat);
+        return flatRepository.save(flat);
     }
 
     @Transactional
@@ -58,16 +52,17 @@ public class FlatService {
     public void removeFlat(long id) {
         System.out.println("Usuwanie mieszkania service "+id);
 
-        //this.parent.dismissChild(this); //SYNCHRONIZING THE OTHER SIDE OF RELATIONSHIP
-        //this.parent = null;
-
+        // TODO usuwanie mieszkanców
 
         Flat tempFlat = getFlat(id);
-        Building tempBuilding = buildingService.getBuilding(tempFlat.getBuilding().getId());
 
+        //usuwanie podległych flatcharges
+        List<FlatCharges> fChargesList = tempFlat.getFlatCharges();
+        for (FlatCharges fch:
+                fChargesList) {
+            flatChargesService.removeFlatCharges(fch.getId());
+        }
 
-        //getFlat(id).setBuilding(null);
-        //tempBuilding.removeFlat(tempFlat);
         tempFlat.getBuilding().removeFlat(tempFlat);
         flatRepository.delete(tempFlat);
 

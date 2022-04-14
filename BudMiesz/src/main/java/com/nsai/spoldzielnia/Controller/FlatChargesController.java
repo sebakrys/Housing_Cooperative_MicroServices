@@ -83,6 +83,8 @@ public class FlatChargesController {
     @PutMapping("/updateFlatCharges")
     public ResponseEntity<FlatCharges> updateFlatCharges(@RequestBody FlatCharges flatCharges, BindingResult result) throws JsonProcessingException {
 
+        if(flatChargesService.getFlatCharges(flatCharges.getId())==null)return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
+
         Flat tmpFlat = flatService.getFlat(flatCharges.getFlat().getId());
         flatCharges.setFlat(tmpFlat);
         System.out.println(new ObjectMapper().writeValueAsString(flatCharges));
@@ -119,7 +121,7 @@ public class FlatChargesController {
 
         System.out.println("Usuwanie  flatCharges "+flatChargesId);
 
-
+        if(flatChargesService.getFlatCharges(flatChargesId)==null)return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
 
         flatChargesService.removeFlatCharges(flatChargesId);
         return ResponseEntity.ok().build();

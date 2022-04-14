@@ -18,7 +18,6 @@ public class Flat {
 
     @ManyToOne
     @JoinColumn(name="building_id", nullable=false)
-    @JsonIgnore
     private Building building;
 
 

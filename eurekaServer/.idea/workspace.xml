@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="Building, Flat, FlatCharges - service added&#10;- Building CRUD&#10;- missing Flat CRUD&#10;- missing FlatCharges CRUD">
-      <change afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Validator/FlatChargesValidator.java" afterDir="false" />
+    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="- added FlatCharges CRUD&#10;- missing Flat CRUD">
+      <change afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Validator/FlatValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Controller/BuildingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Controller/BuildingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Controller/FlatChargesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Controller/FlatChargesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Entity/Building.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Entity/Building.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Controller/FlatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Controller/FlatController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Entity/Flat.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Entity/Flat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Entity/FlatCharges.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Entity/FlatCharges.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Service/FlatChargesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Service/FlatChargesService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Service/BuildingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Service/BuildingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Service/FlatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Service/FlatService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Validator/FlatChargesValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Validator/FlatChargesValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -149,7 +151,7 @@
       <workItem from="1649842940469" duration="5662000" />
       <workItem from="1649888502815" duration="144000" />
       <workItem from="1649890865162" duration="4717000" />
-      <workItem from="1649921142367" duration="297000" />
+      <workItem from="1649921142367" duration="4579000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit - Eureka">
       <created>1649598456859</created>
@@ -221,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649887091834</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="- added FlatCharges CRUD&#10;- missing Flat CRUD">
+      <created>1649921967287</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1649921967287</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,6 +272,7 @@
     <MESSAGE value="Pdf service as eureka client" />
     <MESSAGE value="Gateway first init" />
     <MESSAGE value="Building, Flat, FlatCharges - service added&#10;- Building CRUD&#10;- missing Flat CRUD&#10;- missing FlatCharges CRUD" />
-    <option name="LAST_COMMIT_MESSAGE" value="Building, Flat, FlatCharges - service added&#10;- Building CRUD&#10;- missing Flat CRUD&#10;- missing FlatCharges CRUD" />
+    <MESSAGE value="- added FlatCharges CRUD&#10;- missing Flat CRUD" />
+    <option name="LAST_COMMIT_MESSAGE" value="- added FlatCharges CRUD&#10;- missing Flat CRUD" />
   </component>
 </project>

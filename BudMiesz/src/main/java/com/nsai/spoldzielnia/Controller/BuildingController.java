@@ -62,6 +62,8 @@ public class BuildingController {
     @PutMapping("/updateBuilding")
     public ResponseEntity<Building> updateBuilding(@RequestBody Building building, BindingResult result)
     {
+        if(buildingService.getBuilding(building.getId())==null)return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
+
         buildingValidator.validate(building, result);
 
         if (result.getErrorCount() == 0) {
@@ -93,19 +95,8 @@ public class BuildingController {
 
         System.out.println("Usuwanie  budynku "+buildingId);
 
-        /* TODO usuwanie zarządców
-        List<SpUserApp> zarzadcyBudynku = userService.getUserAppByBuilding(buildingId);
-        SpBuilding building = buildingService.getBuilding(buildingId);
-        for (SpUserApp tempZarz : zarzadcyBudynku) {
-            //usuwanie zarzadców
-            userService.removeUserBuilding(tempZarz, building);
-        }*/
+        if(buildingService.getBuilding(buildingId)==null)return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
 
-        List<Flat> buildingFlats = buildingService.getBuilding(buildingId).getFlat();
-        for (Flat f:
-             buildingFlats) {
-            flatService.removeFlat(f.getId());
-        }
 
         buildingService.removeBuilding(buildingId);
         return ResponseEntity.ok().build();

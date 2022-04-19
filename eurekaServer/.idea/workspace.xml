@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="validacja postalCode regex">
-      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Controller/FlatChargesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Controller/FlatChargesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Validator/FlatChargesValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Validator/FlatChargesValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Validator/FlatValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Validator/FlatValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/resources/application.properties" afterDir="false" />
+    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="validation flatCharges and Flats">
+      <change afterPath="$PROJECT_DIR$/../EmailNotification/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EmailNotification/src/main/java/com/nsai/spoldzielnia/emailnotification/configuration/Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EmailNotification/src/main/java/com/nsai/spoldzielnia/emailnotification/controller/NotificationReciverEmailSenderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EmailNotification/src/main/java/com/nsai/spoldzielnia/emailnotification/entity/Notification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EmailNotification/src/main/java/com/nsai/spoldzielnia/emailnotification/service/EMailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,7 +31,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="master" />
+        <entry key="$PROJECT_DIR$/.." value="Validation" />
       </map>
     </option>
     <option name="RECENT_COMMON_BRANCH" value="master" />
@@ -72,6 +76,8 @@
       <recent name="D:\STUDIA_informatyka\S2\NSAI\Projekt\BudMiesz\src\main\java\com\nsai\spoldzielnia\Entity" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.nsai.spoldzielnia.emailnotification.entity" />
+      <recent name="com.nsai.spoldzielnia.emailnotification.Service" />
       <recent name="com.nsai.spoldzielnia.Validator" />
       <recent name="com.nsai.spoldzielnia.Controller" />
       <recent name="com.nsai.spoldzielnia.Repository" />
@@ -84,10 +90,17 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.BudMieszApplication">
+  <component name="RunManager" selected="Spring Boot.EmailNotificationApplication">
     <configuration name="BudMieszApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="BudMiesz" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.nsai.spoldzielnia.BudMieszApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmailNotificationApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="EmailNotification" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.nsai.spoldzielnia.emailnotification.EmailNotificationApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -122,6 +135,7 @@
       <item itemvalue="Spring Boot.EurekaServerApplication" />
       <item itemvalue="Spring Boot.GatewayApplication" />
       <item itemvalue="Spring Boot.BudMieszApplication" />
+      <item itemvalue="Spring Boot.EmailNotificationApplication" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -150,7 +164,9 @@
       <workItem from="1649921142367" duration="13166000" />
       <workItem from="1650040495596" duration="595000" />
       <workItem from="1650053210967" duration="3789000" />
-      <workItem from="1650093834793" duration="4664000" />
+      <workItem from="1650093834793" duration="5635000" />
+      <workItem from="1650375860455" duration="4671000" />
+      <workItem from="1650384205462" duration="1922000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit - Eureka">
       <created>1649598456859</created>
@@ -257,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650055393971</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="validation flatCharges and Flats">
+      <created>1650120516447</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1650120516447</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,6 +327,7 @@
     <MESSAGE value="added:&#10;- get Flat's all flqatCharges&#10;- get Building's all Flats" />
     <MESSAGE value="added:&#10;- get Flat's all flatCharges&#10;- get Building's all Flats&#10;- podczas usuwania mieskzania sa usuwane nalezace do niego oplaty&#10;-podczas usuwania budynku sa usuwane mieszkania i oplaty mieszkan" />
     <MESSAGE value="validacja postalCode regex" />
-    <option name="LAST_COMMIT_MESSAGE" value="validacja postalCode regex" />
+    <MESSAGE value="validation flatCharges and Flats" />
+    <option name="LAST_COMMIT_MESSAGE" value="validation flatCharges and Flats" />
   </component>
 </project>

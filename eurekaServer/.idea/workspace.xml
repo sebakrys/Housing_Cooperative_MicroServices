@@ -5,9 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="added:&#10;- get Flat's all flatCharges&#10;- get Building's all Flats&#10;- podczas usuwania mieskzania sa usuwane nalezace do niego oplaty&#10;-podczas usuwania budynku sa usuwane mieszkania i oplaty mieszkan">
-      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Controller/FlatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Controller/FlatController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Repository/FlatChargesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Repository/FlatChargesRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Service/FlatChargesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Service/FlatChargesService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JWTokens/JWTokens/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JWTokens/JWTokens/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JWTokens/JWTokens/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JWTokens/JWTokens/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JWTokens/JWTokens/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JWTokens/JWTokens/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JWTokens/JWTokens/src/main/java/TokensService/JWTokens/Controller/JWTAuthorizationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JWTokens/JWTokens/src/main/java/TokensService/JWTokens/Controller/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JWTokens/JWTokens/src/main/java/TokensService/JWTokens/Controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JWTokens/JWTokens/src/main/java/TokensService/JWTokens/JwTokensApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JWTokens/JWTokens/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PDF/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,6 +155,7 @@
       <workItem from="1649888502815" duration="144000" />
       <workItem from="1649890865162" duration="4717000" />
       <workItem from="1649921142367" duration="13166000" />
+      <workItem from="1650565625985" duration="35000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit - Eureka">
       <created>1649598456859</created>

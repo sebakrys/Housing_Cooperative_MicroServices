@@ -5,18 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="added:&#10;- get Flat's all flatCharges&#10;- get Building's all Flats&#10;- podczas usuwania mieskzania sa usuwane nalezace do niego oplaty&#10;-podczas usuwania budynku sa usuwane mieszkania i oplaty mieszkan">
-      <change afterPath="$PROJECT_DIR$/../JWTokens/JWTokens/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../JWTokens/JWTokens/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../JWTokens/JWTokens/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../JWTokens/JWTokens/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../JWTokens/JWTokens/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../JWTokens/JWTokens/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../JWTokens/JWTokens/src/main/java/TokensService/JWTokens/Controller/JWTAuthorizationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../JWTokens/JWTokens/src/main/java/TokensService/JWTokens/Controller/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../JWTokens/JWTokens/src/main/java/TokensService/JWTokens/Controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../JWTokens/JWTokens/src/main/java/TokensService/JWTokens/JwTokensApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../JWTokens/JWTokens/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PDF/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Controller/BuildingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Controller/BuildingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="pdf_service" />
+        <entry key="$PROJECT_DIR$/.." value="master" />
       </map>
     </option>
     <option name="RECENT_COMMON_BRANCH" value="master" />
@@ -53,7 +46,9 @@
     </option>
   </component>
   <component name="ProjectId" id="27boL6qAWaou0PjTokCfjdNLg6T" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -68,11 +63,14 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="corretto-11" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Entity" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Mieszkancy" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.5321839" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -91,7 +89,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.BudMieszApplication">
+  <component name="RunManager" selected="Spring Boot.MieszkancyApplication">
     <configuration name="BudMieszApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="BudMiesz" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.nsai.spoldzielnia.BudMieszApplication" />
@@ -100,7 +98,7 @@
       </method>
     </configuration>
     <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="eurekaServer" />
+      <module name="spoldzielnia (1)" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.nsai.spoldzielnia.EurekaServerApplication" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="ALTERNATIVE_JRE_PATH" value="corretto-11" />
@@ -115,8 +113,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="JwTokensApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="JWTokens" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="TokensService.JWTokens.JwTokensApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MieszkancyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="Mieszkancy" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.mieszkancy.MieszkancyApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PdfService" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="pdf_service" />
+      <module name="spoldzielnia (2)" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="pl.skrys.pdf.PdfServiceApplication" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="ALTERNATIVE_JRE_PATH" value="corretto-11" />
@@ -129,6 +141,8 @@
       <item itemvalue="Spring Boot.EurekaServerApplication" />
       <item itemvalue="Spring Boot.GatewayApplication" />
       <item itemvalue="Spring Boot.BudMieszApplication" />
+      <item itemvalue="Spring Boot.JwTokensApplication" />
+      <item itemvalue="Spring Boot.MieszkancyApplication" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -156,6 +170,12 @@
       <workItem from="1649890865162" duration="4717000" />
       <workItem from="1649921142367" duration="13166000" />
       <workItem from="1650565625985" duration="35000" />
+      <workItem from="1650621466744" duration="1566000" />
+      <workItem from="1650647061817" duration="9527000" />
+      <workItem from="1650740571832" duration="3005000" />
+      <workItem from="1650988880377" duration="3922000" />
+      <workItem from="1651084483283" duration="2800000" />
+      <workItem from="1651087504027" duration="18000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit - Eureka">
       <created>1649598456859</created>

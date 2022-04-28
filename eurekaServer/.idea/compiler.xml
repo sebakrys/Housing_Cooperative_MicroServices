@@ -7,12 +7,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="MieszkancyZarzadcy" />
+        <module name="BudMiesz" />
         <module name="spoldzielnia" />
         <module name="EmailNotification" />
         <module name="eurekaServer" />
         <module name="pdf_service" />
         <module name="gateway" />
-        <module name="BudMiesz" />
       </profile>
     </annotationProcessing>
   </component>
@@ -20,6 +21,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="BudMiesz" options="-parameters" />
       <module name="EmailNotification" options="-parameters" />
+      <module name="MieszkancyZarzadcy" options="-parameters" />
       <module name="eurekaServer" options="-parameters" />
       <module name="gateway" options="-parameters" />
       <module name="pdf_service" options="-parameters" />

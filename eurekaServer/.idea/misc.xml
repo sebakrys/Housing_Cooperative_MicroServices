@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/../PDF/pom.xml" />
         <option value="$PROJECT_DIR$/../gateway/pom.xml" />
         <option value="$PROJECT_DIR$/../BudMiesz/pom.xml" />
+        <option value="$PROJECT_DIR$/../EmailNotification/pom.xml" />
       </list>
     </option>
   </component>

@@ -19,8 +19,8 @@ public class ManagerBuilding {
     @GeneratedValue(strategy = GenerationType.AUTO)
     long id;
 
-    long manager_id;
-    long building_id;
+    long managerId;
+    long buildingId;
 
     public long getId() {
         return id;
@@ -30,19 +30,19 @@ public class ManagerBuilding {
         this.id = id;
     }
 
-    public long getManager_id() {
-        return manager_id;
+    public long getManagerId() {
+        return managerId;
     }
 
-    public void setManager_id(long manager_id) {
-        this.manager_id = manager_id;
+    public void setManagerId(long managerId) {
+        this.managerId = managerId;
     }
 
-    public long getBuilding_id() {
-        return building_id;
+    public long getBuildingId() {
+        return buildingId;
     }
 
-    public void setBuilding_id(long building_id) {
-        this.building_id = building_id;
+    public void setBuildingId(long buildingId) {
+        this.buildingId = buildingId;
     }
 }

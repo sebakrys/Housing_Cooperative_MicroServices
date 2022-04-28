@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class LocatorFlatService {
@@ -17,33 +18,53 @@ public class LocatorFlatService {
     }
 
     @Transactional
-    public LocatorFlat addLocatorToFlat(long locator_id, long flat_id){
-
+    public LocatorFlat addLocatorToFlat(LocatorFlat locatorFlat){
+        return locatorFlatRepository.save(locatorFlat);
     }
 
     @Transactional
     public LocatorFlat editLocatorToFlat(LocatorFlat locatorFlat){
-
-    }
-
-    @Transactional
-    public List<LocatorFlat> listLocatorsFlat(){
-
-    }
-
-    @Transactional
-    public List<Long> getFlatsFromLocator(long locator_Id){
-
-    }
-
-    @Transactional
-    public List<Long> getLocatorsFromFlat(long flat_Id){
-
+        return locatorFlatRepository.save(locatorFlat);
     }
 
 
     @Transactional
-    public void removeLocatorBuilding(long id) {
+    public List<LocatorFlat> listAllLocatorsFlat(){
+        return locatorFlatRepository.findAll();
+    }
 
+    @Transactional
+    public List<Long> getAllFlatsFromLocator(long locator_Id){
+        return locatorFlatRepository.findAllByLocatorId(locator_Id).stream()
+                .map(LocatorFlat::getFlatId)
+                .collect(Collectors.toList());
+    }
+
+    @Transactional
+    public List<Long> getAllLocatorsFromFlat(long flat_Id){
+        return locatorFlatRepository.findAllByFlatId(flat_Id).stream()
+                .map(LocatorFlat::getFlatId)
+                .collect(Collectors.toList());
+    }
+
+
+    @Transactional
+    public void removeLocatorFlat(long id) {
+        locatorFlatRepository.deleteById(id);
+    }
+
+    @Transactional
+    public void removeLocatorFromFlat(long locatorId, long flatId) {
+        locatorFlatRepository.deleteByFlatIdAndLocatorId(flatId, locatorId);
+    }
+
+    @Transactional
+    public void removeAllFlatsFromLocator(long locatorId) {
+        locatorFlatRepository.deleteAllByLocatorId(locatorId);
+    }
+
+    @Transactional
+    public void removeAllLocatorsFromFlat(long flatId) {
+        locatorFlatRepository.deleteAllByFlatId(flatId);
     }
 }

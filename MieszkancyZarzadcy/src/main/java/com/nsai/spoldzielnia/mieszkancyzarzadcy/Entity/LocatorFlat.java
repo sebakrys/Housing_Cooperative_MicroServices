@@ -12,8 +12,8 @@ public class LocatorFlat {
     @GeneratedValue(strategy = GenerationType.AUTO)
     long id;
 
-    long locator_id;
-    long flat_id;
+    long locatorId;
+    long flatId;
 
     public long getId() {
         return id;
@@ -23,19 +23,19 @@ public class LocatorFlat {
         this.id = id;
     }
 
-    public long getLocator_id() {
-        return locator_id;
+    public long getLocatorId() {
+        return locatorId;
     }
 
-    public void setLocator_id(long locator_id) {
-        this.locator_id = locator_id;
+    public void setLocatorId(long locatorId) {
+        this.locatorId = locatorId;
     }
 
-    public long getFlat_id() {
-        return flat_id;
+    public long getFlatId() {
+        return flatId;
     }
 
-    public void setFlat_id(long flat_id) {
-        this.flat_id = flat_id;
+    public void setFlatId(long flatId) {
+        this.flatId = flatId;
     }
 }

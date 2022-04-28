@@ -4,20 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="added frame for email notification when flatCharges are accepted or when are paid">
-      <change afterPath="$PROJECT_DIR$/MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Controller/LocatorFlatController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Controller/ManagerBuildingController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Entity/LocatorFlat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Entity/ManagerBuilding.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Rabbit/Notification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Repository/LocatorFlatRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Repository/ManagerBuildingRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Service/LocatorFlatService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Service/ManagerBuildingService.java" afterDir="false" />
+    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="First Commit with service MieszkancyZarzadcy - service connecting users and buildings/flats&#10;-todo add CRUD">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MieszkancyZarzadcy/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MieszkancyZarzadcy/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MieszkancyZarzadcy/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MieszkancyZarzadcy/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MieszkancyZarzadcy/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MieszkancyZarzadcy/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Controller/LocatorFlatController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Controller/ManagerBuildingController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Entity/LocatorFlat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Entity/ManagerBuilding.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/MieszkancyZarzadcyApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Rabbit/Notification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Repository/LocatorFlatRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Repository/ManagerBuildingRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Service/LocatorFlatService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Service/ManagerBuildingService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MieszkancyZarzadcy/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MieszkancyZarzadcy/src/test/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/MieszkancyZarzadcyApplicationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +77,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="corretto-11" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Entity" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MieszkancyZarzadcy" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.5321839" />
@@ -293,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650120516447</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="First Commit with service MieszkancyZarzadcy - service connecting users and buildings/flats&#10;-todo add CRUD">
+      <created>1651160322967</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1651160322967</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,6 +356,7 @@
     <MESSAGE value="added:&#10;- get Flat's all flatCharges&#10;- get Building's all Flats&#10;- podczas usuwania mieskzania sa usuwane nalezace do niego oplaty&#10;-podczas usuwania budynku sa usuwane mieszkania i oplaty mieszkan" />
     <MESSAGE value="validacja postalCode regex" />
     <MESSAGE value="validation flatCharges and Flats" />
-    <option name="LAST_COMMIT_MESSAGE" value="validation flatCharges and Flats" />
+    <MESSAGE value="First Commit with service MieszkancyZarzadcy - service connecting users and buildings/flats&#10;-todo add CRUD" />
+    <option name="LAST_COMMIT_MESSAGE" value="First Commit with service MieszkancyZarzadcy - service connecting users and buildings/flats&#10;-todo add CRUD" />
   </component>
 </project>

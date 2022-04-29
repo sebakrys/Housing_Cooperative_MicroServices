@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.nsai.spoldzielnia.Entity.Building;
 import com.nsai.spoldzielnia.Entity.Flat;
 import com.nsai.spoldzielnia.Entity.FlatCharges;
+import com.nsai.spoldzielnia.Rabbit.Notification;
 import com.nsai.spoldzielnia.Repository.FlatChargesRepository;
 import com.nsai.spoldzielnia.Service.BuildingService;
 import com.nsai.spoldzielnia.Service.FlatChargesService;
@@ -18,12 +19,16 @@ import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 
 import javax.validation.Valid;
 import java.util.List;
 
 @RestController
 public class FlatChargesController {
+
+    private static final String QUEUE_244019 = "244019";
+    private final RabbitTemplate rabbitTemplate;
 
     public static double cprad_stawka = 0.65;
     public static double cgaz_stawka = 1.3;
@@ -50,10 +55,10 @@ public class FlatChargesController {
 
     private FlatChargesValidator flatChargesValidator = new FlatChargesValidator();
 
-    public FlatChargesController(FlatChargesRepository flatChargesRepository) {
+    public FlatChargesController(RabbitTemplate rabbitTemplate, FlatChargesRepository flatChargesRepository) {
+        this.rabbitTemplate = rabbitTemplate;
         this.flatChargesRepository = flatChargesRepository;
     }
-
 
     //POST
     @PostMapping(value = "/addNewFlatCharges")
@@ -73,6 +78,18 @@ public class FlatChargesController {
         if (result.getErrorCount() == 0) {
             //dodawanie budynku
             System.out.println("dodawanie flatcharges");
+            if(flatCharges.isAccepted()){
+                //todo wyslij maila do mieszkanców o zaplate;
+                //todo getLocators
+                //todo for each rabbitTemplate.convertAndSend(QUEUE_244019, new Notification("email", "title", "Odczyty z "+flatCharges.getData().getMonth()+" "+flatCharges.getData().getYear()+" zostały zaakceptowane"));
+            }
+            if(flatCharges.isZaplacone()){
+                //todo wyslij maila do mieszkanców i managerow ze jest zaplacone;
+                //todo getLocators
+                //todo for each rabbitTemplate.convertAndSend(QUEUE_244019, new Notification("email", "title", "Opłaty za "+flatCharges.getData().getMonth()+" "+flatCharges.getData().getYear()+" zostały uregulowane"));
+                //todo getZarzadcy
+                //todo for each rabbitTemplate.convertAndSend(QUEUE_244019, new Notification("email", "title", "Opłaty za mieszkanie ul. "+tmpFlat.getBuilding().getStreet()+" nr. "+tmpFlat.getBuilding().getBuildingNumber()+"/"+tmpFlat.getFlatNumber()+" za okres: "+flatCharges.getData().getMonth()+" "+flatCharges.getData().getYear()+" zostały uregulowane"));
+            }
             return ResponseEntity.ok(flatChargesService.addFlatCharges(flatCharges));
         }
 
@@ -86,7 +103,8 @@ public class FlatChargesController {
     @PutMapping("/updateFlatCharges")
     public ResponseEntity<FlatCharges> updateFlatCharges(@RequestBody FlatCharges flatCharges, BindingResult result) throws JsonProcessingException {
 
-        if(flatChargesService.getFlatCharges(flatCharges.getId())==null)return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
+        FlatCharges tmpFlatCharges = flatChargesService.getFlatCharges(flatCharges.getId());
+        if(tmpFlatCharges==null)return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
 
         Flat tmpFlat = flatService.getFlat(flatCharges.getFlat().getId());
         flatCharges.setFlat(tmpFlat);
@@ -97,6 +115,20 @@ public class FlatChargesController {
 
         if (result.getErrorCount() == 0) {
             System.out.println("edit flatCharges");
+
+            if(!tmpFlatCharges.isAccepted() && flatCharges.isAccepted()){
+                //todo wyslij maila do mieszkanców o zaplate;
+                //todo getLocators
+                //todo for each rabbitTemplate.convertAndSend(QUEUE_244019, new Notification("email", "title", "Odczyty z "+flatCharges.getData().getMonth()+" "+flatCharges.getData().getYear()+" zostały zaakceptowane"));
+            }
+            if(!tmpFlatCharges.isZaplacone() && flatCharges.isZaplacone()){
+                //todo wyslij maila do mieszkanców i managerow ze jest zaplacone;
+                //todo getLocators
+                //todo for each rabbitTemplate.convertAndSend(QUEUE_244019, new Notification("email", "title", "Opłaty za "+flatCharges.getData().getMonth()+" "+flatCharges.getData().getYear()+" zostały uregulowane"));
+                //todo getZarzadcy
+                //todo for each rabbitTemplate.convertAndSend(QUEUE_244019, new Notification("email", "title", "Opłaty za mieszkanie ul. "+tmpFlat.getBuilding().getStreet()+" nr. "+tmpFlat.getBuilding().getBuildingNumber()+"/"+tmpFlat.getFlatNumber()+" za okres: "+flatCharges.getData().getMonth()+" "+flatCharges.getData().getYear()+" zostały uregulowane"));
+            }
+
             return ResponseEntity.ok(flatChargesService.editFlatCharges(flatCharges));
         }
 

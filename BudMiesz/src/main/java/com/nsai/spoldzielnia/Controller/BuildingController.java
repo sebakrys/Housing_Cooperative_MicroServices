@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
-public class BuildingController {
+public class    BuildingController {
 
     @Autowired
     private BuildingService buildingService;

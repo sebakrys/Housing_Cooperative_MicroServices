@@ -11,6 +11,8 @@
         <option value="$PROJECT_DIR$/../EmailNotification/pom.xml" />
         <option value="$PROJECT_DIR$/MieszkancyZarzadcy/pom.xml" />
         <option value="$PROJECT_DIR$/../MieszkancyZarzadcy/pom.xml" />
+        <option value="$PROJECT_DIR$/../JWTokens/JWTokens/pom.xml" />
+        <option value="$PROJECT_DIR$/../Mieszkancy/pom.xml" />
       </list>
     </option>
   </component>

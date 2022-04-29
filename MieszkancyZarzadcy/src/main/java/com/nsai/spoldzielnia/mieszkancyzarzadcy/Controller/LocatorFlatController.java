@@ -1,11 +1,15 @@
 package com.nsai.spoldzielnia.mieszkancyzarzadcy.Controller;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.nsai.spoldzielnia.mieszkancyzarzadcy.Entity.LocatorFlat;
 import com.nsai.spoldzielnia.mieszkancyzarzadcy.Service.LocatorFlatService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.client.RestTemplate;
+
 
 import java.util.List;
 
@@ -13,6 +17,7 @@ import java.util.List;
 public class LocatorFlatController {
 
     private LocatorFlatService locatorFlatService;
+    private RestTemplate restTemplate = new RestTemplate();
 
     public LocatorFlatController(LocatorFlatService locatorFlatService) {
         this.locatorFlatService = locatorFlatService;
@@ -24,7 +29,22 @@ public class LocatorFlatController {
         LocatorFlat locatorFlat = new LocatorFlat();
         locatorFlat.setLocatorId(locatorId);
         locatorFlat.setFlatId(flatId);
-        return ResponseEntity.ok(locatorFlatService.addLocatorToFlat(locatorFlat));
+
+        try {
+            //sprawdzanie czy user istnieje
+            restTemplate.getForObject("http://localhost:8000/residents-flat-service/getPerson/"+locatorId, String.class);
+            //sprawdzanie czy Flat istnieje
+            restTemplate.getForObject("http://localhost:8000/building-flat-service/getFlat/"+flatId, String.class);
+
+            return ResponseEntity.ok(locatorFlatService.addLocatorToFlat(locatorFlat));
+        }
+        catch (final HttpClientErrorException e) {
+            System.out.println(e.getStatusCode());
+            System.out.println(e.getResponseBodyAsString());
+        }
+
+        return ResponseEntity.notFound().build();
+
     }
 
     @GetMapping("/getAllLocatorFlat")

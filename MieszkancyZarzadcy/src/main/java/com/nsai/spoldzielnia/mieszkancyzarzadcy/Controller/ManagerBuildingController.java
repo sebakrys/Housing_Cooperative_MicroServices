@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
@@ -14,6 +16,7 @@ public class ManagerBuildingController {
 
 
     private ManagerBuildingService managerBuildingService;
+    private RestTemplate restTemplate = new RestTemplate();
 
     public ManagerBuildingController(ManagerBuildingService managerBuildingService) {
         this.managerBuildingService = managerBuildingService;
@@ -25,7 +28,21 @@ public class ManagerBuildingController {
         ManagerBuilding managerBuilding = new ManagerBuilding();
         managerBuilding.setManagerId(managerId);
         managerBuilding.setBuildingId(buildingId);
-        return ResponseEntity.ok(managerBuildingService.addManagerToBuilding(managerBuilding));
+
+        try {
+            //sprawdzanie czy user istnieje
+            restTemplate.getForObject("http://localhost:8000/residents-flat-service/getPerson/"+managerId, String.class);
+            //sprawdzanie czy Building istnieje
+            restTemplate.getForObject("http://localhost:8000/building-flat-service/getBuilding/"+buildingId, String.class);
+
+            return ResponseEntity.ok(managerBuildingService.addManagerToBuilding(managerBuilding));
+        }
+        catch (final HttpClientErrorException e) {
+            System.out.println(e.getStatusCode());
+            System.out.println(e.getResponseBodyAsString());
+        }
+
+        return ResponseEntity.notFound().build();
     }
 
     @GetMapping("/getAllManagerBuilding")

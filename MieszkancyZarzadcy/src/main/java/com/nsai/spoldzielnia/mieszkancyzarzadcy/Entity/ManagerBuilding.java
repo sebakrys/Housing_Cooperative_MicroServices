@@ -11,7 +11,9 @@ import javax.persistence.Table;
 import java.util.List;
 
 @Entity
-@Table(name = "manager_building")
+@Table(name = "manager_building", uniqueConstraints={
+        @UniqueConstraint(columnNames = {"managerId", "buildingId"})
+})
 public class ManagerBuilding {
 
 

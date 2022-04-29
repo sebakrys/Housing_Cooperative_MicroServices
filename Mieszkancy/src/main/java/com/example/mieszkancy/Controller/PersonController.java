@@ -41,6 +41,21 @@ public class PersonController {
         return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
     }
 
+
+    @GetMapping(value = "/getEmail/{id}")
+    public ResponseEntity<String> getUserIdByEmail(@PathVariable Long id){
+        if(id > 0){
+            System.out.println("Zwracam uzytkownika email z przeslanego id");
+            return ResponseEntity.ok(personRepository.findById(id).get().getEmail());
+        }
+        else {
+            System.out.println("Wartość niezgodna z baza danych. Sprawdz czy przesyłany jest dobry id");
+            return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
+        }
+    }
+
+
+
     //PUT
     @PutMapping("/updatePerson")
     public ResponseEntity<Person> updatePerson(@RequestBody Person person, BindingResult bindingResult){

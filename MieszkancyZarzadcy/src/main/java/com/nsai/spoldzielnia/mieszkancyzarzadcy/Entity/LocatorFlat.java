@@ -4,7 +4,9 @@ package com.nsai.spoldzielnia.mieszkancyzarzadcy.Entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "locator_flat")
+@Table(name = "locator_flat", uniqueConstraints={
+        @UniqueConstraint(columnNames = {"locatorId", "flatId"})
+})
 public class LocatorFlat {
 
 

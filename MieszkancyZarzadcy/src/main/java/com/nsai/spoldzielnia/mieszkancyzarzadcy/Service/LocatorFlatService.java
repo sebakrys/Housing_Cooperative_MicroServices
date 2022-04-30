@@ -43,7 +43,7 @@ public class LocatorFlatService {
     @Transactional
     public List<Long> getAllLocatorsFromFlat(long flat_Id){
         return locatorFlatRepository.findAllByFlatId(flat_Id).stream()
-                .map(LocatorFlat::getFlatId)
+                .map(LocatorFlat::getLocatorId)
                 .collect(Collectors.toList());
     }
 

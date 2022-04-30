@@ -1,7 +1,7 @@
 package com.nsai.spoldzielnia.emailnotification.controller;
 
 import com.nsai.spoldzielnia.emailnotification.service.EMailService;
-import com.nsai.spoldzielnia.emailnotification.entity.Notification;
+import com.nsai.spoldzielnia.Rabbit.Notification;
 import org.apache.commons.validator.routines.EmailValidator;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;

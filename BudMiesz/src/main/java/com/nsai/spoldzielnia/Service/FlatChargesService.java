@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 @Service
@@ -68,5 +69,15 @@ public class FlatChargesService {
         flatChargesRepository.deleteById(id);
     }
 
+
+    public long generateChecksum(String getUrl){
+        byte[] bytes = getUrl.substring(0, getUrl.indexOf("ch=")).getBytes(StandardCharsets.US_ASCII);
+        long checksum = 0;
+        for (byte b:
+                bytes) {
+            checksum+=b;
+        }
+        return checksum;
+    }
 
 }

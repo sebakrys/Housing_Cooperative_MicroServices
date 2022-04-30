@@ -21,6 +21,7 @@ public class FlatCharges {
     @JsonBackReference
     private Flat flat;
 
+//TODO zamienic typ danych
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private Date data;
 

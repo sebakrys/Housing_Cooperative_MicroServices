@@ -4,12 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="Merged with JWT + Users">
+    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="added constrains table LocatorFlat and ManagerBuilding on ids&#10;include checking if user exists and if building/flat exists when adding connections between them">
+      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Controller/FlatChargesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Controller/FlatChargesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Entity/FlatCharges.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Entity/FlatCharges.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Rabbit/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Rabbit/Notification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Service/FlatChargesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Service/FlatChargesService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EmailNotification/src/main/java/com/nsai/spoldzielnia/emailnotification/controller/NotificationReciverEmailSenderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EmailNotification/src/main/java/com/nsai/spoldzielnia/emailnotification/controller/NotificationReciverEmailSenderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EmailNotification/src/main/java/com/nsai/spoldzielnia/emailnotification/entity/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EmailNotification/src/main/java/com/nsai/spoldzielnia/emailnotification/entity/Notification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EmailNotification/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../EmailNotification/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Mieszkancy/src/main/java/com/example/mieszkancy/Controller/PersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Mieszkancy/src/main/java/com/example/mieszkancy/Controller/PersonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Controller/LocatorFlatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Controller/LocatorFlatController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Controller/ManagerBuildingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Controller/ManagerBuildingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Entity/LocatorFlat.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Entity/LocatorFlat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Entity/ManagerBuilding.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Entity/ManagerBuilding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Service/LocatorFlatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Service/LocatorFlatService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Service/ManagerBuildingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Service/ManagerBuildingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDF/src/main/java/pl/skrys/pdf/PdfControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PDF/src/main/java/pl/skrys/pdf/PdfControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDF/src/main/java/pl/skrys/pdf/PdfService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PDF/src/main/java/pl/skrys/pdf/PdfService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDF/target/classes/pl/skrys/pdf/PdfControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PDF/target/classes/pl/skrys/pdf/PdfControl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDF/target/classes/pl/skrys/pdf/PdfService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PDF/target/classes/pl/skrys/pdf/PdfService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,11 +84,11 @@
       <recent name="D:\STUDIA_informatyka\S2\NSAI\Projekt\BudMiesz\src\main\java\com\nsai\spoldzielnia\Entity" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.nsai.spoldzielnia.Rabbit" />
       <recent name="com.nsai.spoldzielnia.mieszkancyzarzadcy.Service" />
       <recent name="com.nsai.spoldzielnia.mieszkancyzarzadcy.Repository" />
       <recent name="com.nsai.spoldzielnia.mieszkancyzarzadcy.Controller" />
       <recent name="com.nsai.spoldzielnia.mieszkancyzarzadcy.Entity" />
-      <recent name="com.nsai.spoldzielnia.mieszkancyzarzadcy.Rabbit" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -89,7 +98,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.MieszkancyZarzadcyApplication">
+  <component name="RunManager" selected="Spring Boot.PdfService">
     <configuration name="BudMieszApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="BudMiesz" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.nsai.spoldzielnia.BudMieszApplication" />
@@ -325,7 +334,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651254562516</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="added constrains table LocatorFlat and ManagerBuilding on ids&#10;include checking if user exists and if building/flat exists when adding connections between them">
+      <created>1651259058913</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1651259058913</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -342,7 +358,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="connection_users_buildings" />
+                        <option value="FlatCharges_Email" />
                       </list>
                     </value>
                   </entry>
@@ -376,6 +392,7 @@
     <MESSAGE value="First Commit with service MieszkancyZarzadcy - service connecting users and buildings/flats&#10;-todo add CRUD" />
     <MESSAGE value="First Commit - mistake - wrong directory" />
     <MESSAGE value="Merged with JWT + Users" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merged with JWT + Users" />
+    <MESSAGE value="added constrains table LocatorFlat and ManagerBuilding on ids&#10;include checking if user exists and if building/flat exists when adding connections between them" />
+    <option name="LAST_COMMIT_MESSAGE" value="added constrains table LocatorFlat and ManagerBuilding on ids&#10;include checking if user exists and if building/flat exists when adding connections between them" />
   </component>
 </project>

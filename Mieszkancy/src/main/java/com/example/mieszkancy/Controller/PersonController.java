@@ -54,6 +54,18 @@ public class PersonController {
         }
     }
 
+    @GetMapping(value = "/getNames/{id}")
+    public ResponseEntity<String> getUserNamesById(@PathVariable Long id){
+        if(id > 0){
+            System.out.println("Zwracam uzytkownika email z przeslanego id");
+            return ResponseEntity.ok(personRepository.findById(id).get().getFirstName()+" "+personRepository.findById(id).get().getLastName());
+        }
+        else {
+            System.out.println("Wartość niezgodna z baza danych. Sprawdz czy przesyłany jest dobry id");
+            return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
+        }
+    }
+
 
 
     //PUT

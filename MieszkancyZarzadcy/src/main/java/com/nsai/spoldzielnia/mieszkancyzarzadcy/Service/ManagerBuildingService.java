@@ -43,7 +43,7 @@ public class ManagerBuildingService {
     @Transactional
     public List<Long> getAllManagersFromBuilding(long building_Id){
         return managerBuildingRepository.findAllByBuildingId(building_Id).stream()
-                .map(ManagerBuilding::getBuildingId)
+                .map(ManagerBuilding::getManagerId)
                 .collect(Collectors.toList());
     }
 

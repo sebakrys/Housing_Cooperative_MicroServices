@@ -7,14 +7,20 @@ import com.nsai.spoldzielnia.Repository.BuildingRepository;
 import com.nsai.spoldzielnia.Repository.FlatChargesRepository;
 import com.nsai.spoldzielnia.Repository.FlatRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.Iterator;
 import java.util.List;
 
 @Service
 public class FlatService {
+
+    private RestTemplate restTemplate = new RestTemplate();
 
     @Autowired
     private FlatRepository flatRepository;
@@ -54,7 +60,11 @@ public class FlatService {
     public void removeFlat(long id) {
         System.out.println("Usuwanie mieszkania service "+id);
 
-        // TODO usuwanie mieszkanców
+        //usuwanie mieszkanców
+        ResponseEntity re= restTemplate.exchange("http://localhost:8000/managers-locators-service/deleteAllLocatorsFromFlat/"+id, HttpMethod.DELETE, HttpEntity.EMPTY, String.class);
+        System.out.println(re.getStatusCodeValue());
+        if(re.getStatusCodeValue()!=200)return;//jesli nie 200 wycofaj
+
 
         Flat tempFlat = getFlat(id);
 
@@ -67,6 +77,8 @@ public class FlatService {
         }
 
         flatRepository.delete(tempFlat);
+
+
 
         System.out.println("mieszkania powinno byc usuniete service "+id);
     }

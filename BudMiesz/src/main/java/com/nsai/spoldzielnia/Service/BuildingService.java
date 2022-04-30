@@ -4,14 +4,20 @@ import com.nsai.spoldzielnia.Entity.Building;
 import com.nsai.spoldzielnia.Entity.Flat;
 import com.nsai.spoldzielnia.Repository.BuildingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.Iterator;
 import java.util.List;
 
 @Service
 public class BuildingService {
+
+    private RestTemplate restTemplate = new RestTemplate();
 
     private BuildingRepository buildingRepository;
 
@@ -56,13 +62,12 @@ public class BuildingService {
     @Transactional
     public void removeBuilding(long id) {
 
-        /* TODO usuwanie zarządców
-        List<SpUserApp> zarzadcyBudynku = userService.getUserAppByBuilding(buildingId);
-        SpBuilding building = buildingService.getBuilding(buildingId);
-        for (SpUserApp tempZarz : zarzadcyBudynku) {
-            //usuwanie zarzadców
-            userService.removeUserBuilding(tempZarz, building);
-        }*/
+
+        //usuwanie zarządców
+        ResponseEntity re= restTemplate.exchange("http://localhost:8000/managers-locators-service/deleteAllManagersFromBuilding/"+id, HttpMethod.DELETE, HttpEntity.EMPTY, String.class);
+        System.out.println(re.getStatusCodeValue());
+        if(re.getStatusCodeValue()!=200)return;//jesli nie 200 wycofaj
+
         Building tmpBuilding = getBuilding(id);
 
         List<Flat> buildingFlats = tmpBuilding.getFlat();

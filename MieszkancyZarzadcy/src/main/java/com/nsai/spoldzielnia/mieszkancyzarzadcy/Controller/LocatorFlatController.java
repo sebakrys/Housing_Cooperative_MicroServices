@@ -31,6 +31,7 @@ public class LocatorFlatController {
         locatorFlat.setFlatId(flatId);
 
         try {
+            //todo mozna zmodyfikowac na bardziej eleganckie rozwiazanie:         ResponseEntity re= restTemplate.exchange("http://localhost:8000/managers-locators-service/deleteAllManagersFromBuilding/"+id, HttpMethod.DELETE, HttpEntity.EMPTY, String.class);
             //sprawdzanie czy user istnieje
             restTemplate.getForObject("http://localhost:8000/residents-flat-service/getPerson/"+locatorId, String.class);
             //sprawdzanie czy Flat istnieje

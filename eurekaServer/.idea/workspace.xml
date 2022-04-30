@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="Changed datatype from Date to LocalDateTime">
-      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Service/BuildingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Service/BuildingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Service/FlatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Service/FlatService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_04_2022_21_12_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_04_2022_21_12__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_04_2022_21_13_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_04_2022_21_13__Changes_.xml" beforeDir="false" />
+    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="added: when deleting building/flat also locators and managers are deleted">
+      <change beforePath="$PROJECT_DIR$/../MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Controller/LocatorFlatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Controller/LocatorFlatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Controller/ManagerBuildingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Controller/ManagerBuildingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +86,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.BudMieszApplication">
+  <component name="RunManager" selected="Spring Boot.MieszkancyZarzadcyApplication">
     <configuration name="BudMieszApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="BudMiesz" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.nsai.spoldzielnia.BudMieszApplication" />
@@ -192,7 +188,7 @@
       <workItem from="1650375860455" duration="4671000" />
       <workItem from="1650384205462" duration="1922000" />
       <workItem from="1651141644742" duration="1919000" />
-      <workItem from="1651333849744" duration="2022000" />
+      <workItem from="1651333849744" duration="4338000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit - Eureka">
       <created>1649598456859</created>
@@ -348,7 +344,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651307969256</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="added: when deleting building/flat also locators and managers are deleted">
+      <created>1651336187419</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1651336187419</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -402,6 +405,7 @@
     <MESSAGE value="added constrains table LocatorFlat and ManagerBuilding on ids&#10;include checking if user exists and if building/flat exists when adding connections between them" />
     <MESSAGE value="added: when accepting flatCharges email is sending to locators with pdf link&#10;added checksum to pdf link, fixed rabbit serialVersionUID" />
     <MESSAGE value="Changed datatype from Date to LocalDateTime" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed datatype from Date to LocalDateTime" />
+    <MESSAGE value="added: when deleting building/flat also locators and managers are deleted" />
+    <option name="LAST_COMMIT_MESSAGE" value="added: when deleting building/flat also locators and managers are deleted" />
   </component>
 </project>

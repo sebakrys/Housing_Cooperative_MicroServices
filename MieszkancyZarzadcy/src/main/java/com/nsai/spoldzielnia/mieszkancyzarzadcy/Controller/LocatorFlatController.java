@@ -4,6 +4,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.nsai.spoldzielnia.mieszkancyzarzadcy.Entity.LocatorFlat;
 import com.nsai.spoldzielnia.mieszkancyzarzadcy.Service.LocatorFlatService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -33,9 +35,11 @@ public class LocatorFlatController {
         try {
             //todo mozna zmodyfikowac na bardziej eleganckie rozwiazanie:         ResponseEntity re= restTemplate.exchange("http://localhost:8000/managers-locators-service/deleteAllManagersFromBuilding/"+id, HttpMethod.DELETE, HttpEntity.EMPTY, String.class);
             //sprawdzanie czy user istnieje
-            restTemplate.getForObject("http://localhost:8000/residents-flat-service/getPerson/"+locatorId, String.class);
+            if(restTemplate.exchange("http://localhost:8000/residents-flat-service/getPerson/"+locatorId, HttpMethod.GET, HttpEntity.EMPTY, String.class).getStatusCodeValue()!=200) return ResponseEntity.notFound().build();
+            //old restTemplate.getForObject("http://localhost:8000/residents-flat-service/getPerson/"+locatorId, String.class);
             //sprawdzanie czy Flat istnieje
-            restTemplate.getForObject("http://localhost:8000/building-flat-service/getFlat/"+flatId, String.class);
+            if(restTemplate.exchange("http://localhost:8000/building-flat-service/getFlat/"+flatId, HttpMethod.GET, HttpEntity.EMPTY, String.class).getStatusCodeValue()!=200) return ResponseEntity.notFound().build();
+            //old restTemplate.getForObject("http://localhost:8000/building-flat-service/getFlat/"+flatId, String.class);
 
             return ResponseEntity.ok(locatorFlatService.addLocatorToFlat(locatorFlat));
         }

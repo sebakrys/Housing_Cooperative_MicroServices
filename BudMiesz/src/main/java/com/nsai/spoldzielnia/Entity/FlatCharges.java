@@ -3,8 +3,11 @@ package com.nsai.spoldzielnia.Entity;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -21,9 +24,9 @@ public class FlatCharges {
     @JsonBackReference
     private Flat flat;
 
-//TODO zamienic typ danych
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
-    private Date data;
+
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime data;
 
     private boolean accepted;
 
@@ -48,14 +51,13 @@ public class FlatCharges {
     private double funduszRemontowy_stawka;
 
 
-    public Date getData() {
+    public LocalDateTime getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(LocalDateTime data) {
         this.data = data;
     }
-
 
     public boolean isZaplacone() {
         return zaplacone;
@@ -200,5 +202,30 @@ public class FlatCharges {
 
     public void setFlat(Flat flat) {
         this.flat = flat;
+    }
+
+    @Override
+    public String toString() {
+        return "FlatCharges{" +
+                "id=" + id +
+                ", flat=" + flat +
+                ", data=" + data +
+                ", accepted=" + accepted +
+                ", zaplacone=" + zaplacone +
+                ", prad=" + prad +
+                ", gaz=" + gaz +
+                ", woda_ciepla=" + woda_ciepla +
+                ", woda_zimna=" + woda_zimna +
+                ", scieki=" + scieki +
+                ", ogrzewanie=" + ogrzewanie +
+                ", funduszRemontowy=" + funduszRemontowy +
+                ", prad_stawka=" + prad_stawka +
+                ", gaz_stawka=" + gaz_stawka +
+                ", woda_ciepla_stawka=" + woda_ciepla_stawka +
+                ", woda_zimna_stawka=" + woda_zimna_stawka +
+                ", scieki_stawka=" + scieki_stawka +
+                ", ogrzewanie_stawka=" + ogrzewanie_stawka +
+                ", funduszRemontowy_stawka=" + funduszRemontowy_stawka +
+                '}';
     }
 }

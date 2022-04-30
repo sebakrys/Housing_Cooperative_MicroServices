@@ -4,21 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="added constrains table LocatorFlat and ManagerBuilding on ids&#10;include checking if user exists and if building/flat exists when adding connections between them">
+    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="added: when accepting flatCharges email is sending to locators with pdf link&#10;added checksum to pdf link, fixed rabbit serialVersionUID">
+      <change beforePath="$PROJECT_DIR$/../BudMiesz/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Controller/FlatChargesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Controller/FlatChargesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Entity/FlatCharges.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Entity/FlatCharges.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Rabbit/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Rabbit/Notification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Service/FlatChargesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Service/FlatChargesService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EmailNotification/src/main/java/com/nsai/spoldzielnia/emailnotification/controller/NotificationReciverEmailSenderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EmailNotification/src/main/java/com/nsai/spoldzielnia/emailnotification/controller/NotificationReciverEmailSenderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EmailNotification/src/main/java/com/nsai/spoldzielnia/emailnotification/entity/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EmailNotification/src/main/java/com/nsai/spoldzielnia/emailnotification/entity/Notification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EmailNotification/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../EmailNotification/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Mieszkancy/src/main/java/com/example/mieszkancy/Controller/PersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Mieszkancy/src/main/java/com/example/mieszkancy/Controller/PersonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Service/LocatorFlatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Service/LocatorFlatService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Service/ManagerBuildingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Service/ManagerBuildingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDF/src/main/java/pl/skrys/pdf/PdfControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PDF/src/main/java/pl/skrys/pdf/PdfControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDF/src/main/java/pl/skrys/pdf/PdfService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PDF/src/main/java/pl/skrys/pdf/PdfService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDF/target/classes/pl/skrys/pdf/PdfControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PDF/target/classes/pl/skrys/pdf/PdfControl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDF/target/classes/pl/skrys/pdf/PdfService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PDF/target/classes/pl/skrys/pdf/PdfService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +87,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.PdfService">
+  <component name="RunManager" selected="Spring Boot.BudMieszApplication">
     <configuration name="BudMieszApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="BudMiesz" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.nsai.spoldzielnia.BudMieszApplication" />
@@ -341,7 +330,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651259058913</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="added: when accepting flatCharges email is sending to locators with pdf link&#10;added checksum to pdf link, fixed rabbit serialVersionUID">
+      <created>1651306178941</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1651306178941</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -393,6 +389,7 @@
     <MESSAGE value="First Commit - mistake - wrong directory" />
     <MESSAGE value="Merged with JWT + Users" />
     <MESSAGE value="added constrains table LocatorFlat and ManagerBuilding on ids&#10;include checking if user exists and if building/flat exists when adding connections between them" />
-    <option name="LAST_COMMIT_MESSAGE" value="added constrains table LocatorFlat and ManagerBuilding on ids&#10;include checking if user exists and if building/flat exists when adding connections between them" />
+    <MESSAGE value="added: when accepting flatCharges email is sending to locators with pdf link&#10;added checksum to pdf link, fixed rabbit serialVersionUID" />
+    <option name="LAST_COMMIT_MESSAGE" value="added: when accepting flatCharges email is sending to locators with pdf link&#10;added checksum to pdf link, fixed rabbit serialVersionUID" />
   </component>
 </project>

@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@CrossOrigin(origins = "http://localhost:3000")//for React
+@RestController
 public class PersonController {
 
 // TODO DODAJ UZUN MODYFIKUJ DODAJ VALIDATOR
@@ -32,13 +33,11 @@ public class PersonController {
     public ResponseEntity<Person> addNewPerson(@RequestBody Person person, BindingResult bindingResult){
         System.out.println(person.getFirstName() +  " " + person.getLastName()+ " " + person.getLogin());
 
-        if (person.getTelephone().equals("")){
-            System.out.println("Dodawanie osoby");
-            return ResponseEntity.ok(personService.addPerson(person));
-        }
+        System.out.println("Dodawanie osoby");
+        return ResponseEntity.ok(personService.addPerson(person));
 
-        System.out.println("Problem z dodaniem osoby");
-        return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
+        //System.out.println("Problem z dodaniem osoby");
+        //return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
     }
 
 

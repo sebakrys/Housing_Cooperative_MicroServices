@@ -6,6 +6,7 @@ import "./loginStyles.css";
 import BuildingsPage from "./BuildingsPage";
 import BuildingService from "../services/BuildingService";
 import registerService from "../services/RegisterService";
+import data from "bootstrap/js/src/dom/data";
 
 function RegisterPage() {
     // React States
@@ -50,10 +51,26 @@ function RegisterPage() {
 
             console.log("REGISTER"+firstName.value+" "+lastName.value);
 
-            var a = registerService.registerUser(userJSON);
+            const headers = {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            };
+            axios.post('http://localhost:8000/residents-flat-service/addPerson', userJSON, {headers})
+                .then((response) => {
+                    console.log("RESP:"+response);
+                    //return postResponse.data;
+                    setIsSubmitted({ name: "firstName", message: "Pomyślnie zarejestrowano" });
+                    //todo wiadomosc o pozytywnym zarejestrowaniu
+                    //return(['ok', data]);
+                }, (error) => {
+                    console.log("EEEE:"+error);
+                    //return(['error', 'Nie zarejestrowano']);
+                    setErrorMessages({ name: "firstName", message: "Nie zarejestrowano - Błąd z serwera" });
+                });
 
 
-            console.log("REGISTERED "+a);
+            //console.log("REGISTERED "+a.data+" "+a.type);
 
         }else{
             setErrorMessages({ name: "passwordRepeat", message: "Passwords don't match" });
@@ -82,6 +99,7 @@ function RegisterPage() {
         name === errorMessages.name && (
             <div className="error">{errorMessages.message}</div>
         );
+
 
     // JSX code for login form
     const renderForm = (

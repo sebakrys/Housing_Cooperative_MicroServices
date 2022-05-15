@@ -30,7 +30,7 @@ public class PersonController {
 
     //POST
     @PostMapping(value = "/addPerson")
-    public ResponseEntity<Person> addNewPerson(@RequestBody Person person, BindingResult bindingResult){
+    public ResponseEntity<Person> addNewPerson(@RequestBody Person person){
         System.out.println(person.getFirstName() +  " " + person.getLastName()+ " " + person.getLogin());
 
         System.out.println("Dodawanie osoby");

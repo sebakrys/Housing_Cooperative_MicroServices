@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="removed redundant directory from eureka">
+    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="added pages login/ register/ buildings">
+      <change beforePath="$PROJECT_DIR$/../Mieszkancy/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Mieszkancy/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Mieszkancy/src/main/java/com/example/mieszkancy/Controller/PersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Mieszkancy/src/main/java/com/example/mieszkancy/Controller/PersonController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/pages/BuildingsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/pages/BuildingsPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/pages/RegisterPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/pages/RegisterPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/services/RegisterService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/services/RegisterService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,11 +22,11 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -84,6 +86,7 @@
       <recent name="D:\STUDIA_informatyka\S2\NSAI\Projekt\BudMiesz\src\main\java\com\nsai\spoldzielnia\Entity" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\STUDIA_informatyka\S2\NSAI\Projekt\Mieszkancy\src\main\java\com\example\mieszkancy" />
       <recent name="D:\STUDIA_informatyka\S2\NSAI\Projekt\frontend\src\components\Navbar" />
       <recent name="D:\STUDIA_informatyka\S2\NSAI\Projekt\frontend\src" />
     </key>
@@ -102,7 +105,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="Spring Boot.MieszkancyApplication">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -220,7 +223,13 @@
       <workItem from="1652259327793" duration="25000" />
       <workItem from="1652369011111" duration="2254000" />
       <workItem from="1652371380242" duration="6734000" />
-      <workItem from="1652429649636" duration="8197000" />
+      <workItem from="1652429649636" duration="8368000" />
+      <workItem from="1652465415689" duration="3322000" />
+      <workItem from="1652508402815" duration="79000" />
+      <workItem from="1652517759168" duration="1220000" />
+      <workItem from="1652517328668" duration="2268000" />
+      <workItem from="1652529098527" duration="3024000" />
+      <workItem from="1652623323497" duration="4886000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit - Eureka">
       <created>1649598456859</created>
@@ -404,7 +413,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652378145663</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="added pages login/ register/ buildings">
+      <created>1652439323902</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1652439323902</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -462,6 +478,7 @@
     <MESSAGE value="added condition to check if both exist when adding ManagerBuilding or LocatorFlat via checking if response==200" />
     <MESSAGE value="added React.js view for BuildingsList" />
     <MESSAGE value="removed redundant directory from eureka" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed redundant directory from eureka" />
+    <MESSAGE value="added pages login/ register/ buildings" />
+    <option name="LAST_COMMIT_MESSAGE" value="added pages login/ register/ buildings" />
   </component>
 </project>

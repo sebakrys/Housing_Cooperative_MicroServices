@@ -1,6 +1,11 @@
 import React from "react";
 import BuildingService from "../services/BuildingService";
 import {render} from "react-dom";
+import ReactDOM from "react-dom";
+import axios from "axios";
+
+import "./loginStyles.css";
+import registerService from "../services/RegisterService";
 
 class BuildingsPage extends React.Component{
 
@@ -17,8 +22,16 @@ class BuildingsPage extends React.Component{
         });
     }
 
+
+    handleSubmit = (event) => {
+        //Prevent page reload
+        event.preventDefault();
+    };
+
+
     render(){
         return(
+            <div>
             <div>
                 <h1 className="text-center">Buildings List</h1>
                 <table className="table table-striped">
@@ -46,6 +59,7 @@ class BuildingsPage extends React.Component{
                     }
                     </tbody>
                 </table>
+            </div>
             </div>
         )
     }

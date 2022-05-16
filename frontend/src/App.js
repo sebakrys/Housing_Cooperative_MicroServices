@@ -7,6 +7,7 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import BuildingsPage from "./pages/BuildingsPage";
 import Navbar from "./components/Navbar";
+import AddBuildingPage from "./pages/AddBuildingPage";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
                 <Route path='/login' element={<LoginPage/>} />
                 <Route path='/register' element={<RegisterPage/>} />
                 <Route path='/buildings' element={<BuildingsPage/>} />
+                <Route path='/addbuilding' element={<AddBuildingPage/>} />
             </Routes>
         </Router>
     );

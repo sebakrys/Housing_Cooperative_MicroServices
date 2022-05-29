@@ -21,6 +21,7 @@ public class BuildingValidator implements Validator{
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "city", "error.field.required");
 
         if(!((Building)target).getPostalCode().matches("^([0-9]{2}-[0-9]{3})$")){//validacja regex postal code
+            System.out.println(((Building)target).getPostalCode());
             errors.rejectValue("postalCode", "error.incorrect.postal");
         }
 

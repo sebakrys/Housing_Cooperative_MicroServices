@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="added: when deleting building/flat also locators and managers are deleted">
-      <change beforePath="$PROJECT_DIR$/../MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Controller/LocatorFlatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Controller/LocatorFlatController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Controller/ManagerBuildingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Controller/ManagerBuildingController.java" afterDir="false" />
+    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="rejestracja dziala">
+      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Validator/BuildingValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Validator/BuildingValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Navbar/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Navbar/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +19,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
         <option value="Class" />
       </list>
     </option>
@@ -25,7 +30,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="JWT" />
+        <entry key="$PROJECT_DIR$/.." value="connection_users_buildings" />
       </map>
     </option>
     <option name="RECENT_COMMON_BRANCH" value="master" />
@@ -61,15 +66,27 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="corretto-11" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Mieszkancy" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../frontend/src/pages" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path" value="$APPLICATION_CONFIG_DIR$/node/node-v14.15.0-win-x64/node" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.5321839" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
+    <property name="project.structure.side.proportion" value="0.19655173" />
+    <property name="settings.editor.selected.configurable" value="advanced.settings" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2021.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\STUDIA_informatyka\S2\NSAI\Projekt\frontend\src\pages" />
       <recent name="D:\STUDIA_informatyka\S2\NSAI\Projekt\BudMiesz\src\main\java\com\nsai\spoldzielnia\Entity" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\STUDIA_informatyka\S2\NSAI\Projekt\Mieszkancy\src\main\java\com\example\mieszkancy" />
+      <recent name="D:\STUDIA_informatyka\S2\NSAI\Projekt\frontend\src\components\Navbar" />
+      <recent name="D:\STUDIA_informatyka\S2\NSAI\Projekt\frontend\src" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.nsai.spoldzielnia.Rabbit" />
@@ -86,7 +103,10 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.MieszkancyZarzadcyApplication">
+  <component name="RunManager" selected="Spring Boot.BudMieszApplication">
+    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
     <configuration name="BudMieszApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="BudMiesz" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.nsai.spoldzielnia.BudMieszApplication" />
@@ -147,7 +167,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/../frontend/package.json" />
+      <command value="start" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <list>
+      <item itemvalue="JavaScript Debug.Debug Application" />
+      <item itemvalue="npm.start" />
       <item itemvalue="Spring Boot.PdfService" />
       <item itemvalue="Spring Boot.EurekaServerApplication" />
       <item itemvalue="Spring Boot.GatewayApplication" />
@@ -188,7 +217,18 @@
       <workItem from="1650375860455" duration="4671000" />
       <workItem from="1650384205462" duration="1922000" />
       <workItem from="1651141644742" duration="1919000" />
-      <workItem from="1651333849744" duration="4338000" />
+      <workItem from="1651333849744" duration="4693000" />
+      <workItem from="1652259327793" duration="25000" />
+      <workItem from="1652369011111" duration="2254000" />
+      <workItem from="1652371380242" duration="6734000" />
+      <workItem from="1652429649636" duration="8368000" />
+      <workItem from="1652465415689" duration="3322000" />
+      <workItem from="1652508402815" duration="79000" />
+      <workItem from="1652517759168" duration="1220000" />
+      <workItem from="1652517328668" duration="2268000" />
+      <workItem from="1652529098527" duration="3024000" />
+      <workItem from="1652623323497" duration="5801000" />
+      <workItem from="1652726537559" duration="1360000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit - Eureka">
       <created>1649598456859</created>
@@ -351,7 +391,42 @@
       <option name="project" value="LOCAL" />
       <updated>1651336187419</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="added condition to check if both exist when adding ManagerBuilding or LocatorFlat via checking if response==200">
+      <created>1651339037664</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1651339037664</updated>
+    </task>
+    <task id="LOCAL-00025" summary="added React.js view for BuildingsList">
+      <created>1652378001468</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1652378001468</updated>
+    </task>
+    <task id="LOCAL-00026" summary="removed redundant directory from eureka">
+      <created>1652378145663</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1652378145663</updated>
+    </task>
+    <task id="LOCAL-00027" summary="added pages login/ register/ buildings">
+      <created>1652439323902</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1652439323902</updated>
+    </task>
+    <task id="LOCAL-00028" summary="rejestracja dziala">
+      <created>1652628557340</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1652628557341</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -368,7 +443,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="FlatCharges_Email" />
+                        <option value="FrontEnd" />
                       </list>
                     </value>
                   </entry>
@@ -406,6 +481,11 @@
     <MESSAGE value="added: when accepting flatCharges email is sending to locators with pdf link&#10;added checksum to pdf link, fixed rabbit serialVersionUID" />
     <MESSAGE value="Changed datatype from Date to LocalDateTime" />
     <MESSAGE value="added: when deleting building/flat also locators and managers are deleted" />
-    <option name="LAST_COMMIT_MESSAGE" value="added: when deleting building/flat also locators and managers are deleted" />
+    <MESSAGE value="added condition to check if both exist when adding ManagerBuilding or LocatorFlat via checking if response==200" />
+    <MESSAGE value="added React.js view for BuildingsList" />
+    <MESSAGE value="removed redundant directory from eureka" />
+    <MESSAGE value="added pages login/ register/ buildings" />
+    <MESSAGE value="rejestracja dziala" />
+    <option name="LAST_COMMIT_MESSAGE" value="rejestracja dziala" />
   </component>
 </project>

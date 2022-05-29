@@ -13,6 +13,7 @@
         <option value="$PROJECT_DIR$/../MieszkancyZarzadcy/pom.xml" />
         <option value="$PROJECT_DIR$/../JWTokens/JWTokens/pom.xml" />
         <option value="$PROJECT_DIR$/../Mieszkancy/pom.xml" />
+        <option value="$PROJECT_DIR$/../Keycloak/pom.xml" />
       </list>
     </option>
   </component>

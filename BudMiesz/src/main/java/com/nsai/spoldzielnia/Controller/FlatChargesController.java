@@ -119,7 +119,7 @@ public class FlatChargesController {
                         //System.out.println(checksum);
                         UrlVariabledPDF = UrlVariabledPDF+checksum;
 
-                        String rachunekPdfUrl = "http://localhost:8080/rachunek?";
+                        String rachunekPdfUrl = "http://localhost:8090/rachunek?";
                         String tmlUsrEmail = restTemplate.getForObject("http://localhost:8000/residents-flat-service/getEmail/"+id, String.class);
                         Notification tmpNoti = new Notification(tmlUsrEmail, "Odczyty zaakceptowane", "Odczyty z "+flatCharges.getData().getMonth().getValue()+" "+flatCharges.getData().getYear()+" zostały zaakceptowane. Rachunek wystawiony pod linkiem: "+rachunekPdfUrl+UrlVariabledPDF);
                         System.out.println(tmpNoti.toString());
@@ -220,7 +220,7 @@ public class FlatChargesController {
                         //System.out.println(checksum);
                         UrlVariabledPDF = UrlVariabledPDF+checksum;
 
-                        String rachunekPdfUrl = "http://localhost:8080/rachunek?";
+                        String rachunekPdfUrl = "http://localhost:8090/rachunek?";
                         String tmlUsrEmail = restTemplate.getForObject("http://localhost:8000/residents-flat-service/getEmail/"+id, String.class);
                         Notification tmpNoti = new Notification(tmlUsrEmail, "Odczyty zaakceptowane", "Odczyty z "+flatCharges.getData().getMonth().getValue()+" "+flatCharges.getData().getYear()+" zostały zaakceptowane. Rachunek wystawiony pod linkiem: "+rachunekPdfUrl+UrlVariabledPDF);
                         System.out.println(tmpNoti.toString());

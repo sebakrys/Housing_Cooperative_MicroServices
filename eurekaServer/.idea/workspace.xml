@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="rejestracja dziala">
-      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Validator/BuildingValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Validator/BuildingValidator.java" afterDir="false" />
+    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="Adding Building Page - added">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_04_2022_12_26__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_04_2022_12_26__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Navbar/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Navbar/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,10 +17,6 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="TypeScript JSX File" />
-        <option value="TypeScript File" />
-        <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="Class" />
       </list>
     </option>
@@ -30,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="connection_users_buildings" />
+        <entry key="$PROJECT_DIR$/.." value="Validation" />
       </map>
     </option>
     <option name="RECENT_COMMON_BRANCH" value="master" />
@@ -66,34 +60,23 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="corretto-11" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../frontend/src/pages" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="nodejs_interpreter_path" value="$APPLICATION_CONFIG_DIR$/node/node-v14.15.0-win-x64/node" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../frontend/frontend.iml" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.19655173" />
-    <property name="settings.editor.selected.configurable" value="advanced.settings" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2021.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="project.structure.side.proportion" value="0.5321839" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\STUDIA_informatyka\S2\NSAI\Projekt\frontend\src\pages" />
       <recent name="D:\STUDIA_informatyka\S2\NSAI\Projekt\BudMiesz\src\main\java\com\nsai\spoldzielnia\Entity" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\STUDIA_informatyka\S2\NSAI\Projekt\Mieszkancy\src\main\java\com\example\mieszkancy" />
-      <recent name="D:\STUDIA_informatyka\S2\NSAI\Projekt\frontend\src\components\Navbar" />
-      <recent name="D:\STUDIA_informatyka\S2\NSAI\Projekt\frontend\src" />
-    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.nsai.spoldzielnia.Rabbit" />
-      <recent name="com.nsai.spoldzielnia.mieszkancyzarzadcy.Service" />
-      <recent name="com.nsai.spoldzielnia.mieszkancyzarzadcy.Repository" />
-      <recent name="com.nsai.spoldzielnia.mieszkancyzarzadcy.Controller" />
-      <recent name="com.nsai.spoldzielnia.mieszkancyzarzadcy.Entity" />
+      <recent name="com.nsai.spoldzielnia.emailnotification.entity" />
+      <recent name="com.nsai.spoldzielnia.emailnotification.Service" />
+      <recent name="com.nsai.spoldzielnia.Validator" />
+      <recent name="com.nsai.spoldzielnia.Controller" />
+      <recent name="com.nsai.spoldzielnia.Repository" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -103,10 +86,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.BudMieszApplication">
-    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="npm.start">
     <configuration name="BudMieszApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="BudMiesz" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.nsai.spoldzielnia.BudMieszApplication" />
@@ -147,6 +127,7 @@
     <configuration name="MieszkancyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="Mieszkancy" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.mieszkancy.MieszkancyApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -169,22 +150,24 @@
     </configuration>
     <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/../frontend/package.json" />
-      <command value="start" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
       <node-interpreter value="project" />
       <envs />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JavaScript Debug.Debug Application" />
       <item itemvalue="npm.start" />
       <item itemvalue="Spring Boot.PdfService" />
       <item itemvalue="Spring Boot.EurekaServerApplication" />
       <item itemvalue="Spring Boot.GatewayApplication" />
       <item itemvalue="Spring Boot.BudMieszApplication" />
       <item itemvalue="Spring Boot.EmailNotificationApplication" />
-      <item itemvalue="Spring Boot.MieszkancyZarzadcyApplication" />
       <item itemvalue="Spring Boot.JwTokensApplication" />
       <item itemvalue="Spring Boot.MieszkancyApplication" />
+      <item itemvalue="Spring Boot.MieszkancyZarzadcyApplication" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -216,19 +199,6 @@
       <workItem from="1650093834793" duration="5635000" />
       <workItem from="1650375860455" duration="4671000" />
       <workItem from="1650384205462" duration="1922000" />
-      <workItem from="1651141644742" duration="1919000" />
-      <workItem from="1651333849744" duration="4693000" />
-      <workItem from="1652259327793" duration="25000" />
-      <workItem from="1652369011111" duration="2254000" />
-      <workItem from="1652371380242" duration="6734000" />
-      <workItem from="1652429649636" duration="8368000" />
-      <workItem from="1652465415689" duration="3322000" />
-      <workItem from="1652508402815" duration="79000" />
-      <workItem from="1652517759168" duration="1220000" />
-      <workItem from="1652517328668" duration="2268000" />
-      <workItem from="1652529098527" duration="3024000" />
-      <workItem from="1652623323497" duration="5801000" />
-      <workItem from="1652726537559" duration="1360000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit - Eureka">
       <created>1649598456859</created>
@@ -342,91 +312,7 @@
       <option name="project" value="LOCAL" />
       <updated>1650120516447</updated>
     </task>
-    <task id="LOCAL-00017" summary="First Commit with service MieszkancyZarzadcy - service connecting users and buildings/flats&#10;-todo add CRUD">
-      <created>1651160322967</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1651160322967</updated>
-    </task>
-    <task id="LOCAL-00018" summary="First Commit - mistake - wrong directory">
-      <created>1651160539447</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1651160539447</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Merged with JWT + Users">
-      <created>1651254562516</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1651254562516</updated>
-    </task>
-    <task id="LOCAL-00020" summary="added constrains table LocatorFlat and ManagerBuilding on ids&#10;include checking if user exists and if building/flat exists when adding connections between them">
-      <created>1651259058913</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1651259058913</updated>
-    </task>
-    <task id="LOCAL-00021" summary="added: when accepting flatCharges email is sending to locators with pdf link&#10;added checksum to pdf link, fixed rabbit serialVersionUID">
-      <created>1651306178941</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1651306178941</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Changed datatype from Date to LocalDateTime">
-      <created>1651307969256</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1651307969256</updated>
-    </task>
-    <task id="LOCAL-00023" summary="added: when deleting building/flat also locators and managers are deleted">
-      <created>1651336187419</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1651336187419</updated>
-    </task>
-    <task id="LOCAL-00024" summary="added condition to check if both exist when adding ManagerBuilding or LocatorFlat via checking if response==200">
-      <created>1651339037664</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1651339037664</updated>
-    </task>
-    <task id="LOCAL-00025" summary="added React.js view for BuildingsList">
-      <created>1652378001468</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1652378001468</updated>
-    </task>
-    <task id="LOCAL-00026" summary="removed redundant directory from eureka">
-      <created>1652378145663</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1652378145663</updated>
-    </task>
-    <task id="LOCAL-00027" summary="added pages login/ register/ buildings">
-      <created>1652439323902</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1652439323902</updated>
-    </task>
-    <task id="LOCAL-00028" summary="rejestracja dziala">
-      <created>1652628557340</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1652628557341</updated>
-    </task>
-    <option name="localTasksCounter" value="29" />
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -443,7 +329,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="FrontEnd" />
+                        <option value="pdf_service" />
                       </list>
                     </value>
                   </entry>
@@ -474,18 +360,6 @@
     <MESSAGE value="added:&#10;- get Flat's all flatCharges&#10;- get Building's all Flats&#10;- podczas usuwania mieskzania sa usuwane nalezace do niego oplaty&#10;-podczas usuwania budynku sa usuwane mieszkania i oplaty mieszkan" />
     <MESSAGE value="validacja postalCode regex" />
     <MESSAGE value="validation flatCharges and Flats" />
-    <MESSAGE value="First Commit with service MieszkancyZarzadcy - service connecting users and buildings/flats&#10;-todo add CRUD" />
-    <MESSAGE value="First Commit - mistake - wrong directory" />
-    <MESSAGE value="Merged with JWT + Users" />
-    <MESSAGE value="added constrains table LocatorFlat and ManagerBuilding on ids&#10;include checking if user exists and if building/flat exists when adding connections between them" />
-    <MESSAGE value="added: when accepting flatCharges email is sending to locators with pdf link&#10;added checksum to pdf link, fixed rabbit serialVersionUID" />
-    <MESSAGE value="Changed datatype from Date to LocalDateTime" />
-    <MESSAGE value="added: when deleting building/flat also locators and managers are deleted" />
-    <MESSAGE value="added condition to check if both exist when adding ManagerBuilding or LocatorFlat via checking if response==200" />
-    <MESSAGE value="added React.js view for BuildingsList" />
-    <MESSAGE value="removed redundant directory from eureka" />
-    <MESSAGE value="added pages login/ register/ buildings" />
-    <MESSAGE value="rejestracja dziala" />
-    <option name="LAST_COMMIT_MESSAGE" value="rejestracja dziala" />
+    <option name="LAST_COMMIT_MESSAGE" value="validation flatCharges and Flats" />
   </component>
 </project>

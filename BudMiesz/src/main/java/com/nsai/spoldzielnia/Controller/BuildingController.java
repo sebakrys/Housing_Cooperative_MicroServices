@@ -20,8 +20,9 @@ import javax.validation.Valid;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:3000")//for React
 @RestController
-public class BuildingController {
+public class    BuildingController {
 
     @Autowired
     private BuildingService buildingService;

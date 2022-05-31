@@ -4,15 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="working project without autorization/authentication">
-      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Controller/FlatChargesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Controller/FlatChargesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDF/PDFbillGenerate.postman_collection.json" beforeDir="false" afterPath="$PROJECT_DIR$/../PDF/PDFbillGenerate.postman_collection.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDF/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../PDF/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDF/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../PDF/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDF/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../PDF/target/classes/application.properties" afterDir="false" />
+    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="validation flatCharges and Flats">
+      <change beforePath="$PROJECT_DIR$/../Keycloak/src/main/java/com/politechnika/artur/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Keycloak/src/main/java/com/politechnika/artur/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Keycloak/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Keycloak/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_05_2022_12_17__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_05_2022_12_17__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_04_2022_12_26__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_04_2022_12_26__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_05_2022_12_19__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_05_2022_12_19__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +32,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="Validation" />
+        <entry key="$PROJECT_DIR$/.." value="master" />
       </map>
     </option>
     <option name="RECENT_COMMON_BRANCH" value="master" />
@@ -50,9 +51,7 @@
     </option>
   </component>
   <component name="ProjectId" id="27boL6qAWaou0PjTokCfjdNLg6T" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="1" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -67,11 +66,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="corretto-11" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Keycloak/pom.xml" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Keycloak" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.5321839" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
@@ -95,7 +91,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Keycloak">
+  <component name="RunManager" selected="Spring Boot.ResourceServerApplication">
     <configuration name="BudMieszApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="BudMiesz" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.nsai.spoldzielnia.BudMieszApplication" />
@@ -126,36 +122,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JwTokensApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="JWTokens" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="TokensService.JWTokens.JwTokensApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Keycloak" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="keycloak" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.politechnika.artur.ResourceServerApplication" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MieszkancyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="Mieszkancy" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.mieszkancy.MieszkancyApplication" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MieszkancyZarzadcyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="MieszkancyZarzadcy" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.nsai.spoldzielnia.mieszkancyzarzadcy.MieszkancyZarzadcyApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="PdfService" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="pdf_service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="pl.skrys.pdf.PdfServiceApplication" />
@@ -165,27 +131,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/../frontend/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="start" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
+    <configuration name="ResourceServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="keycloak" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.politechnika.artur.ResourceServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <list>
-      <item itemvalue="npm.start" />
       <item itemvalue="Spring Boot.PdfService" />
       <item itemvalue="Spring Boot.EurekaServerApplication" />
       <item itemvalue="Spring Boot.GatewayApplication" />
       <item itemvalue="Spring Boot.BudMieszApplication" />
       <item itemvalue="Spring Boot.EmailNotificationApplication" />
-      <item itemvalue="Spring Boot.JwTokensApplication" />
-      <item itemvalue="Spring Boot.MieszkancyApplication" />
-      <item itemvalue="Spring Boot.MieszkancyZarzadcyApplication" />
-      <item itemvalue="Spring Boot.Keycloak" />
+      <item itemvalue="Spring Boot.ResourceServerApplication" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -217,8 +176,6 @@
       <workItem from="1650093834793" duration="5635000" />
       <workItem from="1650375860455" duration="4671000" />
       <workItem from="1650384205462" duration="1922000" />
-      <workItem from="1653825922850" duration="2078000" />
-      <workItem from="1653829339235" duration="1974000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit - Eureka">
       <created>1649598456859</created>
@@ -332,14 +289,7 @@
       <option name="project" value="LOCAL" />
       <updated>1650120516447</updated>
     </task>
-    <task id="LOCAL-00017" summary="working project without autorization/authentication">
-      <created>1653820059990</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1653820059990</updated>
-    </task>
-    <option name="localTasksCounter" value="18" />
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -356,7 +306,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="pdf_service" />
                       </list>
                     </value>
                   </entry>
@@ -387,7 +337,6 @@
     <MESSAGE value="added:&#10;- get Flat's all flatCharges&#10;- get Building's all Flats&#10;- podczas usuwania mieskzania sa usuwane nalezace do niego oplaty&#10;-podczas usuwania budynku sa usuwane mieszkania i oplaty mieszkan" />
     <MESSAGE value="validacja postalCode regex" />
     <MESSAGE value="validation flatCharges and Flats" />
-    <MESSAGE value="working project without autorization/authentication" />
-    <option name="LAST_COMMIT_MESSAGE" value="working project without autorization/authentication" />
+    <option name="LAST_COMMIT_MESSAGE" value="validation flatCharges and Flats" />
   </component>
 </project>

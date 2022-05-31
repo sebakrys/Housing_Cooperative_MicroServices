@@ -16,19 +16,26 @@ public class HelloController {
 
     @GetMapping("/user")
     @RolesAllowed("USER")
-    public String user() {
-        return "Jestem user!";
+    public String user(Principal principal) {
+        return "Jestem zalogowany jako user: " + principal.getName();
     }
 
     @GetMapping("/admin")
     @RolesAllowed("ADMIN")
-    public String admin() {
-        return "Jestem admin!";
+    public String admin(Principal principal) {
+        return "Jestem zalogowany jako admin: " + principal.getName();
+    }
+
+    @GetMapping("/moderator")
+    @RolesAllowed("MODERATOR")
+    public String moderator(Principal principal) {
+        return "Jestem zalogowany jako moderator: " + principal.getName();
     }
 
     @GetMapping("/info")
-    @RolesAllowed({"ADMIN", "USER"})
     public String info(Principal principal) {
         return "Jestem zalogowany jako: " + principal.getName();
     }
+
+
 }

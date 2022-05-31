@@ -65,6 +65,18 @@ public class PersonController {
         }
     }
 
+    @GetMapping(value = "/getID/{username}")
+    public ResponseEntity<Long> getIdByLogin(@PathVariable String login){
+        if(login != null){
+            System.out.println("Zwracam uzytkownika id z przeslanego loginu");
+            return ResponseEntity.ok(personRepository.findByLogin(login).getId());
+        }
+        else {
+            System.out.println("Wartość niezgodna z baza danych. Sprawdz czy przesyłany jest dobry login");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
+
 
 
     //PUT

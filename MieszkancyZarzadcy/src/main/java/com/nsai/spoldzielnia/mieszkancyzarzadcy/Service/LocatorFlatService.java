@@ -1,6 +1,7 @@
 package com.nsai.spoldzielnia.mieszkancyzarzadcy.Service;
 
 import com.nsai.spoldzielnia.mieszkancyzarzadcy.Entity.LocatorFlat;
+import com.nsai.spoldzielnia.mieszkancyzarzadcy.Entity.ManagerBuilding;
 import com.nsai.spoldzielnia.mieszkancyzarzadcy.Repository.LocatorFlatRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -46,6 +47,15 @@ public class LocatorFlatService {
                 .map(LocatorFlat::getLocatorId)
                 .collect(Collectors.toList());
     }
+
+
+    @Transactional
+    public Boolean isLocatorFromFlat(long flat_Id, long locator_Id){
+        List<LocatorFlat> lf = locatorFlatRepository.findAllByFlatIdAndLocatorId(flat_Id, locator_Id);
+        if(lf.size()!=0)return true;
+        else return false;
+    }
+
 
 
     @Transactional

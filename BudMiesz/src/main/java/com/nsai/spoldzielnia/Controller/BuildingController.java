@@ -49,7 +49,7 @@ public class    BuildingController {
     @PostMapping(value = "/addNewBuilding")
     public ResponseEntity<Building> addNewBuilding(@RequestBody Building building, BindingResult result, @RequestHeader (name="Authorization") String token) {
 
-        //todo weryfikacja czy jest admin
+        //aaa weryfikacja czy jest admin
         boolean admin = authService.isAdmin(token);
         if(!admin) return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         /*
@@ -81,8 +81,24 @@ public class    BuildingController {
 
     //PUT
     @PutMapping("/updateBuilding")
-    public ResponseEntity<Building> updateBuilding(@RequestBody Building building, BindingResult result)
+    public ResponseEntity<Building> updateBuilding(@RequestBody Building building, BindingResult result, @RequestHeader (name="Authorization") String token)
     {
+        //aaa weryfikacja czy jest admin lub manager tego budynku
+        boolean admin = authService.isAdmin(token);
+        if(!admin){//nie ma roli admin
+            boolean manager = authService.isManager(token);
+            if(!manager){//nie jest managerem
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+            }else{
+                //ma role manager
+                long id = authService.getUserID(token);
+                if(id==-1l)return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+                boolean isManagBuild = authService.isManagerBuilding(id, building.getId());
+                // nie jest managerem tego budynku
+                if(!isManagBuild) return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+            }
+        }
+
         if(buildingService.getBuilding(building.getId())==null)return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
 
         buildingValidator.validate(building, result);
@@ -98,19 +114,52 @@ public class    BuildingController {
     }
 
     @GetMapping("/getBuildings")
-    public List<Building> getAllBuildings(){
-        return buildingService.listBuildings();
+    public ResponseEntity<List<Building>> getAllBuildings(@RequestHeader (name="Authorization") String token){
+        // weryfikacja czy jest admin
+        boolean admin = authService.isAdmin(token);
+        if(!admin) return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        return ResponseEntity.ok(buildingService.listBuildings());
     }
 
     @GetMapping("/getBuilding/{id}")
-    public ResponseEntity<Building> getBuildingById(@PathVariable Long id){
+    public ResponseEntity<Building> getBuildingById(@PathVariable Long id, @RequestHeader (name="Authorization") String token){
+        //aaa weryfikacja czy jest admin lub manager tego budynku
+        boolean admin = authService.isAdmin(token);
+        if(!admin){//nie ma roli admin
+            boolean manager = authService.isManager(token);
+            if(!manager){//nie jest managerem
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+            }else{
+                //ma role manager
+                long manager_id = authService.getUserID(token);
+                if(manager_id==-1l)return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+                boolean isManagBuild = authService.isManagerBuilding(manager_id, id);
+                // nie jest managerem tego budynku
+                if(!isManagBuild) return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+            }
+        }
         return buildingRepository.findById(id)
                 .map(ResponseEntity::ok)
                 .orElseGet(()->ResponseEntity.notFound().build());
     }
 
     @GetMapping("/getBuildingFlats/{id}")
-    public ResponseEntity<List<Flat>> getBuildingFlatsById(@PathVariable Long id){
+    public ResponseEntity<List<Flat>> getBuildingFlatsById(@PathVariable Long id, @RequestHeader (name="Authorization") String token){
+        //aaa weryfikacja czy jest admin lub manager tego budynku
+        boolean admin = authService.isAdmin(token);
+        if(!admin){//nie ma roli admin
+            boolean manager = authService.isManager(token);
+            if(!manager){//nie jest managerem
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+            }else{
+                //ma role manager
+                long manager_id = authService.getUserID(token);
+                if(manager_id==-1l)return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+                boolean isManagBuild = authService.isManagerBuilding(manager_id, id);
+                // nie jest managerem tego budynku
+                if(!isManagBuild) return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+            }
+        }
         Building tmpBuilding = buildingService.getBuilding(id);
         if(tmpBuilding==null)return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
 
@@ -120,7 +169,10 @@ public class    BuildingController {
 
     //DELETE
     @DeleteMapping("/deleteBuilding/{buildingId}")
-    public ResponseEntity<Building> deleteBuilding(@PathVariable Long buildingId) {
+    public ResponseEntity<Building> deleteBuilding(@PathVariable Long buildingId, @RequestHeader (name="Authorization") String token) {
+        //aaa weryfikacja czy jest admin
+        boolean admin = authService.isAdmin(token);
+        if(!admin) return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
 
         System.out.println("Usuwanie  budynku "+buildingId);
 

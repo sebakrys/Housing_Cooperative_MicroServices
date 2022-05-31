@@ -65,6 +65,17 @@ public class ManagerBuildingController {
         return ResponseEntity.ok(managerBuildingService.getAllManagersFromBuilding(buildingId));
     }
 
+
+
+    @GetMapping("/getManagerFromBuilding/{buildingId}/{managerId}")
+    public ResponseEntity<Boolean> isManagerFromBuilding(@PathVariable Long buildingId, @PathVariable Long managerId){
+        boolean managBuild = managerBuildingService.isManagerFromBuilding(buildingId, managerId);
+        if(!managBuild)return ResponseEntity.notFound().build();
+        else return ResponseEntity.ok(managBuild);
+    }
+
+
+
     //DELETE
     @DeleteMapping("/deleteManagerBuilding/{id}")
     public ResponseEntity<ManagerBuilding> deleteManagerBuilding(@PathVariable Long id) {

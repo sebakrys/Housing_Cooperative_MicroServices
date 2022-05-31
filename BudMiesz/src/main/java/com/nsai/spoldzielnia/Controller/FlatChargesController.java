@@ -7,6 +7,7 @@ import com.nsai.spoldzielnia.Entity.Flat;
 import com.nsai.spoldzielnia.Entity.FlatCharges;
 import com.nsai.spoldzielnia.Rabbit.Notification;
 import com.nsai.spoldzielnia.Repository.FlatChargesRepository;
+import com.nsai.spoldzielnia.Service.AuthService;
 import com.nsai.spoldzielnia.Service.BuildingService;
 import com.nsai.spoldzielnia.Service.FlatChargesService;
 import com.nsai.spoldzielnia.Service.FlatService;
@@ -27,6 +28,7 @@ import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 public class FlatChargesController {
@@ -54,6 +56,11 @@ public class FlatChargesController {
     private FlatChargesService flatChargesService;
     @Autowired
     private FlatService flatService;
+    @Autowired
+    private BuildingService buildingService;
+
+    @Autowired
+    private AuthService authService;
 
     private final FlatChargesRepository flatChargesRepository;
 
@@ -67,11 +74,39 @@ public class FlatChargesController {
 
 
     //POST
-    @PostMapping(value = "/addNewFlatCharges")
-    public ResponseEntity<FlatCharges> addNewFlatCharges(@RequestBody @Valid FlatCharges flatCharges, BindingResult result) throws JsonProcessingException {
-
+    @PostMapping(value = "/addNewFlatCharges")//mieszkaniec nie moze ustawiac na true accepted i zaplacone(nie moze zmienaic tego)
+    public ResponseEntity<FlatCharges> addNewFlatCharges(@RequestBody @Valid FlatCharges flatCharges, BindingResult result, @RequestHeader (name="Authorization") String token) throws JsonProcessingException {
         System.out.println(flatCharges.toString());
         Flat tmpFlat = flatService.getFlat(flatCharges.getFlat().getId());
+
+
+        //aaa weryfikacja czy jest admin lub manager lub locator tego mieszkania
+        boolean admin = authService.isAdmin(token);
+        boolean managAccess = false;
+        boolean locatorAccess = false;
+        if(admin) managAccess = true;//jest adminem
+        else {
+            boolean manager = authService.isManager(token);
+            boolean locator = authService.isUser(token);
+            long user_id = authService.getUserID(token);
+            if(locator){//jest locatorerm
+                long locator_id = user_id;
+                if(locator_id!=-1l) {
+                    boolean isLocatorFlat = authService.isLocatorFlat(locator_id, flatCharges.getFlat().getId());
+                    if(isLocatorFlat) locatorAccess = true;//jest locatorem tego mieszkania
+                }
+            }
+            if(manager){//jesli jest managerem
+                long manager_id = user_id;
+                if(manager_id!=-1l) {
+                    boolean isManagBuild = authService.isManagerBuilding(manager_id, tmpFlat.getBuilding().getId());
+                    if(isManagBuild) managAccess = true;//jest managerem budynku tego mieszkania
+                }
+            }
+        }
+        if(!managAccess && !locatorAccess)return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();//jesli nie ma dostepu zadnego
+
+
         flatCharges.setFlat(tmpFlat);
         System.out.println(flatCharges.toString());
 
@@ -84,6 +119,9 @@ public class FlatChargesController {
         if (result.getErrorCount() == 0) {
             //dodawanie budynku
             System.out.println("dodawanie flatcharges");
+            if(flatCharges.isAccepted() && !managAccess)flatCharges.setAccepted(false);// jesli nie ma dostepu managerskiego
+            if(flatCharges.isZaplacone() && !managAccess)flatCharges.setZaplacone(false);// jesli nie ma dostepu managerskiego
+
             if(flatCharges.isAccepted()){
                 //wyslij maila do mieszkanców o zaplate;
                 try {
@@ -169,13 +207,43 @@ public class FlatChargesController {
     }
 
     //PUT
-    @PutMapping("/updateFlatCharges")
-    public ResponseEntity<FlatCharges> updateFlatCharges(@RequestBody FlatCharges flatCharges, BindingResult result) throws JsonProcessingException {
+    @PutMapping("/updateFlatCharges")//mieszkaniec nie moze ustawiac na true accepted i zaplacone(nie moze zmienaic tego)
+    public ResponseEntity<FlatCharges> updateFlatCharges(@RequestBody FlatCharges flatCharges, BindingResult result, @RequestHeader (name="Authorization") String token) throws JsonProcessingException {
 
         FlatCharges tmpFlatCharges = flatChargesService.getFlatCharges(flatCharges.getId());
         if(tmpFlatCharges==null)return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
 
         Flat tmpFlat = flatService.getFlat(flatCharges.getFlat().getId());
+
+
+        //aaa weryfikacja czy jest admin lub manager lub locator tego mieszkania
+        boolean admin = authService.isAdmin(token);
+        boolean managAccess = false;
+        boolean locatorAccess = false;
+        if(admin) managAccess = true;//jest adminem
+        else {
+            boolean manager = authService.isManager(token);
+            boolean locator = authService.isUser(token);
+            long user_id = authService.getUserID(token);
+            if(locator){//jest locatorerm
+                long locator_id = user_id;
+                if(locator_id!=-1l) {
+                    boolean isLocatorFlat = authService.isLocatorFlat(locator_id, flatCharges.getFlat().getId());
+                    if(isLocatorFlat) locatorAccess = true;//jest locatorem tego mieszkania
+                }
+            }
+            if(manager){//jesli jest managerem
+                long manager_id = user_id;
+                if(manager_id!=-1l) {
+                    boolean isManagBuild = authService.isManagerBuilding(manager_id, tmpFlat.getBuilding().getId());
+                    if(isManagBuild) managAccess = true;//jest managerem budynku tego mieszkania
+                }
+            }
+        }
+        if(!managAccess && !locatorAccess)return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();//jesli nie ma dostepu zadnego
+
+
+
         flatCharges.setFlat(tmpFlat);
         System.out.println(new ObjectMapper().writeValueAsString(flatCharges));
 
@@ -184,6 +252,9 @@ public class FlatChargesController {
 
         if (result.getErrorCount() == 0) {
             System.out.println("edit flatCharges");
+            if(!tmpFlatCharges.isAccepted() && flatCharges.isAccepted() && !managAccess) flatCharges.setAccepted(false);// nie moze zaakceptowac jesli nie ma dostepu managerskiego
+            if(!tmpFlatCharges.isZaplacone() && flatCharges.isZaplacone() && !managAccess)flatCharges.setZaplacone(false);// nie moze zaakceptowac platnosci jesli nie ma dostepu managerskiego
+
 
             if(!tmpFlatCharges.isAccepted() && flatCharges.isAccepted()){
                 //wyslij maila do mieszkanców o zaplate;
@@ -269,13 +340,49 @@ public class FlatChargesController {
     }
 
     @GetMapping("/getAllFlatCharges")
-    public List<FlatCharges> getAllFlatCharges(){
-        return flatChargesService.listFlatCharges();
+    public ResponseEntity<List<FlatCharges>> getAllFlatCharges(@RequestHeader (name="Authorization") String token){
+        //aaa weryfikacja czy jest admin
+        boolean admin = authService.isAdmin(token);
+        if(!admin) return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        return ResponseEntity.ok(flatChargesService.listFlatCharges());
     }
 
     @GetMapping("/getFlatCharges/{id}")
-    public ResponseEntity<FlatCharges> getFlatChargesById(@PathVariable Long id){
-        return flatChargesRepository.findById(id)
+    public ResponseEntity<FlatCharges> getFlatChargesById(@PathVariable Long id, @RequestHeader (name="Authorization") String token){
+
+        Optional<FlatCharges> optFlatCharges = flatChargesRepository.findById(id);
+        FlatCharges tmpFlatCharges = optFlatCharges.get();
+        Flat tmpFlat = flatService.getFlat(tmpFlatCharges.getFlat().getId());
+        //Building tmpBuilding = buildingService.getBuilding(tmpFlat.getBuilding().getId());
+
+
+        //aaa weryfikacja czy jest admin lub manager lub locator tego mieszkania
+        boolean admin = authService.isAdmin(token);
+        boolean managAccess = false;
+        boolean locatorAccess = false;
+        if(admin) managAccess = true;//jest adminem
+        else {
+            boolean manager = authService.isManager(token);
+            boolean locator = authService.isUser(token);
+            long user_id = authService.getUserID(token);
+            if(locator){//jest locatorerm
+                long locator_id = user_id;
+                if(locator_id!=-1l) {
+                    boolean isLocatorFlat = authService.isLocatorFlat(locator_id, tmpFlatCharges.getFlat().getId());
+                    if(isLocatorFlat) locatorAccess = true;//jest locatorem tego mieszkania
+                }
+            }
+            if(manager){//jesli jest managerem
+                long manager_id = user_id;
+                if(manager_id!=-1l) {
+                    boolean isManagBuild = authService.isManagerBuilding(manager_id, tmpFlat.getBuilding().getId());
+                    if(isManagBuild) managAccess = true;//jest managerem budynku tego mieszkania
+                }
+            }
+        }
+        if(!managAccess && !locatorAccess)return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();//jesli nie ma dostepu zadnego
+
+        return optFlatCharges
                 .map(ResponseEntity::ok)
                 .orElseGet(()->ResponseEntity.notFound().build());
     }
@@ -283,11 +390,47 @@ public class FlatChargesController {
 
     //DELETE
     @DeleteMapping("/deleteFlatCharges/{flatChargesId}")
-    public ResponseEntity<Building> deleteFlatCharges(@PathVariable Long flatChargesId) {
+    public ResponseEntity<Building> deleteFlatCharges(@PathVariable Long flatChargesId, @RequestHeader (name="Authorization") String token) {
+
+
+        FlatCharges tmpFlatCharges = flatChargesService.getFlatCharges(flatChargesId);
+        if(tmpFlatCharges==null)return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
+        Flat tmpFlat = flatService.getFlat(tmpFlatCharges.getFlat().getId());
+        Building tmpBuilding = buildingService.getBuilding(tmpFlat.getBuilding().getId());
+
+
+
+
+        //aaa weryfikacja czy jest admin lub manager lub locator tego mieszkania
+        boolean admin = authService.isAdmin(token);
+        boolean managAccess = false;
+        //boolean locatorAccess = false;
+        if(admin) managAccess = true;//jest adminem
+        else {
+            boolean manager = authService.isManager(token);
+            //boolean locator = authService.isUser(token);
+            long user_id = authService.getUserID(token);
+            /*if(locator){//jest locatorerm
+                long locator_id = user_id;
+                if(locator_id!=-1l) {
+                    boolean isLocatorFlat = authService.isLocatorFlat(locator_id, tmpFlatCharges.getFlat().getId());
+                    if(isLocatorFlat) locatorAccess = true;//jest locatorem tego mieszkania
+                }
+            }*/
+            if(manager){//jesli jest managerem
+                long manager_id = user_id;
+                if(manager_id!=-1l) {
+                    boolean isManagBuild = authService.isManagerBuilding(manager_id, tmpFlat.getBuilding().getId());
+                    if(isManagBuild) managAccess = true;//jest managerem budynku tego mieszkania
+                }
+            }
+        }
+        if(!managAccess)return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();//jesli nie ma dostepu managerskiego
+
+
 
         System.out.println("Usuwanie  flatCharges "+flatChargesId);
 
-        if(flatChargesService.getFlatCharges(flatChargesId)==null)return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
 
         flatChargesService.removeFlatCharges(flatChargesId);
         return ResponseEntity.ok().build();

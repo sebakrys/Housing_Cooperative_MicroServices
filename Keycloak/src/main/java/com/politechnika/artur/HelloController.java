@@ -16,20 +16,20 @@ public class HelloController {
 
     @GetMapping("/user")
     @RolesAllowed("USER")
-    public String user(Principal principal) {
-        return "Jestem zalogowany jako user: " + principal.getName();
+    public String isUser(Principal principal) {
+        return "USER";
     }
 
     @GetMapping("/admin")
     @RolesAllowed("ADMIN")
-    public String admin(Principal principal) {
-        return "Jestem zalogowany jako admin: " + principal.getName();
+    public String isAdmin(Principal principal) {
+        return "ADMIN";
     }
 
     @GetMapping("/moderator")
     @RolesAllowed("MODERATOR")
-    public String moderator(Principal principal) {
-        return "Jestem zalogowany jako moderator: " + principal.getName();
+    public String isModerator(Principal principal) {
+        return "MODERATOR";
     }
 
     @GetMapping("/info")
@@ -37,5 +37,9 @@ public class HelloController {
         return "Jestem zalogowany jako: " + principal.getName();
     }
 
+    @GetMapping("/username")
+    public String getUsername(Principal principal) {
+        return principal.getName();
+    }
 
 }

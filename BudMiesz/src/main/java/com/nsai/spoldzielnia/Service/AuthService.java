@@ -4,6 +4,8 @@ import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.List;
+
 @Service
 public class AuthService {
 
@@ -108,6 +110,42 @@ public class AuthService {
             return true;
         }
     }
+
+    public ResponseEntity<String> nExchange(String url, String JWT_Token){
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Authorization", JWT_Token);
+        HttpEntity<String> request = new HttpEntity<String>(headers);
+        return new RestTemplate().exchange(url, HttpMethod.GET, request, String.class);
+        //return new RestTemplate().exchange(url, HttpMethod.GET, HttpEntity.EMPTY, String.class);
+    }
+
+    public List<Integer> nGetForObjectListInteger(String url, String JWT_Token){
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Authorization", JWT_Token);
+        HttpEntity<String> request = new HttpEntity<String>(headers);
+        return new RestTemplate().exchange(url, HttpMethod.GET, request, List.class).getBody();
+        //return new RestTemplate().getForObject(url, String.class).;
+        //return new RestTemplate().exchange(url, HttpMethod.GET, HttpEntity.EMPTY, String.class);
+    }
+
+    public String nGetForObjectString(String url, String JWT_Token){
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Authorization", JWT_Token);
+        HttpEntity<String> request = new HttpEntity<String>(headers);
+        return new RestTemplate().exchange(url, HttpMethod.GET, request, String.class).getBody();
+        //return new RestTemplate().getForObject(url, String.class).;
+        //return new RestTemplate().exchange(url, HttpMethod.GET, HttpEntity.EMPTY, String.class);
+    }
+
+    public Long nGetForObjectLong(String url, String JWT_Token){
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Authorization", JWT_Token);
+        HttpEntity<String> request = new HttpEntity<String>(headers);
+        return new RestTemplate().exchange(url, HttpMethod.GET, request, Long.class).getBody();
+        //return new RestTemplate().getForObject(url, String.class).;
+        //return new RestTemplate().exchange(url, HttpMethod.GET, HttpEntity.EMPTY, String.class);
+    }
+
 
 
 }

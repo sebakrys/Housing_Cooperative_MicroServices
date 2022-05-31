@@ -268,7 +268,7 @@ public class FlatController {
         System.out.println("Usuwanie  flat "+flatId);
 
 
-        flatService.removeFlat(flatId);
+        flatService.removeFlat(flatId, token);
         return ResponseEntity.ok().build();
     }
 }

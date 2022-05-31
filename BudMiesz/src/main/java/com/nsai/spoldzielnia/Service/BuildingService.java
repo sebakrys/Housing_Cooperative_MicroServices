@@ -24,6 +24,9 @@ public class BuildingService {
     private FlatService flatService;
 
     @Autowired
+    private AuthService authService;
+
+    @Autowired
     public BuildingService(BuildingRepository buildingRepository, FlatService flatService) {
         this.buildingRepository = buildingRepository;
         this.flatService = flatService;
@@ -60,11 +63,11 @@ public class BuildingService {
     }
 
     @Transactional
-    public void removeBuilding(long id) {
+    public void removeBuilding(long id, String token) {
 
 
         //usuwanie zarządców
-        ResponseEntity re= restTemplate.exchange("http://localhost:8000/managers-locators-service/deleteAllManagersFromBuilding/"+id, HttpMethod.DELETE, HttpEntity.EMPTY, String.class);
+        ResponseEntity re= authService.nExchange("http://localhost:8000/managers-locators-service/deleteAllManagersFromBuilding/"+id, token);
         System.out.println(re.getStatusCodeValue());
         if(re.getStatusCodeValue()!=200)return;//jesli nie 200 wycofaj
 
@@ -74,7 +77,7 @@ public class BuildingService {
         for (Iterator<Flat> f = buildingFlats.iterator(); f.hasNext();) {
             Flat tmpFlat = f.next();
             System.out.println("usuwanie Flat: "+tmpFlat.getId());
-            flatService.removeFlat(tmpFlat.getId());
+            flatService.removeFlat(tmpFlat.getId(), token);
 
         }
         buildingRepository.deleteById(id);

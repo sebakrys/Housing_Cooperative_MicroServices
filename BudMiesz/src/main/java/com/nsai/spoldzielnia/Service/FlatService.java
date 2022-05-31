@@ -31,7 +31,8 @@ public class FlatService {
     @Autowired
     private FlatChargesRepository flatChargesRepository;
 
-
+    @Autowired
+    private AuthService authService;
 
 
     @Transactional
@@ -57,11 +58,11 @@ public class FlatService {
     }
 
     @Transactional
-    public void removeFlat(long id) {
+    public void removeFlat(long id, String token) {
         System.out.println("Usuwanie mieszkania service "+id);
 
         //usuwanie mieszkanców
-        ResponseEntity re= restTemplate.exchange("http://localhost:8000/managers-locators-service/deleteAllLocatorsFromFlat/"+id, HttpMethod.DELETE, HttpEntity.EMPTY, String.class);
+        ResponseEntity re= authService.nExchange("http://localhost:8000/managers-locators-service/deleteAllLocatorsFromFlat/"+id, token);
         System.out.println(re.getStatusCodeValue());
         if(re.getStatusCodeValue()!=200)return;//jesli nie 200 wycofaj
 

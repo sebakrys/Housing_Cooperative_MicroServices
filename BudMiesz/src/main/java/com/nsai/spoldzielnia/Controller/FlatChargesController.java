@@ -127,9 +127,9 @@ public class FlatChargesController {
                 try {
                     //getLocators
                     //pobieranie listy id uzytkownikow(Locators) z mieszkania
-                    List<Integer> locatorIdList =  restTemplate.getForObject("http://localhost:8000/managers-locators-service/getAllLocatorsFromFlat/"+flatCharges.getFlat().getId(), List.class);
+                    List<Integer> locatorIdList =  authService.nGetForObjectListInteger("http://localhost:8000/managers-locators-service/getAllLocatorsFromFlat/"+flatCharges.getFlat().getId(), token);
                     Map<Integer, String> usrNames = new HashMap<>();
-                    for (Integer usrId: locatorIdList) usrNames.put(usrId, restTemplate.getForObject("http://localhost:8000/residents-flat-service/getNames/"+usrId, String.class));
+                    for (Integer usrId: locatorIdList) usrNames.put(usrId, authService.nGetForObjectString("http://localhost:8000/residents-flat-service/getNames/"+usrId, token));
                     for (Integer id: locatorIdList) {
                         System.out.println(id);
                         //wysylanie notyfikacji
@@ -158,7 +158,7 @@ public class FlatChargesController {
                         UrlVariabledPDF = UrlVariabledPDF+checksum;
 
                         String rachunekPdfUrl = "http://localhost:8090/rachunek?";
-                        String tmlUsrEmail = restTemplate.getForObject("http://localhost:8000/residents-flat-service/getEmail/"+id, String.class);
+                        String tmlUsrEmail = authService.nGetForObjectString("http://localhost:8000/residents-flat-service/getEmail/"+id, token);
                         Notification tmpNoti = new Notification(tmlUsrEmail, "Odczyty zaakceptowane", "Odczyty z "+flatCharges.getData().getMonth().getValue()+" "+flatCharges.getData().getYear()+" zostały zaakceptowane. Rachunek wystawiony pod linkiem: "+rachunekPdfUrl+UrlVariabledPDF);
                         System.out.println(tmpNoti.toString());
                         rabbitTemplate.convertAndSend(QUEUE_244019, tmpNoti);
@@ -175,7 +175,7 @@ public class FlatChargesController {
                 try {
                     //getLocators
                     //pobieranie listy id uzytkownikow(Locators) z mieszkania
-                    List<Integer> locatorIdList = restTemplate.getForObject("http://localhost:8000/managers-locators-service/getAllLocatorsFromFlat/" + flatCharges.getFlat().getId(), List.class);
+                    List<Integer> locatorIdList = authService.nGetForObjectListInteger("http://localhost:8000/managers-locators-service/getAllLocatorsFromFlat/" + flatCharges.getFlat().getId(), token);
                     for (Integer id: locatorIdList) {
                         System.out.println(id);
                         //wysylanie notyfikacji o zaplaceniu
@@ -184,7 +184,7 @@ public class FlatChargesController {
 
                     //getManagers
                     //pobieranie listy id uzytkownikow(Managers) z budynku
-                    List<Integer> managersIdList = restTemplate.getForObject("http://localhost:8000/managers-locators-service/getAllManagersFromBuilding/" + flatCharges.getFlat().getBuilding().getId(), List.class);
+                    List<Integer> managersIdList = authService.nGetForObjectListInteger("http://localhost:8000/managers-locators-service/getAllManagersFromBuilding/" + flatCharges.getFlat().getBuilding().getId(), token);
                     for (Integer id: managersIdList) {
                         System.out.println(id);
                         //wysylanie notyfikacji o zaplaceniu Managerom
@@ -261,9 +261,9 @@ public class FlatChargesController {
                 try {
                     //getLocators
                     //pobieranie listy id uzytkownikow(Locators) z mieszkania
-                    List<Integer> locatorIdList =  restTemplate.getForObject("http://localhost:8000/managers-locators-service/getAllLocatorsFromFlat/"+flatCharges.getFlat().getId(), List.class);
+                    List<Integer> locatorIdList =  authService.nGetForObjectListInteger("http://localhost:8000/managers-locators-service/getAllLocatorsFromFlat/"+flatCharges.getFlat().getId(), token);
                     Map<Integer, String> usrNames = new HashMap<>();
-                    for (Integer usrId: locatorIdList) usrNames.put(usrId, restTemplate.getForObject("http://localhost:8000/residents-flat-service/getNames/"+usrId, String.class));
+                    for (Integer usrId: locatorIdList) usrNames.put(usrId, authService.nGetForObjectString("http://localhost:8000/residents-flat-service/getNames/"+usrId, token));
                     for (Integer id: locatorIdList) {
                         System.out.println(id);
                         //wysylanie notyfikacji
@@ -292,7 +292,7 @@ public class FlatChargesController {
                         UrlVariabledPDF = UrlVariabledPDF+checksum;
 
                         String rachunekPdfUrl = "http://localhost:8090/rachunek?";
-                        String tmlUsrEmail = restTemplate.getForObject("http://localhost:8000/residents-flat-service/getEmail/"+id, String.class);
+                        String tmlUsrEmail = authService.nGetForObjectString("http://localhost:8000/residents-flat-service/getEmail/"+id, token);
                         Notification tmpNoti = new Notification(tmlUsrEmail, "Odczyty zaakceptowane", "Odczyty z "+flatCharges.getData().getMonth().getValue()+" "+flatCharges.getData().getYear()+" zostały zaakceptowane. Rachunek wystawiony pod linkiem: "+rachunekPdfUrl+UrlVariabledPDF);
                         System.out.println(tmpNoti.toString());
                         rabbitTemplate.convertAndSend(QUEUE_244019, tmpNoti);
@@ -308,7 +308,7 @@ public class FlatChargesController {
                 try {
                     //getLocators
                     //pobieranie listy id uzytkownikow(Locators) z mieszkania
-                    List<Integer> locatorIdList = restTemplate.getForObject("http://localhost:8000/managers-locators-service/getAllLocatorsFromFlat/" + flatCharges.getFlat().getId(), List.class);
+                    List<Integer> locatorIdList = authService.nGetForObjectListInteger("http://localhost:8000/managers-locators-service/getAllLocatorsFromFlat/" + flatCharges.getFlat().getId(), token);
                     for (Integer id: locatorIdList) {
                         System.out.println(id);
                         //wysylanie notyfikacji o zaplaceniu
@@ -317,7 +317,7 @@ public class FlatChargesController {
 
                     //getManagers
                     //pobieranie listy id uzytkownikow(Managers) z budynku
-                    List<Integer> managersIdList = restTemplate.getForObject("http://localhost:8000/managers-locators-service/getAllManagersFromBuilding/" + flatCharges.getFlat().getBuilding().getId(), List.class);
+                    List<Integer> managersIdList = authService.nGetForObjectListInteger("http://localhost:8000/managers-locators-service/getAllManagersFromBuilding/" + flatCharges.getFlat().getBuilding().getId(), token);
                     for (Integer id: managersIdList) {
                         System.out.println(id);
                         //wysylanie notyfikacji o zaplaceniu Managerom

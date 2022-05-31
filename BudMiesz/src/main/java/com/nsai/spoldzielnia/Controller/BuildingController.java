@@ -56,7 +56,7 @@ public class    BuildingController {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Authorization", token);
         HttpEntity<String> request = new HttpEntity<String>(headers);
-        ResponseEntity re= new RestTemplate().exchange(keycloakAuthAddr+"/admin", HttpMethod.GET, request, String.class);
+        ResponseEntity re= new RestTemplate().authService.nExchange(keycloakAuthAddr+"/admin", HttpMethod.GET, request, String.class);
         System.out.println(re.getStatusCodeValue());
         if(re.getStatusCodeValue()!=200)return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();;//jesli nie 200 wycofaj
          */
@@ -179,7 +179,7 @@ public class    BuildingController {
         if(buildingService.getBuilding(buildingId)==null)return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
 
 
-        buildingService.removeBuilding(buildingId);
+        buildingService.removeBuilding(buildingId, token);
         return ResponseEntity.ok().build();
     }
 

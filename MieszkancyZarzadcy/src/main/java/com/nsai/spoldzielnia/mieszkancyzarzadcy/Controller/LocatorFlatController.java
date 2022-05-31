@@ -48,7 +48,7 @@ public class LocatorFlatController {
             if(manager){//jesli jest managerem
                 long manager_id = user_id;
                 if(manager_id!=-1l) {
-                    Long bId = restTemplate.getForObject("http://localhost:8000/building-flat-service/getFlatBuildingId/"+flatId, Long.class);
+                    Long bId = authService.nGetForObjectLong("http://localhost:8000/building-flat-service/getFlatBuildingId/"+flatId, token);
                     boolean isManagBuild = authService.isManagerBuilding(manager_id, bId);
                     if(isManagBuild) managAccess = true;//jest managerem budynku tego mieszkania
                 }
@@ -58,12 +58,12 @@ public class LocatorFlatController {
 
 
         try {
-            //todo mozna zmodyfikowac na bardziej eleganckie rozwiazanie:         ResponseEntity re= restTemplate.exchange("http://localhost:8000/managers-locators-service/deleteAllManagersFromBuilding/"+id, HttpMethod.DELETE, HttpEntity.EMPTY, String.class);
+            //todo mozna zmodyfikowac na bardziej eleganckie rozwiazanie:         ResponseEntity re= authService.nExchange("http://localhost:8000/managers-locators-service/deleteAllManagersFromBuilding/"+id, HttpMethod.DELETE, HttpEntity.EMPTY, String.class);
             //sprawdzanie czy user istnieje
-            if(restTemplate.exchange("http://localhost:8000/residents-flat-service/getPerson/"+locatorId, HttpMethod.GET, HttpEntity.EMPTY, String.class).getStatusCodeValue()!=200) return ResponseEntity.notFound().build();
+            if(authService.nExchange("http://localhost:8000/residents-flat-service/getPerson/"+locatorId, token).getStatusCodeValue()!=200) return ResponseEntity.notFound().build();
             //old restTemplate.getForObject("http://localhost:8000/residents-flat-service/getPerson/"+locatorId, String.class);
             //sprawdzanie czy Flat istnieje
-            if(restTemplate.exchange("http://localhost:8000/building-flat-service/getFlat/"+flatId, HttpMethod.GET, HttpEntity.EMPTY, String.class).getStatusCodeValue()!=200) return ResponseEntity.notFound().build();
+            if(authService.nExchange("http://localhost:8000/building-flat-service/getFlat/"+flatId, token).getStatusCodeValue()!=200) return ResponseEntity.notFound().build();
             //old restTemplate.getForObject("http://localhost:8000/building-flat-service/getFlat/"+flatId, String.class);
 
             return ResponseEntity.ok(locatorFlatService.addLocatorToFlat(locatorFlat));
@@ -111,23 +111,11 @@ public class LocatorFlatController {
     @GetMapping("/getAllLocatorsFromFlat/{flatId}")
     public ResponseEntity<List<Long>> getAllLocatorsFromFlat(@PathVariable Long flatId, @RequestHeader (name="Authorization") String token){
 
-        //aaa weryfikacja czy jest admin lub manager dla budynku tego mieszkania
+        //aaa weryfikacja czy jest admin lub manager lub user
         boolean admin = authService.isAdmin(token);
-        boolean managAccess = false;
-        if(admin) managAccess = true;//jest adminem
-        else {
-            boolean manager = authService.isManager(token);
-            long user_id = authService.getUserID(token);
-            if(manager){//jesli jest managerem
-                long manager_id = user_id;
-                if(manager_id!=-1l) {
-                    Long bId = restTemplate.getForObject("http://localhost:8000/building-flat-service/getFlatBuildingId/"+flatId, Long.class);
-                    boolean isManagBuild = authService.isManagerBuilding(manager_id, bId);
-                    if(isManagBuild) managAccess = true;//jest managerem budynku tego mieszkania
-                }
-            }
-        }
-        if(!managAccess)return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();//jesli nie ma dostepu managerskiego
+        boolean manager = authService.isManager(token);
+        boolean user = authService.isUser(token);
+        if(!admin && !manager && !user)return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();//jesli nie ma zadnej roli
 
 
         return ResponseEntity.ok(locatorFlatService.getAllLocatorsFromFlat(flatId));
@@ -136,7 +124,14 @@ public class LocatorFlatController {
 
 
     @GetMapping("/getLocatorFromFlat/{flatId}/{locatorId}")
-    public ResponseEntity<Boolean> isLocatorFromFlat(@PathVariable Long flatId, @PathVariable Long locatorId){//todo jesli bedzie dzialac mozna dodac sprawdzanie tokena w przyszłości
+    public ResponseEntity<Boolean> isLocatorFromFlat(@PathVariable Long flatId, @PathVariable Long locatorId, @RequestHeader (name="Authorization") String token){//todo jesli bedzie dzialac mozna dodac sprawdzanie tokena w przyszłości
+
+        //aaa weryfikacja czy jest admin lub manager lub user
+        boolean admin = authService.isAdmin(token);
+        boolean manager = authService.isManager(token);
+        boolean user = authService.isUser(token);
+        if(!admin && !manager && !user)return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();//jesli nie ma zadnej roli
+
         boolean locatorFlat = locatorFlatService.isLocatorFromFlat(flatId, locatorId);
         if(!locatorFlat)return ResponseEntity.notFound().build();
         else return ResponseEntity.ok(locatorFlat);
@@ -169,7 +164,7 @@ public class LocatorFlatController {
             if(manager){//jesli jest managerem
                 long manager_id = user_id;
                 if(manager_id!=-1l) {
-                    Long bId = restTemplate.getForObject("http://localhost:8000/building-flat-service/getFlatBuildingId/"+flatId, Long.class);
+                    Long bId = authService.nGetForObjectLong("http://localhost:8000/building-flat-service/getFlatBuildingId/"+flatId, token);
                     boolean isManagBuild = authService.isManagerBuilding(manager_id, bId);
                     if(isManagBuild) managAccess = true;//jest managerem budynku tego mieszkania
                 }
@@ -215,7 +210,7 @@ public class LocatorFlatController {
             if(manager){//jesli jest managerem
                 long manager_id = user_id;
                 if(manager_id!=-1l) {
-                    Long bId = restTemplate.getForObject("http://localhost:8000/building-flat-service/getFlatBuildingId/"+flatId, Long.class);
+                    Long bId = authService.nGetForObjectLong("http://localhost:8000/building-flat-service/getFlatBuildingId/"+flatId, token);
                     boolean isManagBuild = authService.isManagerBuilding(manager_id, bId);
                     if(isManagBuild) managAccess = true;//jest managerem budynku tego mieszkania
                 }

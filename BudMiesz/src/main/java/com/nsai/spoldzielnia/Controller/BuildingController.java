@@ -3,17 +3,18 @@ package com.nsai.spoldzielnia.Controller;
 import com.nsai.spoldzielnia.Entity.Building;
 import com.nsai.spoldzielnia.Entity.Flat;
 import com.nsai.spoldzielnia.Repository.BuildingRepository;
+import com.nsai.spoldzielnia.Service.AuthService;
 import com.nsai.spoldzielnia.Service.BuildingService;
 import com.nsai.spoldzielnia.Service.FlatService;
 import com.nsai.spoldzielnia.Validator.BuildingValidator;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import javax.validation.Valid;
 
@@ -23,6 +24,9 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:3000")//for React
 @RestController
 public class    BuildingController {
+
+    @Autowired
+    private AuthService authService;
 
     @Autowired
     private BuildingService buildingService;
@@ -39,9 +43,25 @@ public class    BuildingController {
         this.buildingRepository = buildingRepository;
     }
 
+    public  String keycloakAuthAddr = "http://localhost:8091";
+
     //POST
     @PostMapping(value = "/addNewBuilding")
-    public ResponseEntity<Building> addNewBuilding(@RequestBody Building building, BindingResult result) {
+    public ResponseEntity<Building> addNewBuilding(@RequestBody Building building, BindingResult result, @RequestHeader (name="Authorization") String token) {
+
+        //todo weryfikacja czy jest admin
+        boolean admin = authService.isAdmin(token);
+        if(!admin) return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        /*
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Authorization", token);
+        HttpEntity<String> request = new HttpEntity<String>(headers);
+        ResponseEntity re= new RestTemplate().exchange(keycloakAuthAddr+"/admin", HttpMethod.GET, request, String.class);
+        System.out.println(re.getStatusCodeValue());
+        if(re.getStatusCodeValue()!=200)return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();;//jesli nie 200 wycofaj
+         */
+
+
 
         System.out.println(building.getNazwa()+" "+building.getId()+" "+building.getCity());
         buildingValidator.validate(building, result);

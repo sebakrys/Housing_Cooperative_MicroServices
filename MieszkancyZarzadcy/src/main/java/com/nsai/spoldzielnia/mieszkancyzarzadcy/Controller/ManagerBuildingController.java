@@ -49,11 +49,20 @@ public class ManagerBuildingController {
             if(authService.nExchange("http://localhost:8000/building-flat-service/getBuilding/"+buildingId, token).getStatusCodeValue()!=200) return ResponseEntity.notFound().build();
             //old restTemplate.getForObject("http://localhost:8000/building-flat-service/getBuilding/"+buildingId, String.class);
 
-            return ResponseEntity.ok(managerBuildingService.addManagerToBuilding(managerBuilding));
+            try {
+                ManagerBuilding mb = managerBuildingService.addManagerToBuilding(managerBuilding);
+                if(mb!=null)return ResponseEntity.ok(mb);
+                else return ResponseEntity.status(HttpStatus.CONFLICT).build();
+            }catch (Exception e){
+                System.out.println(e);
+                return ResponseEntity.status(HttpStatus.CONFLICT).build();
+            }
+
+            //return ResponseEntity.ok(managerBuildingService.addManagerToBuilding(managerBuilding));
         }
-        catch (final HttpClientErrorException e) {
-            System.out.println(e.getStatusCode());
-            System.out.println(e.getResponseBodyAsString());
+        catch (Exception e) {
+            System.out.println(e);
+            //System.out.println(e.getResponseBodyAsString());
         }
 
         return ResponseEntity.notFound().build();

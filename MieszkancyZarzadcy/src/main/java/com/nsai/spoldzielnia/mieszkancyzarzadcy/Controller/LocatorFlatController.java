@@ -65,12 +65,18 @@ public class LocatorFlatController {
             //sprawdzanie czy Flat istnieje
             if(authService.nExchange("http://localhost:8000/building-flat-service/getFlat/"+flatId, token).getStatusCodeValue()!=200) return ResponseEntity.notFound().build();
             //old restTemplate.getForObject("http://localhost:8000/building-flat-service/getFlat/"+flatId, String.class);
-
-            return ResponseEntity.ok(locatorFlatService.addLocatorToFlat(locatorFlat));
+            try {
+                LocatorFlat lf =locatorFlatService.addLocatorToFlat(locatorFlat);
+                if(lf!=null)return ResponseEntity.ok(lf);
+                else return ResponseEntity.status(HttpStatus.CONFLICT).build();
+            }catch (Exception e){
+                System.out.println(e);
+                return ResponseEntity.status(HttpStatus.CONFLICT).build();
+            }
         }
-        catch (final HttpClientErrorException e) {
-            System.out.println(e.getStatusCode());
-            System.out.println(e.getResponseBodyAsString());
+        catch (Exception e) {
+            System.out.println(e);
+            //System.out.println(e.getResponseBodyAsString());
         }
 
         return ResponseEntity.notFound().build();

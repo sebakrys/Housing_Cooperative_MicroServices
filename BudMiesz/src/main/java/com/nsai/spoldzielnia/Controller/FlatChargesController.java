@@ -79,6 +79,10 @@ public class FlatChargesController {
         System.out.println(flatCharges.toString());
         Flat tmpFlat = flatService.getFlat(flatCharges.getFlat().getId());
 
+        if(tmpFlat==null)return ResponseEntity.status(HttpStatus.NOT_FOUND).build();//nie ma takiego mieszkania
+        //System.out.println(tmpFlat.getId());
+        //flatService.
+
 
         //aaa weryfikacja czy jest admin lub manager lub locator tego mieszkania
         boolean admin = authService.isAdmin(token);
@@ -92,14 +96,16 @@ public class FlatChargesController {
             if(locator){//jest locatorerm
                 long locator_id = user_id;
                 if(locator_id!=-1l) {
-                    boolean isLocatorFlat = authService.isLocatorFlat(locator_id, flatCharges.getFlat().getId());
+                    boolean isLocatorFlat = authService.isLocatorFlat(locator_id, flatCharges.getFlat().getId(), token);
                     if(isLocatorFlat) locatorAccess = true;//jest locatorem tego mieszkania
                 }
             }
             if(manager){//jesli jest managerem
                 long manager_id = user_id;
                 if(manager_id!=-1l) {
-                    boolean isManagBuild = authService.isManagerBuilding(manager_id, tmpFlat.getBuilding().getId());
+                    //System.out.println(""+manager_id+" tmpFlat.getBuilding().getId()");
+                    //System.out.println("manager_id "+tmpFlat.getBuilding().getId()+"");
+                    boolean isManagBuild = authService.isManagerBuilding(manager_id, tmpFlat.getBuilding().getId(), token);
                     if(isManagBuild) managAccess = true;//jest managerem budynku tego mieszkania
                 }
             }
@@ -211,9 +217,11 @@ public class FlatChargesController {
     public ResponseEntity<FlatCharges> updateFlatCharges(@RequestBody FlatCharges flatCharges, BindingResult result, @RequestHeader (name="Authorization") String token) throws JsonProcessingException {
 
         FlatCharges tmpFlatCharges = flatChargesService.getFlatCharges(flatCharges.getId());
-        if(tmpFlatCharges==null)return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
+        if(tmpFlatCharges==null)return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 
         Flat tmpFlat = flatService.getFlat(flatCharges.getFlat().getId());
+
+        if(tmpFlat==null)return ResponseEntity.status(HttpStatus.NOT_FOUND).build();//nie ma takiego mieszkania
 
 
         //aaa weryfikacja czy jest admin lub manager lub locator tego mieszkania
@@ -228,14 +236,14 @@ public class FlatChargesController {
             if(locator){//jest locatorerm
                 long locator_id = user_id;
                 if(locator_id!=-1l) {
-                    boolean isLocatorFlat = authService.isLocatorFlat(locator_id, flatCharges.getFlat().getId());
+                    boolean isLocatorFlat = authService.isLocatorFlat(locator_id, flatCharges.getFlat().getId(), token);
                     if(isLocatorFlat) locatorAccess = true;//jest locatorem tego mieszkania
                 }
             }
             if(manager){//jesli jest managerem
                 long manager_id = user_id;
                 if(manager_id!=-1l) {
-                    boolean isManagBuild = authService.isManagerBuilding(manager_id, tmpFlat.getBuilding().getId());
+                    boolean isManagBuild = authService.isManagerBuilding(manager_id, tmpFlat.getBuilding().getId(), token);
                     if(isManagBuild) managAccess = true;//jest managerem budynku tego mieszkania
                 }
             }
@@ -352,7 +360,9 @@ public class FlatChargesController {
 
         Optional<FlatCharges> optFlatCharges = flatChargesRepository.findById(id);
         FlatCharges tmpFlatCharges = optFlatCharges.get();
+        if(tmpFlatCharges==null)return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         Flat tmpFlat = flatService.getFlat(tmpFlatCharges.getFlat().getId());
+        if(tmpFlat==null)return ResponseEntity.status(HttpStatus.NOT_FOUND).build();//nie ma takiego mieszkania
         //Building tmpBuilding = buildingService.getBuilding(tmpFlat.getBuilding().getId());
 
 
@@ -368,14 +378,14 @@ public class FlatChargesController {
             if(locator){//jest locatorerm
                 long locator_id = user_id;
                 if(locator_id!=-1l) {
-                    boolean isLocatorFlat = authService.isLocatorFlat(locator_id, tmpFlatCharges.getFlat().getId());
+                    boolean isLocatorFlat = authService.isLocatorFlat(locator_id, tmpFlatCharges.getFlat().getId(), token);
                     if(isLocatorFlat) locatorAccess = true;//jest locatorem tego mieszkania
                 }
             }
             if(manager){//jesli jest managerem
                 long manager_id = user_id;
                 if(manager_id!=-1l) {
-                    boolean isManagBuild = authService.isManagerBuilding(manager_id, tmpFlat.getBuilding().getId());
+                    boolean isManagBuild = authService.isManagerBuilding(manager_id, tmpFlat.getBuilding().getId(), token);
                     if(isManagBuild) managAccess = true;//jest managerem budynku tego mieszkania
                 }
             }
@@ -394,10 +404,11 @@ public class FlatChargesController {
 
 
         FlatCharges tmpFlatCharges = flatChargesService.getFlatCharges(flatChargesId);
-        if(tmpFlatCharges==null)return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
+        if(tmpFlatCharges==null)return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         Flat tmpFlat = flatService.getFlat(tmpFlatCharges.getFlat().getId());
+        if(tmpFlat==null)return ResponseEntity.status(HttpStatus.NOT_FOUND).build();//nie ma takiego mieszkania
         Building tmpBuilding = buildingService.getBuilding(tmpFlat.getBuilding().getId());
-
+        if(tmpBuilding==null)return ResponseEntity.status(HttpStatus.NOT_FOUND).build();//nie ma takiego budynku
 
 
 
@@ -420,7 +431,7 @@ public class FlatChargesController {
             if(manager){//jesli jest managerem
                 long manager_id = user_id;
                 if(manager_id!=-1l) {
-                    boolean isManagBuild = authService.isManagerBuilding(manager_id, tmpFlat.getBuilding().getId());
+                    boolean isManagBuild = authService.isManagerBuilding(manager_id, tmpFlat.getBuilding().getId(), token);
                     if(isManagBuild) managAccess = true;//jest managerem budynku tego mieszkania
                 }
             }

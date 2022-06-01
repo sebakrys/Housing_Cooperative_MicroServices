@@ -49,7 +49,7 @@ public class LocatorFlatController {
                 long manager_id = user_id;
                 if(manager_id!=-1l) {
                     Long bId = authService.nGetForObjectLong("http://localhost:8000/building-flat-service/getFlatBuildingId/"+flatId, token);
-                    boolean isManagBuild = authService.isManagerBuilding(manager_id, bId);
+                    boolean isManagBuild = authService.isManagerBuilding(manager_id, bId, token);
                     if(isManagBuild) managAccess = true;//jest managerem budynku tego mieszkania
                 }
             }
@@ -165,7 +165,7 @@ public class LocatorFlatController {
                 long manager_id = user_id;
                 if(manager_id!=-1l) {
                     Long bId = authService.nGetForObjectLong("http://localhost:8000/building-flat-service/getFlatBuildingId/"+flatId, token);
-                    boolean isManagBuild = authService.isManagerBuilding(manager_id, bId);
+                    boolean isManagBuild = authService.isManagerBuilding(manager_id, bId, token);
                     if(isManagBuild) managAccess = true;//jest managerem budynku tego mieszkania
                 }
             }
@@ -211,7 +211,7 @@ public class LocatorFlatController {
                 long manager_id = user_id;
                 if(manager_id!=-1l) {
                     Long bId = authService.nGetForObjectLong("http://localhost:8000/building-flat-service/getFlatBuildingId/"+flatId, token);
-                    boolean isManagBuild = authService.isManagerBuilding(manager_id, bId);
+                    boolean isManagBuild = authService.isManagerBuilding(manager_id, bId, token);
                     if(isManagBuild) managAccess = true;//jest managerem budynku tego mieszkania
                 }
             }

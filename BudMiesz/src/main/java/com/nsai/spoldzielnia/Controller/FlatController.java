@@ -52,6 +52,8 @@ public class FlatController {
         System.out.println(new ObjectMapper().writeValueAsString(flat));
         Building tmpBuilding = buildingService.getBuilding(flat.getBuilding().getId());
 
+        if(tmpBuilding==null)return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+
 
         //aaa weryfikacja czy jest admin lub manager dla budynku tego mieszkania
         boolean admin = authService.isAdmin(token);
@@ -63,7 +65,7 @@ public class FlatController {
             if(manager){//jesli jest managerem
                 long manager_id = user_id;
                 if(manager_id!=-1l) {
-                    boolean isManagBuild = authService.isManagerBuilding(manager_id, flat.getBuilding().getId());
+                    boolean isManagBuild = authService.isManagerBuilding(manager_id, flat.getBuilding().getId(), token);
                     if(isManagBuild) managAccess = true;//jest managerem budynku tego mieszkania
                 }
             }
@@ -96,6 +98,8 @@ public class FlatController {
     @PutMapping("/updateFlat")
     public ResponseEntity<Flat> updateFlat(@RequestBody Flat flat, BindingResult result, @RequestHeader (name="Authorization") String token) throws JsonProcessingException {
 
+        if(flatService.getFlat(flat.getId())==null)return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+
         //aaa weryfikacja czy jest admin lub manager dla budynku tego mieszkania
         boolean admin = authService.isAdmin(token);
         boolean managAccess = false;
@@ -106,7 +110,7 @@ public class FlatController {
             if(manager){//jesli jest managerem
                 long manager_id = user_id;
                 if(manager_id!=-1l) {
-                    boolean isManagBuild = authService.isManagerBuilding(manager_id, flat.getBuilding().getId());
+                    boolean isManagBuild = authService.isManagerBuilding(manager_id, flat.getBuilding().getId(), token);
                     if(isManagBuild) managAccess = true;//jest managerem budynku tego mieszkania
                 }
             }
@@ -114,7 +118,6 @@ public class FlatController {
         if(!managAccess)return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();//jesli nie ma dostepu managerskiego
 
 
-        if(flatService.getFlat(flat.getId())==null)return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
 
         System.out.println(new ObjectMapper().writeValueAsString(flat));
         Building tmpBuilding = buildingService.getBuilding(flat.getBuilding().getId());
@@ -148,6 +151,8 @@ public class FlatController {
         Optional<Flat> optFlat = flatRepository.findById(id);
         Flat tmpFlat = optFlat.get();
 
+        if(tmpFlat==null)return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+
         //aaa weryfikacja czy jest admin lub manager lub locator tego mieszkania
         boolean admin = authService.isAdmin(token);
         boolean managAccess = false;
@@ -160,14 +165,14 @@ public class FlatController {
             if(locator){//jest locatorerm
                 long locator_id = user_id;
                 if(locator_id!=-1l) {
-                    boolean isLocatorFlat = authService.isLocatorFlat(locator_id, id);
+                    boolean isLocatorFlat = authService.isLocatorFlat(locator_id, id, token);
                     if(isLocatorFlat) locatorAccess = true;//jest locatorem tego mieszkania
                 }
             }
             if(manager){//jesli jest managerem
                 long manager_id = user_id;
                 if(manager_id!=-1l) {
-                    boolean isManagBuild = authService.isManagerBuilding(manager_id, tmpFlat.getBuilding().getId());
+                    boolean isManagBuild = authService.isManagerBuilding(manager_id, tmpFlat.getBuilding().getId(), token);
                     if(isManagBuild) managAccess = true;//jest managerem budynku tego mieszkania
                 }
             }
@@ -179,8 +184,14 @@ public class FlatController {
                 .orElseGet(()->ResponseEntity.notFound().build());
     }
 
-    @GetMapping("/getFlatBuildingId/{id}")
+    @GetMapping("/getFlatBuildingId/{flat_id}")
     public ResponseEntity<Long> getFlatBuildingById(@PathVariable Long flat_id, @RequestHeader (name="Authorization") String token){
+
+        Flat tmpFlat = flatService.getFlat(flat_id);
+        //System.out.println("AAAAAAAAAAAA");
+        //System.out.println("AAAAAAAAAAAA"+tmpFlat.getId());
+        //System.out.println("AAAAAAAAAAAA"+tmpFlat.getBuilding().getId());
+        if(tmpFlat==null)return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 
 
         //aaa weryfikacja czy jest admin lub manager dla budynku tego mieszkania
@@ -193,8 +204,6 @@ public class FlatController {
         if(!managAccess)return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();//jesli nie ma dostepu managerskiego
 
 
-        Flat tmpFlat = flatService.getFlat(flat_id);
-        if(tmpFlat==null)return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
 
 
 
@@ -204,7 +213,7 @@ public class FlatController {
     @GetMapping("/getFlatFlatCharges/{id}")
     public ResponseEntity<List<FlatCharges>> getFlatFlatChargesById(@PathVariable Long id, @RequestHeader (name="Authorization") String token) throws JsonProcessingException {
         Flat tmpFlat = flatService.getFlat(id);
-        if(tmpFlat==null)return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
+        if(tmpFlat==null)return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 
 
         //aaa weryfikacja czy jest admin lub manager lub locator tego mieszkania
@@ -219,14 +228,14 @@ public class FlatController {
             if(locator){//jest locatorerm
                 long locator_id = user_id;
                 if(locator_id!=-1l) {
-                    boolean isLocatorFlat = authService.isLocatorFlat(locator_id, id);
+                    boolean isLocatorFlat = authService.isLocatorFlat(locator_id, id, token);
                     if(isLocatorFlat) locatorAccess = true;//jest locatorem tego mieszkania
                 }
             }
             if(manager){//jesli jest managerem
                 long manager_id = user_id;
                 if(manager_id!=-1l) {
-                    boolean isManagBuild = authService.isManagerBuilding(manager_id, tmpFlat.getBuilding().getId());
+                    boolean isManagBuild = authService.isManagerBuilding(manager_id, tmpFlat.getBuilding().getId(), token);
                     if(isManagBuild) managAccess = true;//jest managerem budynku tego mieszkania
                 }
             }
@@ -245,7 +254,7 @@ public class FlatController {
     @DeleteMapping("/deleteFlat/{flatId}")
     public ResponseEntity<Building> deleteFlat(@PathVariable Long flatId, @RequestHeader (name="Authorization") String token) {
         Flat tmpFlat = flatService.getFlat(flatId);
-        if(tmpFlat==null)return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
+        if(tmpFlat==null)return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 
         //aaa weryfikacja czy jest admin lub manager dla budynku tego mieszkania
         boolean admin = authService.isAdmin(token);
@@ -257,7 +266,7 @@ public class FlatController {
             if(manager){//jesli jest managerem
                 long manager_id = user_id;
                 if(manager_id!=-1l) {
-                    boolean isManagBuild = authService.isManagerBuilding(manager_id, tmpFlat.getBuilding().getId());
+                    boolean isManagBuild = authService.isManagerBuilding(manager_id, tmpFlat.getBuilding().getId(), token);
                     if(isManagBuild) managAccess = true;//jest managerem budynku tego mieszkania
                 }
             }

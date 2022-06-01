@@ -83,6 +83,9 @@ public class    BuildingController {
     @PutMapping("/updateBuilding")
     public ResponseEntity<Building> updateBuilding(@RequestBody Building building, BindingResult result, @RequestHeader (name="Authorization") String token)
     {
+
+        if(buildingService.getBuilding(building.getId())==null)return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
+
         //aaa weryfikacja czy jest admin lub manager tego budynku
         boolean admin = authService.isAdmin(token);
         if(!admin){//nie ma roli admin
@@ -93,13 +96,13 @@ public class    BuildingController {
                 //ma role manager
                 long id = authService.getUserID(token);
                 if(id==-1l)return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
-                boolean isManagBuild = authService.isManagerBuilding(id, building.getId());
+                boolean isManagBuild = authService.isManagerBuilding(id, building.getId(), token);
                 // nie jest managerem tego budynku
                 if(!isManagBuild) return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
             }
         }
 
-        if(buildingService.getBuilding(building.getId())==null)return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
+
 
         buildingValidator.validate(building, result);
 
@@ -123,6 +126,9 @@ public class    BuildingController {
 
     @GetMapping("/getBuilding/{id}")
     public ResponseEntity<Building> getBuildingById(@PathVariable Long id, @RequestHeader (name="Authorization") String token){
+
+        if(buildingService.getBuilding(id)==null)return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+
         //aaa weryfikacja czy jest admin lub manager tego budynku
         boolean admin = authService.isAdmin(token);
         if(!admin){//nie ma roli admin
@@ -133,7 +139,7 @@ public class    BuildingController {
                 //ma role manager
                 long manager_id = authService.getUserID(token);
                 if(manager_id==-1l)return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
-                boolean isManagBuild = authService.isManagerBuilding(manager_id, id);
+                boolean isManagBuild = authService.isManagerBuilding(manager_id, id, token);
                 // nie jest managerem tego budynku
                 if(!isManagBuild) return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
             }
@@ -145,6 +151,10 @@ public class    BuildingController {
 
     @GetMapping("/getBuildingFlats/{id}")
     public ResponseEntity<List<Flat>> getBuildingFlatsById(@PathVariable Long id, @RequestHeader (name="Authorization") String token){
+
+        Building tmpBuilding = buildingService.getBuilding(id);
+        if(tmpBuilding==null)return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
+
         //aaa weryfikacja czy jest admin lub manager tego budynku
         boolean admin = authService.isAdmin(token);
         if(!admin){//nie ma roli admin
@@ -155,13 +165,11 @@ public class    BuildingController {
                 //ma role manager
                 long manager_id = authService.getUserID(token);
                 if(manager_id==-1l)return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
-                boolean isManagBuild = authService.isManagerBuilding(manager_id, id);
+                boolean isManagBuild = authService.isManagerBuilding(manager_id, id, token);
                 // nie jest managerem tego budynku
                 if(!isManagBuild) return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
             }
         }
-        Building tmpBuilding = buildingService.getBuilding(id);
-        if(tmpBuilding==null)return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
 
         return ResponseEntity.ok(tmpBuilding.getFlat());
     }
@@ -170,13 +178,15 @@ public class    BuildingController {
     //DELETE
     @DeleteMapping("/deleteBuilding/{buildingId}")
     public ResponseEntity<Building> deleteBuilding(@PathVariable Long buildingId, @RequestHeader (name="Authorization") String token) {
+
+        if(buildingService.getBuilding(buildingId)==null)return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
+
         //aaa weryfikacja czy jest admin
         boolean admin = authService.isAdmin(token);
         if(!admin) return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
 
         System.out.println("Usuwanie  budynku "+buildingId);
 
-        if(buildingService.getBuilding(buildingId)==null)return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
 
 
         buildingService.removeBuilding(buildingId, token);

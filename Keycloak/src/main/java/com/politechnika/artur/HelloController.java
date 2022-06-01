@@ -27,7 +27,7 @@ public class HelloController {
     }
 
     @GetMapping("/moderator")
-    @RolesAllowed("MODERATOR")
+    @RolesAllowed("MANAGER")
     public String isModerator(Principal principal) {
         return "MODERATOR";
     }

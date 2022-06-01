@@ -4,15 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="autoryzacja dodana BudMiesz i LocatorFlat&#10;-brakuje ManagerBuilding&#10;-dodac przesylanie tokena przy restTemplate.getForObject( oraz restTemplate.exchange(">
+    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="autoryzacja BudMiesz + MieszkancyZarzadcy&#10;- wymaga sprawdzenia (nGetForObject..., nExchange)">
       <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Controller/BuildingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Controller/BuildingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Controller/FlatChargesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Controller/FlatChargesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Controller/FlatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Controller/FlatController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Service/BuildingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Service/BuildingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Service/FlatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Service/FlatService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Keycloak/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Keycloak/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Keycloak/src/main/java/com/politechnika/artur/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Keycloak/src/main/java/com/politechnika/artur/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Keycloak/src/main/java/com/politechnika/artur/ResourceServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Keycloak/src/main/java/com/politechnika/artur/ResourceServerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Keycloak/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Keycloak/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mieszkancy/src/main/java/com/example/mieszkancy/Controller/PersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Mieszkancy/src/main/java/com/example/mieszkancy/Controller/PersonController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Controller/LocatorFlatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Controller/LocatorFlatController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Controller/ManagerBuildingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Controller/ManagerBuildingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MieszkancyZarzadcy/src/main/java/com/nsai/spoldzielnia/mieszkancyzarzadcy/Service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MieszkancyZarzadcy/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../MieszkancyZarzadcy/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,11 +82,11 @@
       <recent name="D:\STUDIA_informatyka\S2\NSAI\Projekt\BudMiesz\src\main\java\com\nsai\spoldzielnia\Entity" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.nsai.spoldzielnia.Service" />
       <recent name="com.nsai.spoldzielnia.mieszkancyzarzadcy.Service" />
       <recent name="com.nsai.spoldzielnia.emailnotification.entity" />
       <recent name="com.nsai.spoldzielnia.emailnotification.Service" />
       <recent name="com.nsai.spoldzielnia.Validator" />
-      <recent name="com.nsai.spoldzielnia.Controller" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -103,7 +107,7 @@
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.KeycloackAuthServer">
+  <component name="RunManager" selected="Spring Boot.BudMieszApplication">
     <configuration name="BudMieszApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="BudMiesz" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.nsai.spoldzielnia.BudMieszApplication" />
@@ -175,9 +179,9 @@
     </configuration>
     <list>
       <item itemvalue="Spring Boot.PdfService" />
+      <item itemvalue="Spring Boot.BudMieszApplication" />
       <item itemvalue="Spring Boot.EurekaServerApplication" />
       <item itemvalue="Spring Boot.GatewayApplication" />
-      <item itemvalue="Spring Boot.BudMieszApplication" />
       <item itemvalue="Spring Boot.EmailNotificationApplication" />
       <item itemvalue="Spring Boot.ResourceServerApplication" />
       <item itemvalue="Spring Boot.KeycloackAuthServer" />
@@ -348,7 +352,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654029202277</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="autoryzacja BudMiesz + MieszkancyZarzadcy&#10;- wymaga sprawdzenia (nGetForObject..., nExchange)">
+      <created>1654032854056</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1654032854056</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -399,6 +410,7 @@
     <MESSAGE value="keycloak auth server endpoint modification" />
     <MESSAGE value="Pierwsza proba dodawnia autoryzacji po stronie budMiesz" />
     <MESSAGE value="autoryzacja dodana BudMiesz i LocatorFlat&#10;-brakuje ManagerBuilding&#10;-dodac przesylanie tokena przy restTemplate.getForObject( oraz restTemplate.exchange(" />
-    <option name="LAST_COMMIT_MESSAGE" value="autoryzacja dodana BudMiesz i LocatorFlat&#10;-brakuje ManagerBuilding&#10;-dodac przesylanie tokena przy restTemplate.getForObject( oraz restTemplate.exchange(" />
+    <MESSAGE value="autoryzacja BudMiesz + MieszkancyZarzadcy&#10;- wymaga sprawdzenia (nGetForObject..., nExchange)" />
+    <option name="LAST_COMMIT_MESSAGE" value="autoryzacja BudMiesz + MieszkancyZarzadcy&#10;- wymaga sprawdzenia (nGetForObject..., nExchange)" />
   </component>
 </project>

@@ -65,7 +65,7 @@ public class PersonController {
         }
     }
 
-    @GetMapping(value = "/getID/{username}")
+    @GetMapping(value = "/getID/{login}")
     public ResponseEntity<Long> getIdByLogin(@PathVariable String login){
         if(login != null){
             System.out.println("Zwracam uzytkownika id z przeslanego loginu");

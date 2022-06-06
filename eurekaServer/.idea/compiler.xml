@@ -23,6 +23,9 @@
     <bytecodeTargetLevel>
       <module name="google-oauth-roles" target="1.5" />
       <module name="JWTokens" target="11" />
+      <module name="eurekaServer" target="11" />
+      <module name="MieszkancyZarzadcy" target="11" />
+      <module name="pdf_service" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

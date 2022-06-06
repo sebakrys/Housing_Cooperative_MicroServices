@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="spoldzielnia (1)" />
         <module name="keycloak" />
+        <module name="Mieszkancy" />
         <module name="spoldzielnia (2)" />
         <module name="BudMiesz" />
         <module name="spoldzielnia" />
@@ -18,11 +19,15 @@
         <module name="gateway" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="MieszkancyZarzadcy" target="11" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="BudMiesz" options="-parameters" />
       <module name="EmailNotification" options="-parameters" />
+      <module name="Mieszkancy" options="-parameters" />
       <module name="eurekaServer" options="-parameters" />
       <module name="gateway" options="-parameters" />
       <module name="keycloak" options="-parameters" />

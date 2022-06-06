@@ -47,6 +47,13 @@ public class ManagerBuildingService {
                 .collect(Collectors.toList());
     }
 
+    @Transactional
+    public Boolean isManagerFromBuilding(long building_Id, long manager_Id){
+        List<ManagerBuilding> mb = managerBuildingRepository.findAllByBuildingIdAndManagerId(building_Id, manager_Id);
+        if(mb.size()!=0)return true;
+        else return false;
+    }
+
 
     @Transactional
     public void removeManagerBuilding(long id) {

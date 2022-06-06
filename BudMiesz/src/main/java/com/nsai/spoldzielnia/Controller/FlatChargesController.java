@@ -7,6 +7,7 @@ import com.nsai.spoldzielnia.Entity.Flat;
 import com.nsai.spoldzielnia.Entity.FlatCharges;
 import com.nsai.spoldzielnia.Rabbit.Notification;
 import com.nsai.spoldzielnia.Repository.FlatChargesRepository;
+import com.nsai.spoldzielnia.Service.AuthService;
 import com.nsai.spoldzielnia.Service.BuildingService;
 import com.nsai.spoldzielnia.Service.FlatChargesService;
 import com.nsai.spoldzielnia.Service.FlatService;
@@ -27,6 +28,7 @@ import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 public class FlatChargesController {
@@ -54,6 +56,11 @@ public class FlatChargesController {
     private FlatChargesService flatChargesService;
     @Autowired
     private FlatService flatService;
+    @Autowired
+    private BuildingService buildingService;
+
+    @Autowired
+    private AuthService authService;
 
     private final FlatChargesRepository flatChargesRepository;
 
@@ -67,11 +74,45 @@ public class FlatChargesController {
 
 
     //POST
-    @PostMapping(value = "/addNewFlatCharges")
-    public ResponseEntity<FlatCharges> addNewFlatCharges(@RequestBody @Valid FlatCharges flatCharges, BindingResult result) throws JsonProcessingException {
-
+    @PostMapping(value = "/addNewFlatCharges")//mieszkaniec nie moze ustawiac na true accepted i zaplacone(nie moze zmienaic tego)
+    public ResponseEntity<FlatCharges> addNewFlatCharges(@RequestBody @Valid FlatCharges flatCharges, BindingResult result, @RequestHeader (name="Authorization") String token) throws JsonProcessingException {
         System.out.println(flatCharges.toString());
         Flat tmpFlat = flatService.getFlat(flatCharges.getFlat().getId());
+
+        if(tmpFlat==null)return ResponseEntity.status(HttpStatus.NOT_FOUND).build();//nie ma takiego mieszkania
+        //System.out.println(tmpFlat.getId());
+        //flatService.
+
+
+        //aaa weryfikacja czy jest admin lub manager lub locator tego mieszkania
+        boolean admin = authService.isAdmin(token);
+        boolean managAccess = false;
+        boolean locatorAccess = false;
+        if(admin) managAccess = true;//jest adminem
+        else {
+            boolean manager = authService.isManager(token);
+            boolean locator = authService.isUser(token);
+            long user_id = authService.getUserID(token);
+            if(locator){//jest locatorerm
+                long locator_id = user_id;
+                if(locator_id!=-1l) {
+                    boolean isLocatorFlat = authService.isLocatorFlat(locator_id, flatCharges.getFlat().getId(), token);
+                    if(isLocatorFlat) locatorAccess = true;//jest locatorem tego mieszkania
+                }
+            }
+            if(manager){//jesli jest managerem
+                long manager_id = user_id;
+                if(manager_id!=-1l) {
+                    //System.out.println(""+manager_id+" tmpFlat.getBuilding().getId()");
+                    //System.out.println("manager_id "+tmpFlat.getBuilding().getId()+"");
+                    boolean isManagBuild = authService.isManagerBuilding(manager_id, tmpFlat.getBuilding().getId(), token);
+                    if(isManagBuild) managAccess = true;//jest managerem budynku tego mieszkania
+                }
+            }
+        }
+        if(!managAccess && !locatorAccess)return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();//jesli nie ma dostepu zadnego
+
+
         flatCharges.setFlat(tmpFlat);
         System.out.println(flatCharges.toString());
 
@@ -84,14 +125,17 @@ public class FlatChargesController {
         if (result.getErrorCount() == 0) {
             //dodawanie budynku
             System.out.println("dodawanie flatcharges");
+            if(flatCharges.isAccepted() && !managAccess)flatCharges.setAccepted(false);// jesli nie ma dostepu managerskiego
+            if(flatCharges.isZaplacone() && !managAccess)flatCharges.setZaplacone(false);// jesli nie ma dostepu managerskiego
+
             if(flatCharges.isAccepted()){
                 //wyslij maila do mieszkanców o zaplate;
                 try {
                     //getLocators
                     //pobieranie listy id uzytkownikow(Locators) z mieszkania
-                    List<Integer> locatorIdList =  restTemplate.getForObject("http://localhost:8000/managers-locators-service/getAllLocatorsFromFlat/"+flatCharges.getFlat().getId(), List.class);
+                    List<Integer> locatorIdList =  authService.nGetForObjectListInteger("http://localhost:8000/managers-locators-service/getAllLocatorsFromFlat/"+flatCharges.getFlat().getId(), token);
                     Map<Integer, String> usrNames = new HashMap<>();
-                    for (Integer usrId: locatorIdList) usrNames.put(usrId, restTemplate.getForObject("http://localhost:8000/residents-flat-service/getNames/"+usrId, String.class));
+                    for (Integer usrId: locatorIdList) usrNames.put(usrId, authService.nGetForObjectString("http://localhost:8000/residents-flat-service/getNames/"+usrId, token));
                     for (Integer id: locatorIdList) {
                         System.out.println(id);
                         //wysylanie notyfikacji
@@ -120,7 +164,7 @@ public class FlatChargesController {
                         UrlVariabledPDF = UrlVariabledPDF+checksum;
 
                         String rachunekPdfUrl = "http://localhost:8090/rachunek?";
-                        String tmlUsrEmail = restTemplate.getForObject("http://localhost:8000/residents-flat-service/getEmail/"+id, String.class);
+                        String tmlUsrEmail = authService.nGetForObjectString("http://localhost:8000/residents-flat-service/getEmail/"+id, token);
                         Notification tmpNoti = new Notification(tmlUsrEmail, "Odczyty zaakceptowane", "Odczyty z "+flatCharges.getData().getMonth().getValue()+" "+flatCharges.getData().getYear()+" zostały zaakceptowane. Rachunek wystawiony pod linkiem: "+rachunekPdfUrl+UrlVariabledPDF);
                         System.out.println(tmpNoti.toString());
                         rabbitTemplate.convertAndSend(QUEUE_244019, tmpNoti);
@@ -137,7 +181,7 @@ public class FlatChargesController {
                 try {
                     //getLocators
                     //pobieranie listy id uzytkownikow(Locators) z mieszkania
-                    List<Integer> locatorIdList = restTemplate.getForObject("http://localhost:8000/managers-locators-service/getAllLocatorsFromFlat/" + flatCharges.getFlat().getId(), List.class);
+                    List<Integer> locatorIdList = authService.nGetForObjectListInteger("http://localhost:8000/managers-locators-service/getAllLocatorsFromFlat/" + flatCharges.getFlat().getId(), token);
                     for (Integer id: locatorIdList) {
                         System.out.println(id);
                         //wysylanie notyfikacji o zaplaceniu
@@ -146,7 +190,7 @@ public class FlatChargesController {
 
                     //getManagers
                     //pobieranie listy id uzytkownikow(Managers) z budynku
-                    List<Integer> managersIdList = restTemplate.getForObject("http://localhost:8000/managers-locators-service/getAllManagersFromBuilding/" + flatCharges.getFlat().getBuilding().getId(), List.class);
+                    List<Integer> managersIdList = authService.nGetForObjectListInteger("http://localhost:8000/managers-locators-service/getAllManagersFromBuilding/" + flatCharges.getFlat().getBuilding().getId(), token);
                     for (Integer id: managersIdList) {
                         System.out.println(id);
                         //wysylanie notyfikacji o zaplaceniu Managerom
@@ -169,13 +213,45 @@ public class FlatChargesController {
     }
 
     //PUT
-    @PutMapping("/updateFlatCharges")
-    public ResponseEntity<FlatCharges> updateFlatCharges(@RequestBody FlatCharges flatCharges, BindingResult result) throws JsonProcessingException {
+    @PutMapping("/updateFlatCharges")//mieszkaniec nie moze ustawiac na true accepted i zaplacone(nie moze zmienaic tego)
+    public ResponseEntity<FlatCharges> updateFlatCharges(@RequestBody FlatCharges flatCharges, BindingResult result, @RequestHeader (name="Authorization") String token) throws JsonProcessingException {
 
         FlatCharges tmpFlatCharges = flatChargesService.getFlatCharges(flatCharges.getId());
-        if(tmpFlatCharges==null)return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
+        if(tmpFlatCharges==null)return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 
         Flat tmpFlat = flatService.getFlat(flatCharges.getFlat().getId());
+
+        if(tmpFlat==null)return ResponseEntity.status(HttpStatus.NOT_FOUND).build();//nie ma takiego mieszkania
+
+
+        //aaa weryfikacja czy jest admin lub manager lub locator tego mieszkania
+        boolean admin = authService.isAdmin(token);
+        boolean managAccess = false;
+        boolean locatorAccess = false;
+        if(admin) managAccess = true;//jest adminem
+        else {
+            boolean manager = authService.isManager(token);
+            boolean locator = authService.isUser(token);
+            long user_id = authService.getUserID(token);
+            if(locator){//jest locatorerm
+                long locator_id = user_id;
+                if(locator_id!=-1l) {
+                    boolean isLocatorFlat = authService.isLocatorFlat(locator_id, flatCharges.getFlat().getId(), token);
+                    if(isLocatorFlat) locatorAccess = true;//jest locatorem tego mieszkania
+                }
+            }
+            if(manager){//jesli jest managerem
+                long manager_id = user_id;
+                if(manager_id!=-1l) {
+                    boolean isManagBuild = authService.isManagerBuilding(manager_id, tmpFlat.getBuilding().getId(), token);
+                    if(isManagBuild) managAccess = true;//jest managerem budynku tego mieszkania
+                }
+            }
+        }
+        if(!managAccess && !locatorAccess)return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();//jesli nie ma dostepu zadnego
+
+
+
         flatCharges.setFlat(tmpFlat);
         System.out.println(new ObjectMapper().writeValueAsString(flatCharges));
 
@@ -184,15 +260,18 @@ public class FlatChargesController {
 
         if (result.getErrorCount() == 0) {
             System.out.println("edit flatCharges");
+            if(!tmpFlatCharges.isAccepted() && flatCharges.isAccepted() && !managAccess) flatCharges.setAccepted(false);// nie moze zaakceptowac jesli nie ma dostepu managerskiego
+            if(!tmpFlatCharges.isZaplacone() && flatCharges.isZaplacone() && !managAccess)flatCharges.setZaplacone(false);// nie moze zaakceptowac platnosci jesli nie ma dostepu managerskiego
+
 
             if(!tmpFlatCharges.isAccepted() && flatCharges.isAccepted()){
                 //wyslij maila do mieszkanców o zaplate;
                 try {
                     //getLocators
                     //pobieranie listy id uzytkownikow(Locators) z mieszkania
-                    List<Integer> locatorIdList =  restTemplate.getForObject("http://localhost:8000/managers-locators-service/getAllLocatorsFromFlat/"+flatCharges.getFlat().getId(), List.class);
+                    List<Integer> locatorIdList =  authService.nGetForObjectListInteger("http://localhost:8000/managers-locators-service/getAllLocatorsFromFlat/"+flatCharges.getFlat().getId(), token);
                     Map<Integer, String> usrNames = new HashMap<>();
-                    for (Integer usrId: locatorIdList) usrNames.put(usrId, restTemplate.getForObject("http://localhost:8000/residents-flat-service/getNames/"+usrId, String.class));
+                    for (Integer usrId: locatorIdList) usrNames.put(usrId, authService.nGetForObjectString("http://localhost:8000/residents-flat-service/getNames/"+usrId, token));
                     for (Integer id: locatorIdList) {
                         System.out.println(id);
                         //wysylanie notyfikacji
@@ -221,7 +300,7 @@ public class FlatChargesController {
                         UrlVariabledPDF = UrlVariabledPDF+checksum;
 
                         String rachunekPdfUrl = "http://localhost:8090/rachunek?";
-                        String tmlUsrEmail = restTemplate.getForObject("http://localhost:8000/residents-flat-service/getEmail/"+id, String.class);
+                        String tmlUsrEmail = authService.nGetForObjectString("http://localhost:8000/residents-flat-service/getEmail/"+id, token);
                         Notification tmpNoti = new Notification(tmlUsrEmail, "Odczyty zaakceptowane", "Odczyty z "+flatCharges.getData().getMonth().getValue()+" "+flatCharges.getData().getYear()+" zostały zaakceptowane. Rachunek wystawiony pod linkiem: "+rachunekPdfUrl+UrlVariabledPDF);
                         System.out.println(tmpNoti.toString());
                         rabbitTemplate.convertAndSend(QUEUE_244019, tmpNoti);
@@ -237,7 +316,7 @@ public class FlatChargesController {
                 try {
                     //getLocators
                     //pobieranie listy id uzytkownikow(Locators) z mieszkania
-                    List<Integer> locatorIdList = restTemplate.getForObject("http://localhost:8000/managers-locators-service/getAllLocatorsFromFlat/" + flatCharges.getFlat().getId(), List.class);
+                    List<Integer> locatorIdList = authService.nGetForObjectListInteger("http://localhost:8000/managers-locators-service/getAllLocatorsFromFlat/" + flatCharges.getFlat().getId(), token);
                     for (Integer id: locatorIdList) {
                         System.out.println(id);
                         //wysylanie notyfikacji o zaplaceniu
@@ -246,7 +325,7 @@ public class FlatChargesController {
 
                     //getManagers
                     //pobieranie listy id uzytkownikow(Managers) z budynku
-                    List<Integer> managersIdList = restTemplate.getForObject("http://localhost:8000/managers-locators-service/getAllManagersFromBuilding/" + flatCharges.getFlat().getBuilding().getId(), List.class);
+                    List<Integer> managersIdList = authService.nGetForObjectListInteger("http://localhost:8000/managers-locators-service/getAllManagersFromBuilding/" + flatCharges.getFlat().getBuilding().getId(), token);
                     for (Integer id: managersIdList) {
                         System.out.println(id);
                         //wysylanie notyfikacji o zaplaceniu Managerom
@@ -269,13 +348,51 @@ public class FlatChargesController {
     }
 
     @GetMapping("/getAllFlatCharges")
-    public List<FlatCharges> getAllFlatCharges(){
-        return flatChargesService.listFlatCharges();
+    public ResponseEntity<List<FlatCharges>> getAllFlatCharges(@RequestHeader (name="Authorization") String token){
+        //aaa weryfikacja czy jest admin
+        boolean admin = authService.isAdmin(token);
+        if(!admin) return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        return ResponseEntity.ok(flatChargesService.listFlatCharges());
     }
 
     @GetMapping("/getFlatCharges/{id}")
-    public ResponseEntity<FlatCharges> getFlatChargesById(@PathVariable Long id){
-        return flatChargesRepository.findById(id)
+    public ResponseEntity<FlatCharges> getFlatChargesById(@PathVariable Long id, @RequestHeader (name="Authorization") String token){
+
+        Optional<FlatCharges> optFlatCharges = flatChargesRepository.findById(id);
+        FlatCharges tmpFlatCharges = optFlatCharges.get();
+        if(tmpFlatCharges==null)return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        Flat tmpFlat = flatService.getFlat(tmpFlatCharges.getFlat().getId());
+        if(tmpFlat==null)return ResponseEntity.status(HttpStatus.NOT_FOUND).build();//nie ma takiego mieszkania
+        //Building tmpBuilding = buildingService.getBuilding(tmpFlat.getBuilding().getId());
+
+
+        //aaa weryfikacja czy jest admin lub manager lub locator tego mieszkania
+        boolean admin = authService.isAdmin(token);
+        boolean managAccess = false;
+        boolean locatorAccess = false;
+        if(admin) managAccess = true;//jest adminem
+        else {
+            boolean manager = authService.isManager(token);
+            boolean locator = authService.isUser(token);
+            long user_id = authService.getUserID(token);
+            if(locator){//jest locatorerm
+                long locator_id = user_id;
+                if(locator_id!=-1l) {
+                    boolean isLocatorFlat = authService.isLocatorFlat(locator_id, tmpFlatCharges.getFlat().getId(), token);
+                    if(isLocatorFlat) locatorAccess = true;//jest locatorem tego mieszkania
+                }
+            }
+            if(manager){//jesli jest managerem
+                long manager_id = user_id;
+                if(manager_id!=-1l) {
+                    boolean isManagBuild = authService.isManagerBuilding(manager_id, tmpFlat.getBuilding().getId(), token);
+                    if(isManagBuild) managAccess = true;//jest managerem budynku tego mieszkania
+                }
+            }
+        }
+        if(!managAccess && !locatorAccess)return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();//jesli nie ma dostepu zadnego
+
+        return optFlatCharges
                 .map(ResponseEntity::ok)
                 .orElseGet(()->ResponseEntity.notFound().build());
     }
@@ -283,11 +400,48 @@ public class FlatChargesController {
 
     //DELETE
     @DeleteMapping("/deleteFlatCharges/{flatChargesId}")
-    public ResponseEntity<Building> deleteFlatCharges(@PathVariable Long flatChargesId) {
+    public ResponseEntity<Building> deleteFlatCharges(@PathVariable Long flatChargesId, @RequestHeader (name="Authorization") String token) {
+
+
+        FlatCharges tmpFlatCharges = flatChargesService.getFlatCharges(flatChargesId);
+        if(tmpFlatCharges==null)return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        Flat tmpFlat = flatService.getFlat(tmpFlatCharges.getFlat().getId());
+        if(tmpFlat==null)return ResponseEntity.status(HttpStatus.NOT_FOUND).build();//nie ma takiego mieszkania
+        Building tmpBuilding = buildingService.getBuilding(tmpFlat.getBuilding().getId());
+        if(tmpBuilding==null)return ResponseEntity.status(HttpStatus.NOT_FOUND).build();//nie ma takiego budynku
+
+
+
+        //aaa weryfikacja czy jest admin lub manager lub locator tego mieszkania
+        boolean admin = authService.isAdmin(token);
+        boolean managAccess = false;
+        //boolean locatorAccess = false;
+        if(admin) managAccess = true;//jest adminem
+        else {
+            boolean manager = authService.isManager(token);
+            //boolean locator = authService.isUser(token);
+            long user_id = authService.getUserID(token);
+            /*if(locator){//jest locatorerm
+                long locator_id = user_id;
+                if(locator_id!=-1l) {
+                    boolean isLocatorFlat = authService.isLocatorFlat(locator_id, tmpFlatCharges.getFlat().getId());
+                    if(isLocatorFlat) locatorAccess = true;//jest locatorem tego mieszkania
+                }
+            }*/
+            if(manager){//jesli jest managerem
+                long manager_id = user_id;
+                if(manager_id!=-1l) {
+                    boolean isManagBuild = authService.isManagerBuilding(manager_id, tmpFlat.getBuilding().getId(), token);
+                    if(isManagBuild) managAccess = true;//jest managerem budynku tego mieszkania
+                }
+            }
+        }
+        if(!managAccess)return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();//jesli nie ma dostepu managerskiego
+
+
 
         System.out.println("Usuwanie  flatCharges "+flatChargesId);
 
-        if(flatChargesService.getFlatCharges(flatChargesId)==null)return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
 
         flatChargesService.removeFlatCharges(flatChargesId);
         return ResponseEntity.ok().build();

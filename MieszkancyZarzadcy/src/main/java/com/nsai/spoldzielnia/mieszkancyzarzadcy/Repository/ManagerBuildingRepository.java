@@ -17,6 +17,9 @@ public interface ManagerBuildingRepository extends JpaRepository<ManagerBuilding
     List<ManagerBuilding> findAllByBuildingId(long buildingId);
     void deleteByBuildingIdAndManagerId(long BuildingId, long ManagerId);
 
+    List<ManagerBuilding> findAllByBuildingIdAndManagerId(long buildingId, long managerId);
+
     void deleteAllByBuildingId(long BuildingId);
     void deleteAllByManagerId(long ManagerId);
+
 }

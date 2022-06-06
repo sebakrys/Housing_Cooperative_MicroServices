@@ -4,16 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="working project without autorization/authentication">
-      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Controller/FlatChargesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Controller/FlatChargesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDF/PDFbillGenerate.postman_collection.json" beforeDir="false" afterPath="$PROJECT_DIR$/../PDF/PDFbillGenerate.postman_collection.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDF/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../PDF/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDF/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../PDF/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDF/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../PDF/target/classes/application.properties" afterDir="false" />
+    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="keycloak modification, added a few endpoints">
+      <change beforePath="$PROJECT_DIR$/../BudMiesz/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EmailNotification/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../EmailNotification/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Keycloak/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../Keycloak/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Keycloak/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Keycloak/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Keycloak/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/../Keycloak/README.MD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Keycloak/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/../Keycloak/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Keycloak/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/../Keycloak/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Keycloak/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Keycloak/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Keycloak/src/main/java/com/politechnika/artur/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Keycloak/src/main/java/com/politechnika/artur/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Keycloak/src/main/java/com/politechnika/artur/KeycloakConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Keycloak/src/main/java/com/politechnika/artur/KeycloakConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Keycloak/src/main/java/com/politechnika/artur/ResourceServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Keycloak/src/main/java/com/politechnika/artur/ResourceServerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Keycloak/src/main/java/com/politechnika/artur/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Keycloak/src/main/java/com/politechnika/artur/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Keycloak/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Keycloak/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Keycloak/src/test/java/com/politechnika/artur/ResourceServerApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mieszkancy/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Mieszkancy/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mieszkancy/src/main/java/com/example/mieszkancy/Controller/PersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Mieszkancy/src/main/java/com/example/mieszkancy/Controller/PersonController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mieszkancy/src/main/java/com/example/mieszkancy/MieszkancyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Mieszkancy/src/main/java/com/example/mieszkancy/MieszkancyApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDF/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PDF/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_05_2022_12_19_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_05_2022_12_19__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,12 +48,20 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="Validation" />
+        <entry key="$PROJECT_DIR$/.." value="keycloak" />
       </map>
     </option>
     <option name="RECENT_COMMON_BRANCH" value="master" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
     <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -67,25 +92,27 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="corretto-11" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Keycloak/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Mieszkancy" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.5321839" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.toDoOptions" />
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\STUDIA_informatyka\S2\NSAI\Projekt\BudMiesz\src\main\java\com\nsai\spoldzielnia\Entity" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.mieszkancy.Service" />
+      <recent name="com.politechnika.artur" />
+      <recent name="com.nsai.spoldzielnia.Service" />
+      <recent name="com.nsai.spoldzielnia.mieszkancyzarzadcy.Service" />
       <recent name="com.nsai.spoldzielnia.emailnotification.entity" />
-      <recent name="com.nsai.spoldzielnia.emailnotification.Service" />
-      <recent name="com.nsai.spoldzielnia.Validator" />
-      <recent name="com.nsai.spoldzielnia.Controller" />
-      <recent name="com.nsai.spoldzielnia.Repository" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -95,7 +122,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Keycloak">
+  <component name="RunManager" selected="Spring Boot.MieszkancyApplication">
     <configuration name="BudMieszApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="BudMiesz" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.nsai.spoldzielnia.BudMieszApplication" />
@@ -111,7 +138,7 @@
       </method>
     </configuration>
     <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="eurekaServer" />
+      <module name="spoldzielnia (1)" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.nsai.spoldzielnia.EurekaServerApplication" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="ALTERNATIVE_JRE_PATH" value="corretto-11" />
@@ -126,14 +153,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JwTokensApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="JWTokens" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="TokensService.JWTokens.JwTokensApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Keycloak" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <configuration name="KeycloackAuthServer" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="keycloak" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.politechnika.artur.ResourceServerApplication" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -144,7 +164,6 @@
     <configuration name="MieszkancyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="Mieszkancy" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.mieszkancy.MieszkancyApplication" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -165,27 +184,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/../frontend/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="start" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
+    <configuration name="PdfServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="spoldzielnia (2)" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="pl.skrys.pdf.PdfServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ResourceServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="keycloak" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.politechnika.artur.ResourceServerApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <list>
-      <item itemvalue="npm.start" />
       <item itemvalue="Spring Boot.PdfService" />
+      <item itemvalue="Spring Boot.BudMieszApplication" />
       <item itemvalue="Spring Boot.EurekaServerApplication" />
       <item itemvalue="Spring Boot.GatewayApplication" />
-      <item itemvalue="Spring Boot.BudMieszApplication" />
       <item itemvalue="Spring Boot.EmailNotificationApplication" />
-      <item itemvalue="Spring Boot.JwTokensApplication" />
+      <item itemvalue="Spring Boot.ResourceServerApplication" />
+      <item itemvalue="Spring Boot.KeycloackAuthServer" />
       <item itemvalue="Spring Boot.MieszkancyApplication" />
       <item itemvalue="Spring Boot.MieszkancyZarzadcyApplication" />
-      <item itemvalue="Spring Boot.Keycloak" />
+      <item itemvalue="Spring Boot.PdfServiceApplication" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -217,8 +241,9 @@
       <workItem from="1650093834793" duration="5635000" />
       <workItem from="1650375860455" duration="4671000" />
       <workItem from="1650384205462" duration="1922000" />
-      <workItem from="1653825922850" duration="2078000" />
-      <workItem from="1653829339235" duration="1974000" />
+      <workItem from="1654206357962" duration="7770000" />
+      <workItem from="1654271684919" duration="23382000" />
+      <workItem from="1654458917993" duration="8005000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit - Eureka">
       <created>1649598456859</created>
@@ -332,14 +357,42 @@
       <option name="project" value="LOCAL" />
       <updated>1650120516447</updated>
     </task>
-    <task id="LOCAL-00017" summary="working project without autorization/authentication">
-      <created>1653820059990</created>
+    <task id="LOCAL-00017" summary="keycloak auth server endpoint modification">
+      <created>1653988022098</created>
       <option name="number" value="00017" />
       <option name="presentableId" value="LOCAL-00017" />
       <option name="project" value="LOCAL" />
-      <updated>1653820059990</updated>
+      <updated>1653988022098</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Pierwsza proba dodawnia autoryzacji po stronie budMiesz">
+      <created>1654013094349</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1654013094349</updated>
+    </task>
+    <task id="LOCAL-00019" summary="autoryzacja dodana BudMiesz i LocatorFlat&#10;-brakuje ManagerBuilding&#10;-dodac przesylanie tokena przy restTemplate.getForObject( oraz restTemplate.exchange(">
+      <created>1654029202277</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1654029202277</updated>
+    </task>
+    <task id="LOCAL-00020" summary="autoryzacja BudMiesz + MieszkancyZarzadcy&#10;- wymaga sprawdzenia (nGetForObject..., nExchange)">
+      <created>1654032854056</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1654032854056</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Sprawdzona na szybko autoryzacja i poprawiona">
+      <created>1654103456537</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1654103456537</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -356,7 +409,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="pdf_service" />
                       </list>
                     </value>
                   </entry>
@@ -387,7 +440,11 @@
     <MESSAGE value="added:&#10;- get Flat's all flatCharges&#10;- get Building's all Flats&#10;- podczas usuwania mieskzania sa usuwane nalezace do niego oplaty&#10;-podczas usuwania budynku sa usuwane mieszkania i oplaty mieszkan" />
     <MESSAGE value="validacja postalCode regex" />
     <MESSAGE value="validation flatCharges and Flats" />
-    <MESSAGE value="working project without autorization/authentication" />
-    <option name="LAST_COMMIT_MESSAGE" value="working project without autorization/authentication" />
+    <MESSAGE value="keycloak auth server endpoint modification" />
+    <MESSAGE value="Pierwsza proba dodawnia autoryzacji po stronie budMiesz" />
+    <MESSAGE value="autoryzacja dodana BudMiesz i LocatorFlat&#10;-brakuje ManagerBuilding&#10;-dodac przesylanie tokena przy restTemplate.getForObject( oraz restTemplate.exchange(" />
+    <MESSAGE value="autoryzacja BudMiesz + MieszkancyZarzadcy&#10;- wymaga sprawdzenia (nGetForObject..., nExchange)" />
+    <MESSAGE value="Sprawdzona na szybko autoryzacja i poprawiona" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sprawdzona na szybko autoryzacja i poprawiona" />
   </component>
 </project>

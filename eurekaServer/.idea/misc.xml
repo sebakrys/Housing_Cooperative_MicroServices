@@ -11,6 +11,7 @@
         <option value="$PROJECT_DIR$/../EmailNotification/pom.xml" />
         <option value="$PROJECT_DIR$/../Keycloak/pom.xml" />
         <option value="$PROJECT_DIR$/../Mieszkancy/pom.xml" />
+        <option value="$PROJECT_DIR$/../MieszkancyZarzadcy/pom.xml" />
       </list>
     </option>
   </component>

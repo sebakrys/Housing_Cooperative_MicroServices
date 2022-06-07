@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import net.minidev.json.JSONObject;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.keycloak.KeycloakSecurityContext;
 import org.keycloak.representations.AccessToken;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,9 @@ import org.springframework.web.client.RestTemplate;
 
 import java.lang.reflect.Array;
 import java.security.Principal;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Stream;
 
 @CrossOrigin(origins = "http://localhost:3000")//for React
@@ -31,6 +34,8 @@ import java.util.stream.Stream;
 public class PersonController {
 
 // TODO DODAJ UZUN MODYFIKUJ DODAJ VALIDATOR
+
+    private String realmS = "resourceServer";
 
     @Autowired
     private AuthService authService;
@@ -58,21 +63,40 @@ public class PersonController {
         personJsonObject.put("firstName", person.getFirstName());
         personJsonObject.put("lastName", person.getLastName());
 
+        /*Map<String, String> map = new HashMap<>()[];
+        map.put("type", "password");
+        map.put("value", person.getPassword());
+        map.put("temporary", "false");*/
+
+
+        JSONObject credentialsJsonObject[] = new JSONObject[1];
+        credentialsJsonObject[0] = new JSONObject();
+        credentialsJsonObject[0].put("type", "password");
+        credentialsJsonObject[0].put("value", person.getPassword());
+        credentialsJsonObject[0].put("temporary", "false");
+        personJsonObject.put("credentials", credentialsJsonObject);
+        //personJsonObject.put("credentials", map);
+
+
         HttpHeaders headers = new HttpHeaders();
         headers.add("Authorization", token);
         headers.setContentType(MediaType.APPLICATION_JSON);
+        //System.out.println("~~~ "+personJsonObject.toString());
         HttpEntity<String> request = new HttpEntity<String>(personJsonObject.toString(), headers);
 
         try {
-            ResponseEntity<String> re = new RestTemplate().exchange("http://localhost:8080/admin/realms/resourceServer/users",
+            ResponseEntity<String> re = new RestTemplate().exchange("http://localhost:8080/admin/realms/"+realmS+"/users",
                     HttpMethod.POST, request, String.class);
+            System.out.println("User Create response: "+re.getStatusCodeValue());
             if(re.getStatusCodeValue() == 201){//jesli nie 201 wycofaj
+                person.setPassword(new DigestUtils("SHA3-256").digestAsHex(person.getPassword()));//hashowanie hasła
                 return ResponseEntity.ok(personService.addPerson(person));
             }else{
                 return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
             }
         }catch (Exception e)
         {
+            System.out.println(e);
             return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
 
         }
@@ -132,11 +156,18 @@ public class PersonController {
             personJsonObject.put("firstName", person.getFirstName());
             personJsonObject.put("lastName", person.getLastName());
 
+            JSONObject credentialsJsonObject[] = new JSONObject[1];
+            credentialsJsonObject[0] = new JSONObject();
+            credentialsJsonObject[0].put("type", "password");
+            credentialsJsonObject[0].put("value", person.getPassword());
+            credentialsJsonObject[0].put("temporary", "false");
+            personJsonObject.put("credentials", credentialsJsonObject);
+
             HttpHeaders headers = new HttpHeaders();
             headers.add("Authorization", token);
             headers.setContentType(MediaType.APPLICATION_JSON);
             HttpEntity<String> request = new HttpEntity<String>(personJsonObject.toString(), headers);
-            ResponseEntity<KeycloakDataJson> re = new RestTemplate().exchange("http://localhost:8080/admin/realms/resourceServer/users/" + id,
+            ResponseEntity<KeycloakDataJson> re = new RestTemplate().exchange("http://localhost:8080/admin/realms/"+realmS+"/users/" + id,
                     HttpMethod.GET, request, KeycloakDataJson.class);
 //            KeycloakDataJson tmp2 = re.getBody();
 
@@ -146,7 +177,7 @@ public class PersonController {
 
                 SetVariablesInPerson(tmp, person);
 
-                ResponseEntity<String> update = new RestTemplate().exchange("http://localhost:8080/admin/realms/resourceServer/users/" + id,
+                ResponseEntity<String> update = new RestTemplate().exchange("http://localhost:8080/admin/realms/"+realmS+"/users/" + id,
                         HttpMethod.PUT, request, String.class);
 
                 personService.editPerson(tmp);
@@ -183,12 +214,12 @@ public class PersonController {
             headers.add("Authorization", token);
             headers.setContentType(MediaType.APPLICATION_JSON);
             HttpEntity<String> request = new HttpEntity<String>(headers);
-            ResponseEntity<KeycloakDataJson> re = new RestTemplate().exchange("http://localhost:8080/admin/realms/resourceServer/users/" + id,
+            ResponseEntity<KeycloakDataJson> re = new RestTemplate().exchange("http://localhost:8080/admin/realms/"+realmS+"/users/" + id,
                     HttpMethod.GET, request, KeycloakDataJson.class);
 
             Person tmp = personRepository.findByLogin(re.getBody().getUsername());
 
-            ResponseEntity<String> delete = new RestTemplate().exchange("http://localhost:8080/admin/realms/resourceServer/users/" + id,
+            ResponseEntity<String> delete = new RestTemplate().exchange("http://localhost:8080/admin/realms/"+realmS+"/users/" + id,
                         HttpMethod.DELETE, request, String.class);
 
             personService.removePerson(tmp.getId());
@@ -213,8 +244,11 @@ public class PersonController {
             original.setTelephone(mod.getTelephone());
         if (!(mod.getLogin() == null))
             original.setLogin(mod.getLogin());
-        if (!(mod.getPassword() == null))
-            original.setPassword(mod.getPassword());
+        if (!(mod.getPassword() == null)){
+            //original.setPassword(mod.getPassword());
+            original.setPassword(new DigestUtils("SHA3-256").digestAsHex(mod.getPassword()));//hashowanie hasła
+        }
+
     }
 
 }

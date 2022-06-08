@@ -1,11 +1,18 @@
 import axios from "axios";
+import Zawartosc from "../components/Zawartosc";
 
 const BUILDING_REST_URL = 'http://localhost:8000/building-flat-service/';
 
 class BuildingService {
 
     getBuildings(){
-        return axios.get(BUILDING_REST_URL+"getBuildings");
+        const headers = {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Authorization': 'Bearer '+Zawartosc.sToken
+        };
+        return axios.get(BUILDING_REST_URL+"getBuildings", { headers: headers });
     }
 }
 

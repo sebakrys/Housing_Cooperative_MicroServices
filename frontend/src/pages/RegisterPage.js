@@ -50,7 +50,7 @@ function RegisterPage() {
                 enabled: 'true'
             };
 
-            console.log("REGISTER"+firstName.value+" "+lastName.value);
+            console.log("REGISTER: "+firstName.value+" "+lastName.value);
 
             const headers = {
                 'Content-Type': 'application/json',
@@ -152,7 +152,7 @@ function RegisterPage() {
     return (
         <div className="app">
             <div className="register-form">
-                <div className="title">Sign In</div>
+                <div className="title">User Registered</div>
                 {isSubmitted ? <div>User is successfully registered</div> : renderForm}
             </div>
         </div>

@@ -5,7 +5,7 @@ import Secured from "../../pages/Secured";
 
 
 
-const Navbar = () => {
+const NavbarSecured = () => {
 
     /*if(Secured.state.authenticated) */return (
         <>
@@ -52,4 +52,4 @@ const Navbar = () => {
     );*/
 };
 
-export default Navbar;
+export default NavbarSecured;

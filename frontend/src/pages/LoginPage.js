@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 
 import "./loginStyles.css";
 import BuildingsPage from "./BuildingsPage";
+import axios from "axios";
+import data from "bootstrap/js/src/dom/data";
 
 function LoginPage() {
     // React States
@@ -32,8 +34,43 @@ function LoginPage() {
 
         var { uname, pass } = document.forms[0];
 
+
+
         // Find user login info
         const userData = database.find((user) => user.username === uname.value);
+
+        console.log(uname.value+" "+pass.value);
+
+
+        // POST request using axios with set headers
+
+        var userJSON = {
+            client_id: "nsai-frontend",
+            username: uname.value,
+            password: pass.value,
+            grant_type: "password",
+            client_secret: "59Um92ixKBwThNUDYSk1yHEjavIoHvvh"
+        };
+
+        const headers = {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            /*'Access-Control-Allow-Origin': '*',*/
+            /*'Access-Control-Allow-Headers': 'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers, Access-Control-Allow-Origin'*/
+        };
+        var postResponse = axios.post('http://localhost:8080/realms/resourceServer/protocol/openid-connect/token', userJSON, {headers})
+            .then((response) => {
+                console.log("RESP:"+response);
+                //return postResponse.data;
+
+                return(['ok', data]);
+            }, (error) => {
+                console.log("EEEE:"+error);
+                return(['error', 'Nie zalogowano']);
+            });
+
+
+
 
         // Compare user info
         if (userData) {

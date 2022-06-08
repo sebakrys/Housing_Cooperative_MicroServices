@@ -7,6 +7,7 @@ import BuildingsPage from "./BuildingsPage";
 import BuildingService from "../services/BuildingService";
 import registerService from "../services/RegisterService";
 import data from "bootstrap/js/src/dom/data";
+import Zawartosc from "../components/Zawartosc";
 
 function RegisterPage() {
     // React States
@@ -31,6 +32,8 @@ function RegisterPage() {
     };
 
     const handleSubmit = (event) => {
+        console.log("Token Register: "+Zawartosc.sToken)
+        console.log("Admin: "+Zawartosc.sAdmin)
         //Prevent page reload
         event.preventDefault();
 
@@ -44,9 +47,7 @@ function RegisterPage() {
                 telephone: telephone.value,
                 login: login.value,
                 password: password.value,
-                enabled: 'true',
-                dept: 'true',
-                valid: 'true'
+                enabled: 'true'
             };
 
             console.log("REGISTER"+firstName.value+" "+lastName.value);
@@ -54,7 +55,8 @@ function RegisterPage() {
             const headers = {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
-                'Access-Control-Allow-Origin': '*'
+                'Access-Control-Allow-Origin': '*',
+                'Authorization': 'Bearer '+Zawartosc.sToken
             };
             axios.post('http://localhost:8000/residents-flat-service/addPerson', userJSON, {headers})
                 .then((response) => {

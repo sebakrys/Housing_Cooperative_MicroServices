@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="Poprawiono wysyłanie maili w przypadku zatwierdzenia rachunków i w przypadku opłacenia rachunków&#10;(zamieniono GMAIL na ZOHO)">
+    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="First Authentication frontend">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/components/Navbar/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Navbar/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/pages/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/pages/LoginPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Navbar/indexNavbarSecured.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Navbar/indexNavbarSecured.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/pages/RegisterPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/pages/RegisterPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/pages/Secured.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/pages/Secured.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/pages/Welcome.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/pages/Welcome.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,7 +239,7 @@
       <workItem from="1654271684919" duration="23382000" />
       <workItem from="1654458917993" duration="8005000" />
       <workItem from="1654617043397" duration="8194000" />
-      <workItem from="1654671026009" duration="20458000" />
+      <workItem from="1654671026009" duration="27439000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit - Eureka">
       <created>1649598456859</created>
@@ -408,7 +409,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654680731410</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="First Authentication frontend">
+      <created>1654704883183</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1654704883183</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -464,6 +472,7 @@
     <MESSAGE value="dodano brakujące pliki AuthService + KeycloakDataJson" />
     <MESSAGE value="dodano rejestracje i dodawanie hasłas od keyclocka" />
     <MESSAGE value="Poprawiono wysyłanie maili w przypadku zatwierdzenia rachunków i w przypadku opłacenia rachunków&#10;(zamieniono GMAIL na ZOHO)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Poprawiono wysyłanie maili w przypadku zatwierdzenia rachunków i w przypadku opłacenia rachunków&#10;(zamieniono GMAIL na ZOHO)" />
+    <MESSAGE value="First Authentication frontend" />
+    <option name="LAST_COMMIT_MESSAGE" value="First Authentication frontend" />
   </component>
 </project>

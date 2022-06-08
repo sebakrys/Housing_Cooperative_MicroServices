@@ -3,20 +3,18 @@ import Keycloak from 'keycloak-js';
 
 class Secured extends Component {
 
-    static state = { keycloak: null, authenticated: false };
-
     constructor(props) {
         super(props);
         this.state = { keycloak: null, authenticated: false };
-        this.authInProg = false;
+        this.authInProgSecured = false;
     }
 
 
 
 
     componentDidMount() {
-        if(!this.authInProg){
-            this.authInProg = true;
+        if(!this.authInProgSecured){
+            this.authInProgSecured = true;
             //alert("componentDidMount")
             const keycloak = Keycloak('/keycloak.json');
             keycloak.init({onLoad: 'login-required'}).then(authenticated => {
@@ -27,7 +25,7 @@ class Secured extends Component {
     }
 
     componentDidUpdate() {
-        if(this.authInProg)this.authInProg=false;
+        if(this.authInProgSecured)this.authInProgSecured=false;
     }
 
     render() {

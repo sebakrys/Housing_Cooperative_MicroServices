@@ -11,9 +11,6 @@ const NavbarSecured = () => {
         <>
             <Nav>
                 <NavMenu>
-                    <NavLink to="/login" activeStyle>
-                        Login
-                    </NavLink>
                     <NavLink to="/register" activeStyle>
                         Register
                     </NavLink>
@@ -22,12 +19,6 @@ const NavbarSecured = () => {
                     </NavLink>
                     <NavLink to="/addbuilding" activeStyle>
                         Add Building
-                    </NavLink>
-                    <NavLink to="/public" activeStyle>
-                        Public
-                    </NavLink>
-                    <NavLink to="/secured" activeStyle>
-                        Secured
                     </NavLink>
                 </NavMenu>
             </Nav>

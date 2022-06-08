@@ -11,23 +11,11 @@ const Navbar = () => {
         <>
             <Nav>
                 <NavMenu>
-                    <NavLink to="/login" activeStyle>
-                        Login
-                    </NavLink>
-                    <NavLink to="/register" activeStyle>
-                        Register
-                    </NavLink>
-                    <NavLink to="/buildings" activeStyle>
-                        Buildings
-                    </NavLink>
-                    <NavLink to="/addbuilding" activeStyle>
-                        Add Building
+                    <NavLink to="/logout" activeStyle>
+                        Logout
                     </NavLink>
                     <NavLink to="/public" activeStyle>
                         Public
-                    </NavLink>
-                    <NavLink to="/secured" activeStyle>
-                        Secured
                     </NavLink>
                 </NavMenu>
             </Nav>

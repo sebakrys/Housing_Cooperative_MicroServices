@@ -11,22 +11,17 @@ import AddBuildingPage from "./pages/AddBuildingPage";
 import Welcome from './pages/Welcome';
 import Secured from './pages/Secured';
 import IndexNavbarSecured from "./components/Navbar/indexNavbarSecured";
+import Keycloak from "keycloak-js";
+import {useEffect, useState} from "react";
+import Zawartosc from "./components/Zawartosc";
+
 
 
 function App() {
+
     return (
         <Router>
-            <Navbar />
-
-            <Routes>
-                <Route exact path='/' exact element={<LoginPage />} />
-                <Route path="/public" element={<Welcome/>} />
-                <Route path="/secured" element={<Secured/>} />
-                <Route path='/login' element={<LoginPage/>} />
-                <Route path='/register' element={<RegisterPage/>} />
-                <Route path='/buildings' element={<BuildingsPage/>} />
-                <Route path='/addbuilding' element={<AddBuildingPage/>} />
-            </Routes>
+            <Zawartosc />
         </Router>
     );
 }

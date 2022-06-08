@@ -5,6 +5,7 @@ import "./loginStyles.css";
 import BuildingsPage from "./BuildingsPage";
 import axios from "axios";
 import RegisterPage from "./RegisterPage";
+import Zawartosc from "../components/Zawartosc";
 
 function AddBuildingPage() {
     // React States
@@ -36,7 +37,8 @@ function AddBuildingPage() {
             const headers = {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
-                'Access-Control-Allow-Origin': '*'
+                'Access-Control-Allow-Origin': '*',
+                'Authorization': 'Bearer '+Zawartosc.sToken
             };
             axios.post('http://localhost:8000/building-flat-service/addNewBuilding', userJSON, {headers})
                 .then((response) => {

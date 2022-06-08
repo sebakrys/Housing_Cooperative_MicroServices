@@ -31,6 +31,11 @@ public class NotificationReciverEmailSenderController {
 
         }else{
             System.out.println("invalid email");
+            try {
+                System.out.println(notification.getEmail());
+            }catch (Exception e){
+                System.out.println(e);
+            }
         }
 
     }

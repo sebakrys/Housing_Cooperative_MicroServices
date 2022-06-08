@@ -253,7 +253,7 @@ public class FlatChargesController {
 
 
         flatCharges.setFlat(tmpFlat);
-        System.out.println(new ObjectMapper().writeValueAsString(flatCharges));
+        //System.out.println(new ObjectMapper().writeValueAsString(flatCharges));
 
         flatChargesValidator.validate(flatCharges, result);
 
@@ -301,6 +301,7 @@ public class FlatChargesController {
 
                         String rachunekPdfUrl = "http://localhost:8090/rachunek?";
                         String tmlUsrEmail = authService.nGetForObjectString("http://localhost:8000/residents-flat-service/getEmail/"+id, token);
+                        System.out.println("user ID: "+id+" email: "+tmlUsrEmail);
                         Notification tmpNoti = new Notification(tmlUsrEmail, "Odczyty zaakceptowane", "Odczyty z "+flatCharges.getData().getMonth().getValue()+" "+flatCharges.getData().getYear()+" zostały zaakceptowane. Rachunek wystawiony pod linkiem: "+rachunekPdfUrl+UrlVariabledPDF);
                         System.out.println(tmpNoti.toString());
                         rabbitTemplate.convertAndSend(QUEUE_244019, tmpNoti);
@@ -320,7 +321,9 @@ public class FlatChargesController {
                     for (Integer id: locatorIdList) {
                         System.out.println(id);
                         //wysylanie notyfikacji o zaplaceniu
-                        rabbitTemplate.convertAndSend(QUEUE_244019, new Notification("email", "Opłaty uregulowane", "Opłaty za "+flatCharges.getData().getMonth().getValue()+" "+flatCharges.getData().getYear()+" zostały uregulowane"));
+                        String tmlUsrEmail = authService.nGetForObjectString("http://localhost:8000/residents-flat-service/getEmail/"+id, token);
+                        System.out.println("LocatorUuser ID: "+id+" email: "+tmlUsrEmail);
+                        rabbitTemplate.convertAndSend(QUEUE_244019, new Notification(tmlUsrEmail, "Opłaty uregulowane", "Opłaty za "+flatCharges.getData().getMonth().getValue()+" "+flatCharges.getData().getYear()+" zostały uregulowane"));
                     }
 
                     //getManagers
@@ -329,7 +332,9 @@ public class FlatChargesController {
                     for (Integer id: managersIdList) {
                         System.out.println(id);
                         //wysylanie notyfikacji o zaplaceniu Managerom
-                        rabbitTemplate.convertAndSend(QUEUE_244019, new Notification("email", "Opłaty uregulowane", "Opłaty za mieszkanie ul. "+tmpFlat.getBuilding().getStreet()+" nr. "+tmpFlat.getBuilding().getBuildingNumber()+"/"+tmpFlat.getFlatNumber()+" za okres: "+flatCharges.getData().getMonth().getValue()+" "+flatCharges.getData().getYear()+" zostały uregulowane"));
+                        String tmlUsrEmail = authService.nGetForObjectString("http://localhost:8000/residents-flat-service/getEmail/"+id, token);
+                        System.out.println("ManagerUser ID: "+id+" email: "+tmlUsrEmail);
+                        rabbitTemplate.convertAndSend(QUEUE_244019, new Notification(tmlUsrEmail, "Opłaty uregulowane", "Opłaty za mieszkanie ul. "+tmpFlat.getBuilding().getStreet()+" nr. "+tmpFlat.getBuilding().getBuildingNumber()+"/"+tmpFlat.getFlatNumber()+" za okres: "+flatCharges.getData().getMonth().getValue()+" "+flatCharges.getData().getYear()+" zostały uregulowane"));
                     }
 
                 }

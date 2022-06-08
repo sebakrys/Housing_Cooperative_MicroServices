@@ -18,7 +18,8 @@ public class EMailService {
     public void sendNotificationMessage(String to, String subject, String text) {
         //...
         SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom("noreply@Spoldzielnia.pl");
+        //message.setFrom("noreply@Spoldzielnia.pl");
+        message.setFrom("skrysmailspring@zohomail.eu");
         message.setTo(to);
         message.setSubject(subject);
         message.setText(text);

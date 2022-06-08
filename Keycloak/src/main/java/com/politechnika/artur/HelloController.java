@@ -40,7 +40,7 @@ public class HelloController {
     @GetMapping("/moderator")
     @RolesAllowed("MANAGER")
     public String isModerator() {
-        return "MODERATOR";
+        return "MANAGER";
     }
 
     @GetMapping("/info")

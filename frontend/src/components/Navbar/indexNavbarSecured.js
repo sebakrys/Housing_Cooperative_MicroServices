@@ -11,6 +11,12 @@ const NavbarSecured = () => {
         <>
             <Nav>
                 <NavMenu>
+                    <NavLink to="/logout" activeStyle>
+                        Logout
+                    </NavLink>
+                    <NavLink to="/user" activeStyle>
+                        User
+                    </NavLink>
                     <NavLink to="/register" activeStyle>
                         Register
                     </NavLink>

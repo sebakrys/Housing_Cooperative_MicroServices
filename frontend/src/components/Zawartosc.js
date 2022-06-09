@@ -1,6 +1,8 @@
 import React from "react";
 import IndexNavbarSecured from "./Navbar/indexNavbarSecured";
-import {Route, Routes} from "react-router-dom";
+
+import {BrowserRouter as Router, Routes, Route, Link}
+    from 'react-router-dom';
 import LoginPage from "../pages/LoginPage";
 import Welcome from "../pages/Welcome";
 import RegisterPage from "../pages/RegisterPage";
@@ -9,6 +11,10 @@ import AddBuildingPage from "../pages/AddBuildingPage";
 import Navbar from "./Navbar";
 import Secured from "../pages/Secured";
 import Keycloak from "keycloak-js";
+import UserInfo from "./UserInfo";
+import Logout from "./Logout";
+import {useNavigate} from "react-router";
+
 
 
 
@@ -17,10 +23,12 @@ class Zawartosc extends React.Component{
     static sToken = null;
     static sAdmin = false;
 
+
     constructor(props) {
         super(props);
         this.state = { keycloak: null, authenticated: false };
         this.authInProg = false;
+
     }
 
 
@@ -51,14 +59,33 @@ class Zawartosc extends React.Component{
                 const roles = this.state.keycloak.tokenParsed.realm_access.roles;
                 const found = roles.indexOf("ADMIN")
                 console.log("Found: "+found)
+                console.log("KEYCLOACK USER: "+JSON.stringify(this.state.keycloak));
                 Zawartosc.sToken = this.state.keycloak.token;
                 if(found!=(-1)){
                     Zawartosc.sAdmin = true;
                     return (
                         <div>
-                            <IndexNavbarSecured/>
+                            <IndexNavbarSecured />
+                            <Link to="http://localhost:8080/realms/resourceServer/protocol/openid-connect/logout" className="btn btn-primary">Sign up</Link>
+                            <button
+                                type="button"
+                                className="text-blue-800"
+                                onClick={() => {
+                                    this.state.keycloak.logout()
+                                }}
+                            >
+                                Logout
+                            </button>
+                            <a href="http://localhost:8080/realms/resourceServer/protocol/openid-connect/logout"><button>Click</button></a>
+
                             <Routes>
+                                <Route path='/logout' component={() => {
+                                    alert("kupa");
+                                    window.location.href = 'http://localhost:8080/realms/resourceServer/protocol/openid-connect/logout';
+                                    return null;
+                                }}/>
                                 <Route exact path='/' exact element={<Welcome/>}/>
+                                <Route path="/user" element={<UserInfo keycloak={this.state.keycloak}/>}/>
                                 <Route path="/public" element={<Welcome/>}/>
                                 <Route path="/secured" element={<Secured/>}/>
                                 <Route path='/login' element={<LoginPage/>}/>
@@ -72,13 +99,14 @@ class Zawartosc extends React.Component{
                     console.log("Nie ADMIN")
                     return (
                         <div>
-                            <Navbar/>
+                            <Navbar keycloak={this.state.keycloak}/>
                             <div>
                                 Unable to authenticate as Admin!
                             </div>
                             <Routes>
                                 <Route exact path='/' exact element={<Welcome/>}/>
                                 <Route path="/public" element={<Welcome/>}/>
+                                <Route path="/user" element={<UserInfo keycloak={this.state.keycloak}/>}/>
                             </Routes>
                         </div>
 

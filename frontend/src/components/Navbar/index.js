@@ -14,6 +14,9 @@ const Navbar = () => {
                     <NavLink to="/logout" activeStyle>
                         Logout
                     </NavLink>
+                    <NavLink to="/user" activeStyle>
+                        User
+                    </NavLink>
                     <NavLink to="/public" activeStyle>
                         Public
                     </NavLink>

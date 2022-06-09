@@ -11,9 +11,9 @@ const Navbar = () => {
         <>
             <Nav>
                 <NavMenu>
-                    <NavLink to="/logout" activeStyle>
+                    <a className="btn btn-outline-danger" href="http://localhost:8080/realms/resourceServer/protocol/openid-connect/logout">
                         Logout
-                    </NavLink>
+                    </a>
                     <NavLink to="/user" activeStyle>
                         User
                     </NavLink>

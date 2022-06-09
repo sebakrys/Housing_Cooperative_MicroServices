@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="Backup nie dzialajacego frontu">
+    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="backup front logout">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Navbar/NavbarElements.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Navbar/NavbarElements.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/components/Navbar/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Navbar/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/components/Navbar/indexNavbarSecured.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Navbar/indexNavbarSecured.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/UserInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/UserInfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/components/Zawartosc.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Zawartosc.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -455,7 +457,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654718260115</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="backup front logout">
+      <created>1654786728860</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1654786728860</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -514,6 +523,7 @@
     <MESSAGE value="First Authentication frontend" />
     <MESSAGE value="Front z keycloackiem - rejestracja usera, tylko ze brzydki efekt, ale dziala" />
     <MESSAGE value="Front z keycloackiem - Dziala pokazywanie budynkow" />
-    <option name="LAST_COMMIT_MESSAGE" value="Front z keycloackiem - Dziala pokazywanie budynkow" />
+    <MESSAGE value="backup front logout" />
+    <option name="LAST_COMMIT_MESSAGE" value="backup front logout" />
   </component>
 </project>

@@ -66,24 +66,7 @@ class Zawartosc extends React.Component{
                     return (
                         <div>
                             <IndexNavbarSecured />
-                            <Link to="http://localhost:8080/realms/resourceServer/protocol/openid-connect/logout" className="btn btn-primary">Sign up</Link>
-                            <button
-                                type="button"
-                                className="text-blue-800"
-                                onClick={() => {
-                                    this.state.keycloak.logout()
-                                }}
-                            >
-                                Logout
-                            </button>
-                            <a href="http://localhost:8080/realms/resourceServer/protocol/openid-connect/logout"><button>Click</button></a>
-
                             <Routes>
-                                <Route path='/logout' component={() => {
-                                    alert("kupa");
-                                    window.location.href = 'http://localhost:8080/realms/resourceServer/protocol/openid-connect/logout';
-                                    return null;
-                                }}/>
                                 <Route exact path='/' exact element={<Welcome/>}/>
                                 <Route path="/user" element={<UserInfo keycloak={this.state.keycloak}/>}/>
                                 <Route path="/public" element={<Welcome/>}/>

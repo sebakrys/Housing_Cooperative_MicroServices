@@ -7,10 +7,10 @@ class UserInfo extends Component {
         this.state = {
             name: "",
             email: "",
-            id: ""
+            username: ""
         };
         this.props.keycloak.loadUserInfo().then(userInfo => {
-            this.setState({name: userInfo.name, email: userInfo.email, id: userInfo.sub})
+            this.setState({name: userInfo.name, email: userInfo.email, username: userInfo.preferred_username})
         });
     }
 
@@ -19,7 +19,7 @@ class UserInfo extends Component {
             <div className="UserInfo">
                 <p>Name: {this.state.name}</p>
                 <p>Email: {this.state.email}</p>
-                <p>ID: {this.state.id}</p>
+                <p>Login: {this.state.username}</p>
             </div>
         );
     }

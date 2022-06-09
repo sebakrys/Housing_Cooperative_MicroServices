@@ -1,0 +1,562 @@
+{
+	"info": {
+		"_postman_id": "f132af34-8b0c-4d8f-b105-d34b0e0bffb6",
+		"name": "BudMiesz",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19888710"
+	},
+	"item": [
+		{
+			"name": "addBuilding gateway",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJaSmZvMmd6TTJZZHQ3YjloRUdmLVBDb3lleko2cVVVZmtTbWZXemtWV0xzIn0.eyJleHAiOjE2NTQ2NjM5MjgsImlhdCI6MTY1NDYyNzkyOCwianRpIjoiNmRhMDMyODAtMjE2MC00NjA5LWE0N2ItOTgzYTk4OGJiZTdjIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9yZXNvdXJjZVNlcnZlciIsImF1ZCI6WyJyZWFsbS1tYW5hZ2VtZW50IiwiYWNjb3VudCJdLCJzdWIiOiJhOGE3MWI0ZS1hN2JlLTRlNDMtOTNlYS0wM2U1MDI2MWEwMmUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJuc2FpLWJhY2tlbmQiLCJzZXNzaW9uX3N0YXRlIjoiYmViMTIyMzEtOTc2Ny00ODc2LWE5OGYtMTA0NzY5OWY2N2M0IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsIk1BTkFHRVIiLCJBRE1JTiIsInVtYV9hdXRob3JpemF0aW9uIiwiVVNFUiIsImRlZmF1bHQtcm9sZXMtc3BvbGR6aWVsbmlhIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsicmVhbG0tbWFuYWdlbWVudCI6eyJyb2xlcyI6WyJ2aWV3LWlkZW50aXR5LXByb3ZpZGVycyIsInZpZXctcmVhbG0iLCJtYW5hZ2UtaWRlbnRpdHktcHJvdmlkZXJzIiwiaW1wZXJzb25hdGlvbiIsInJlYWxtLWFkbWluIiwiY3JlYXRlLWNsaWVudCIsIm1hbmFnZS11c2VycyIsInF1ZXJ5LXJlYWxtcyIsInZpZXctYXV0aG9yaXphdGlvbiIsInF1ZXJ5LWNsaWVudHMiLCJxdWVyeS11c2VycyIsIm1hbmFnZS1ldmVudHMiLCJtYW5hZ2UtcmVhbG0iLCJ2aWV3LWV2ZW50cyIsInZpZXctdXNlcnMiLCJ2aWV3LWNsaWVudHMiLCJtYW5hZ2UtYXV0aG9yaXphdGlvbiIsIm1hbmFnZS1jbGllbnRzIiwicXVlcnktZ3JvdXBzIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50Iiwidmlldy1hcHBsaWNhdGlvbnMiLCJ2aWV3LWNvbnNlbnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsImRlbGV0ZS1hY2NvdW50IiwibWFuYWdlLWNvbnNlbnQiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJzaWQiOiJiZWIxMjIzMS05NzY3LTQ4NzYtYTk4Zi0xMDQ3Njk5ZjY3YzQiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWRtaW5layJ9.Tnc-kK4gdsx5xuwrwdo3PW6SzXQICulBR8yoJzGaq6K4aGJlkCqdBF_rszlcZ6KJiTms6_aLyMcEjC6rHmcvyy5BG21aEGm0r8hwdivQujoZt8HlTteBJNso5VuxX3weRuu8pzUUlJr5v4nOcCy3sCpeecTWDppu91zMZltpFpD4Qttou7Wl8soWxqUxYxNP7Ly2oOjYUGy4YYg63DySNXvQd7AO7EWbYSeQ5SYxphzQuXZ1GHQ8yiFFGA-tmU3e8_hVgFZlaDyqZ1nw2mjBd229lrhP072W9-AZaoNWtBZyGopcayURY34BPjOMAqVbSS2zQzO4vXradfwFmC0ahg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nazwa\":\"Opolanin Od Adminka222\" ,\r\n    \"city\":\"Opole\" ,\r\n    \"street\":\"Kozielska\" ,\r\n    \"buildingNumber\":\"22\",\r\n    \"postalCode\":\"11-211\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/building-flat-service/addNewBuilding",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"building-flat-service",
+						"addNewBuilding"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateBuilding gateway",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJaSmZvMmd6TTJZZHQ3YjloRUdmLVBDb3lleko2cVVVZmtTbWZXemtWV0xzIn0.eyJleHAiOjE2NTQ2NjM5MjgsImlhdCI6MTY1NDYyNzkyOCwianRpIjoiNmRhMDMyODAtMjE2MC00NjA5LWE0N2ItOTgzYTk4OGJiZTdjIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9yZXNvdXJjZVNlcnZlciIsImF1ZCI6WyJyZWFsbS1tYW5hZ2VtZW50IiwiYWNjb3VudCJdLCJzdWIiOiJhOGE3MWI0ZS1hN2JlLTRlNDMtOTNlYS0wM2U1MDI2MWEwMmUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJuc2FpLWJhY2tlbmQiLCJzZXNzaW9uX3N0YXRlIjoiYmViMTIyMzEtOTc2Ny00ODc2LWE5OGYtMTA0NzY5OWY2N2M0IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsIk1BTkFHRVIiLCJBRE1JTiIsInVtYV9hdXRob3JpemF0aW9uIiwiVVNFUiIsImRlZmF1bHQtcm9sZXMtc3BvbGR6aWVsbmlhIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsicmVhbG0tbWFuYWdlbWVudCI6eyJyb2xlcyI6WyJ2aWV3LWlkZW50aXR5LXByb3ZpZGVycyIsInZpZXctcmVhbG0iLCJtYW5hZ2UtaWRlbnRpdHktcHJvdmlkZXJzIiwiaW1wZXJzb25hdGlvbiIsInJlYWxtLWFkbWluIiwiY3JlYXRlLWNsaWVudCIsIm1hbmFnZS11c2VycyIsInF1ZXJ5LXJlYWxtcyIsInZpZXctYXV0aG9yaXphdGlvbiIsInF1ZXJ5LWNsaWVudHMiLCJxdWVyeS11c2VycyIsIm1hbmFnZS1ldmVudHMiLCJtYW5hZ2UtcmVhbG0iLCJ2aWV3LWV2ZW50cyIsInZpZXctdXNlcnMiLCJ2aWV3LWNsaWVudHMiLCJtYW5hZ2UtYXV0aG9yaXphdGlvbiIsIm1hbmFnZS1jbGllbnRzIiwicXVlcnktZ3JvdXBzIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50Iiwidmlldy1hcHBsaWNhdGlvbnMiLCJ2aWV3LWNvbnNlbnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsImRlbGV0ZS1hY2NvdW50IiwibWFuYWdlLWNvbnNlbnQiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJzaWQiOiJiZWIxMjIzMS05NzY3LTQ4NzYtYTk4Zi0xMDQ3Njk5ZjY3YzQiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWRtaW5layJ9.Tnc-kK4gdsx5xuwrwdo3PW6SzXQICulBR8yoJzGaq6K4aGJlkCqdBF_rszlcZ6KJiTms6_aLyMcEjC6rHmcvyy5BG21aEGm0r8hwdivQujoZt8HlTteBJNso5VuxX3weRuu8pzUUlJr5v4nOcCy3sCpeecTWDppu91zMZltpFpD4Qttou7Wl8soWxqUxYxNP7Ly2oOjYUGy4YYg63DySNXvQd7AO7EWbYSeQ5SYxphzQuXZ1GHQ8yiFFGA-tmU3e8_hVgFZlaDyqZ1nw2mjBd229lrhP072W9-AZaoNWtBZyGopcayURY34BPjOMAqVbSS2zQzO4vXradfwFmC0ahg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 88,\r\n    \"nazwa\": \"Opolanin-EDIT ADMIN\",\r\n    \"city\": \"Opole\",\r\n    \"street\": \"Kozielska\",\r\n    \"buildingNumber\": \"22\",\r\n    \"postalCode\": \"11-211\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/building-flat-service/updateBuilding",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"building-flat-service",
+						"updateBuilding"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBuildings gateway",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJaSmZvMmd6TTJZZHQ3YjloRUdmLVBDb3lleko2cVVVZmtTbWZXemtWV0xzIn0.eyJleHAiOjE2NTQ2NjU5MTcsImlhdCI6MTY1NDYyOTkxNywianRpIjoiNTkyYmQwZmQtMzE4My00MDQ3LWIyYjYtNGQ5NWU3MzM0MDFhIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9yZXNvdXJjZVNlcnZlciIsImF1ZCI6WyJyZWFsbS1tYW5hZ2VtZW50IiwiYWNjb3VudCJdLCJzdWIiOiJhOGE3MWI0ZS1hN2JlLTRlNDMtOTNlYS0wM2U1MDI2MWEwMmUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJuc2FpLWJhY2tlbmQiLCJzZXNzaW9uX3N0YXRlIjoiOGZjMjcwOGYtNjUyZi00MDIxLWFiNzQtMzExOThjMDI4YmRkIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsIk1BTkFHRVIiLCJBRE1JTiIsInVtYV9hdXRob3JpemF0aW9uIiwiVVNFUiIsImRlZmF1bHQtcm9sZXMtc3BvbGR6aWVsbmlhIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsicmVhbG0tbWFuYWdlbWVudCI6eyJyb2xlcyI6WyJ2aWV3LWlkZW50aXR5LXByb3ZpZGVycyIsInZpZXctcmVhbG0iLCJtYW5hZ2UtaWRlbnRpdHktcHJvdmlkZXJzIiwiaW1wZXJzb25hdGlvbiIsInJlYWxtLWFkbWluIiwiY3JlYXRlLWNsaWVudCIsIm1hbmFnZS11c2VycyIsInF1ZXJ5LXJlYWxtcyIsInZpZXctYXV0aG9yaXphdGlvbiIsInF1ZXJ5LWNsaWVudHMiLCJxdWVyeS11c2VycyIsIm1hbmFnZS1ldmVudHMiLCJtYW5hZ2UtcmVhbG0iLCJ2aWV3LWV2ZW50cyIsInZpZXctdXNlcnMiLCJ2aWV3LWNsaWVudHMiLCJtYW5hZ2UtYXV0aG9yaXphdGlvbiIsIm1hbmFnZS1jbGllbnRzIiwicXVlcnktZ3JvdXBzIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50Iiwidmlldy1hcHBsaWNhdGlvbnMiLCJ2aWV3LWNvbnNlbnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsImRlbGV0ZS1hY2NvdW50IiwibWFuYWdlLWNvbnNlbnQiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJzaWQiOiI4ZmMyNzA4Zi02NTJmLTQwMjEtYWI3NC0zMTE5OGMwMjhiZGQiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWRtaW5layJ9.wMZxbAMUKGvQQ7X3my_Lu70ytQ2oeQCRi39DKL-CorjIeyTl3hRw6vYZRQ_Wsbm2hO52KETMlG3O0BOwW8fMtv-Euy833iukIpTXR9_Vykaub0WDHriE194vfdEpDSivS6jw8q8IH3h4BXp46UipZ4ttlya6PmH1oxZU0YoFzOE_whmv1iYOd4XLbNkhleHrrKm-7C9DV966qIPwq0TQnzp2SdhxDwCyMnlQwQCZ_PoWFmSv2Zu-3wJ00MPSD4273uCfthU-GBVxWgRhbBNXknER84e4HT7MRqGnRnwo4cw6XQNq-t01NUQO8Grq_MMFCZQ1mfDKUDQt3gORwHRQig",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/building-flat-service/getBuildings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"building-flat-service",
+						"getBuildings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBuildingById gateway",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJaSmZvMmd6TTJZZHQ3YjloRUdmLVBDb3lleko2cVVVZmtTbWZXemtWV0xzIn0.eyJleHAiOjE2NTQ2NjU5MTcsImlhdCI6MTY1NDYyOTkxNywianRpIjoiNTkyYmQwZmQtMzE4My00MDQ3LWIyYjYtNGQ5NWU3MzM0MDFhIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9yZXNvdXJjZVNlcnZlciIsImF1ZCI6WyJyZWFsbS1tYW5hZ2VtZW50IiwiYWNjb3VudCJdLCJzdWIiOiJhOGE3MWI0ZS1hN2JlLTRlNDMtOTNlYS0wM2U1MDI2MWEwMmUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJuc2FpLWJhY2tlbmQiLCJzZXNzaW9uX3N0YXRlIjoiOGZjMjcwOGYtNjUyZi00MDIxLWFiNzQtMzExOThjMDI4YmRkIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsIk1BTkFHRVIiLCJBRE1JTiIsInVtYV9hdXRob3JpemF0aW9uIiwiVVNFUiIsImRlZmF1bHQtcm9sZXMtc3BvbGR6aWVsbmlhIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsicmVhbG0tbWFuYWdlbWVudCI6eyJyb2xlcyI6WyJ2aWV3LWlkZW50aXR5LXByb3ZpZGVycyIsInZpZXctcmVhbG0iLCJtYW5hZ2UtaWRlbnRpdHktcHJvdmlkZXJzIiwiaW1wZXJzb25hdGlvbiIsInJlYWxtLWFkbWluIiwiY3JlYXRlLWNsaWVudCIsIm1hbmFnZS11c2VycyIsInF1ZXJ5LXJlYWxtcyIsInZpZXctYXV0aG9yaXphdGlvbiIsInF1ZXJ5LWNsaWVudHMiLCJxdWVyeS11c2VycyIsIm1hbmFnZS1ldmVudHMiLCJtYW5hZ2UtcmVhbG0iLCJ2aWV3LWV2ZW50cyIsInZpZXctdXNlcnMiLCJ2aWV3LWNsaWVudHMiLCJtYW5hZ2UtYXV0aG9yaXphdGlvbiIsIm1hbmFnZS1jbGllbnRzIiwicXVlcnktZ3JvdXBzIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50Iiwidmlldy1hcHBsaWNhdGlvbnMiLCJ2aWV3LWNvbnNlbnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsImRlbGV0ZS1hY2NvdW50IiwibWFuYWdlLWNvbnNlbnQiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJzaWQiOiI4ZmMyNzA4Zi02NTJmLTQwMjEtYWI3NC0zMTE5OGMwMjhiZGQiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWRtaW5layJ9.wMZxbAMUKGvQQ7X3my_Lu70ytQ2oeQCRi39DKL-CorjIeyTl3hRw6vYZRQ_Wsbm2hO52KETMlG3O0BOwW8fMtv-Euy833iukIpTXR9_Vykaub0WDHriE194vfdEpDSivS6jw8q8IH3h4BXp46UipZ4ttlya6PmH1oxZU0YoFzOE_whmv1iYOd4XLbNkhleHrrKm-7C9DV966qIPwq0TQnzp2SdhxDwCyMnlQwQCZ_PoWFmSv2Zu-3wJ00MPSD4273uCfthU-GBVxWgRhbBNXknER84e4HT7MRqGnRnwo4cw6XQNq-t01NUQO8Grq_MMFCZQ1mfDKUDQt3gORwHRQig",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/building-flat-service/getBuilding/88",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"building-flat-service",
+						"getBuilding",
+						"88"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBuildingFlats gateway",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/building-flat-service/getBuildingFlats/23",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"building-flat-service",
+						"getBuildingFlats",
+						"23"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteBuilding gateway",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJaSmZvMmd6TTJZZHQ3YjloRUdmLVBDb3lleko2cVVVZmtTbWZXemtWV0xzIn0.eyJleHAiOjE2NTQ4MzQ4MjUsImlhdCI6MTY1NDc5ODgyNSwianRpIjoiNmE4ZDJiYTgtZjZjZC00MDIxLTk2NmMtZDFhMDcyYzEyZjE0IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9yZXNvdXJjZVNlcnZlciIsImF1ZCI6WyJyZWFsbS1tYW5hZ2VtZW50IiwiYWNjb3VudCJdLCJzdWIiOiJhOGE3MWI0ZS1hN2JlLTRlNDMtOTNlYS0wM2U1MDI2MWEwMmUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJuc2FpLWJhY2tlbmQiLCJzZXNzaW9uX3N0YXRlIjoiZDJjMTgwZmMtYjdmNy00NDJiLTkxYmMtZTAxYzg5MmQwNWM1IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiTUFOQUdFUiIsIkFETUlOIiwidW1hX2F1dGhvcml6YXRpb24iLCJVU0VSIiwiZGVmYXVsdC1yb2xlcy1zcG9sZHppZWxuaWEiXX0sInJlc291cmNlX2FjY2VzcyI6eyJyZWFsbS1tYW5hZ2VtZW50Ijp7InJvbGVzIjpbInZpZXctaWRlbnRpdHktcHJvdmlkZXJzIiwidmlldy1yZWFsbSIsIm1hbmFnZS1pZGVudGl0eS1wcm92aWRlcnMiLCJpbXBlcnNvbmF0aW9uIiwicmVhbG0tYWRtaW4iLCJjcmVhdGUtY2xpZW50IiwibWFuYWdlLXVzZXJzIiwicXVlcnktcmVhbG1zIiwidmlldy1hdXRob3JpemF0aW9uIiwicXVlcnktY2xpZW50cyIsInF1ZXJ5LXVzZXJzIiwibWFuYWdlLWV2ZW50cyIsIm1hbmFnZS1yZWFsbSIsInZpZXctZXZlbnRzIiwidmlldy11c2VycyIsInZpZXctY2xpZW50cyIsIm1hbmFnZS1hdXRob3JpemF0aW9uIiwibWFuYWdlLWNsaWVudHMiLCJxdWVyeS1ncm91cHMiXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJ2aWV3LWFwcGxpY2F0aW9ucyIsInZpZXctY29uc2VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwiZGVsZXRlLWFjY291bnQiLCJtYW5hZ2UtY29uc2VudCIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6ImQyYzE4MGZjLWI3ZjctNDQyYi05MWJjLWUwMWM4OTJkMDVjNSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiQWRhbSBBZG1pbmVrIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWRtaW5layIsImdpdmVuX25hbWUiOiJBZGFtIiwiZmFtaWx5X25hbWUiOiJBZG1pbmVrIiwiZW1haWwiOiJlbWFpbC5hZG1pbmthQGFkbWluZWsuZXUifQ.P_CeRHur_q4RgR2a7U6A6I4-cS79pqjOfSF5dQY76qYoXnX7YIOo7vr_3ewaItN1dbDbtg63HjlJFzzE5BbLQ6qFQq7DwjL0RTFPrEi89WsYLbsyIrXv6Axm2HWka0y3fj4Y82MOFwZ7DxgWHu3AySHI0-u2tI2tju1yLzOzTwS297mXaKIY3kCcYTY4pW2FlVxqBM3agEjEBYJHlyzXQXl4pmdNWR3tvi79OwSoG9z0F7Fe--u_W2fK6qC92vcUAn5whzkl5AcIAMeSvPzLRwZ2bzUnhcmv-mUT463rM2deOPBDzSsUF5PRN8fTRCVNSvUE_DNe0UHFXFWXg0pZng",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/building-flat-service/deleteBuilding/88",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"building-flat-service",
+						"deleteBuilding",
+						"88"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addFlat gateway",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJaSmZvMmd6TTJZZHQ3YjloRUdmLVBDb3lleko2cVVVZmtTbWZXemtWV0xzIn0.eyJleHAiOjE2NTQ2Njc1MTQsImlhdCI6MTY1NDYzMTUxNCwianRpIjoiMGIzMWFmNTktNDEyMC00ZWVkLWIxZTAtZWI3YjA0OWU5M2IxIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9yZXNvdXJjZVNlcnZlciIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJjNGU3MTZlNy02MDRjLTQ0NDMtOTQxNi0wYzJhYzRjYzY5YzkiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJuc2FpLWJhY2tlbmQiLCJzZXNzaW9uX3N0YXRlIjoiNWQ1YjRjYTEtMDgxMC00YmUzLThjNWEtOTJmNzlmODc3N2U5IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsIk1BTkFHRVIiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIlVTRVIiLCJkZWZhdWx0LXJvbGVzLXNwb2xkemllbG5pYSJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6IjVkNWI0Y2ExLTA4MTAtNGJlMy04YzVhLTkyZjc5Zjg3NzdlOSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IlNlYmEgS3J5cyIsInByZWZlcnJlZF91c2VybmFtZSI6InNlYmFrcnlzIiwiZ2l2ZW5fbmFtZSI6IlNlYmEiLCJmYW1pbHlfbmFtZSI6IktyeXMiLCJlbWFpbCI6InNlYmFzdGlhbnBrcnlzQGdtYWlsLmNvbSJ9.B9DjJ1axUVc9W5_ntTLZUCQvyt_Vzwcv7vPmb4YBZ6VTrUqQ-N3pZ7sZT2BCG3zHPAFNPMfkHg13eucPU6tPbmgkmoHspR2mYKd40ODp_1ySsYkOtOPIRlVxr8IX7Iza2WDmcwK2aoxvjoLRBx44suFFJ8t4BWlPKQ86iT9-tO_2I3ftqVka5FfBDKSlACuLiRT76NxiGpImHM3ZsoymHsC33g3Xah3Pni2Ba4BC3kBTrwBlWKKL9clY8wr6-27sIrfeyCb0oYoMCrv9Yk3KBpZLR9_nNUcPu5OSFQvqx0mJVIF47c8-uoYXOf9wVrdiL2TlnU4jOVzd9kKj0OaEJw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"building\":{\r\n        \"id\":\"88\"} ,\r\n    \"flatNumber\":\"1Numer 5Mieszkania1_dodal manager\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/building-flat-service/addNewFlat",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"building-flat-service",
+						"addNewFlat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateFlat gateway",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJaSmZvMmd6TTJZZHQ3YjloRUdmLVBDb3lleko2cVVVZmtTbWZXemtWV0xzIn0.eyJleHAiOjE2NTQ2Njc1MTQsImlhdCI6MTY1NDYzMTUxNCwianRpIjoiMGIzMWFmNTktNDEyMC00ZWVkLWIxZTAtZWI3YjA0OWU5M2IxIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9yZXNvdXJjZVNlcnZlciIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJjNGU3MTZlNy02MDRjLTQ0NDMtOTQxNi0wYzJhYzRjYzY5YzkiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJuc2FpLWJhY2tlbmQiLCJzZXNzaW9uX3N0YXRlIjoiNWQ1YjRjYTEtMDgxMC00YmUzLThjNWEtOTJmNzlmODc3N2U5IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsIk1BTkFHRVIiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIlVTRVIiLCJkZWZhdWx0LXJvbGVzLXNwb2xkemllbG5pYSJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6IjVkNWI0Y2ExLTA4MTAtNGJlMy04YzVhLTkyZjc5Zjg3NzdlOSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IlNlYmEgS3J5cyIsInByZWZlcnJlZF91c2VybmFtZSI6InNlYmFrcnlzIiwiZ2l2ZW5fbmFtZSI6IlNlYmEiLCJmYW1pbHlfbmFtZSI6IktyeXMiLCJlbWFpbCI6InNlYmFzdGlhbnBrcnlzQGdtYWlsLmNvbSJ9.B9DjJ1axUVc9W5_ntTLZUCQvyt_Vzwcv7vPmb4YBZ6VTrUqQ-N3pZ7sZT2BCG3zHPAFNPMfkHg13eucPU6tPbmgkmoHspR2mYKd40ODp_1ySsYkOtOPIRlVxr8IX7Iza2WDmcwK2aoxvjoLRBx44suFFJ8t4BWlPKQ86iT9-tO_2I3ftqVka5FfBDKSlACuLiRT76NxiGpImHM3ZsoymHsC33g3Xah3Pni2Ba4BC3kBTrwBlWKKL9clY8wr6-27sIrfeyCb0oYoMCrv9Yk3KBpZLR9_nNUcPu5OSFQvqx0mJVIF47c8-uoYXOf9wVrdiL2TlnU4jOVzd9kKj0OaEJw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"89\",\r\n    \"building\":{\r\n        \"id\":\"88\"} ,\r\n    \"flatNumber\":\"Numer Mieszkania update\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/building-flat-service/updateFlat",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"building-flat-service",
+						"updateFlat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllFlat gateway",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/building-flat-service/getAllFlat",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"building-flat-service",
+						"getAllFlat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getFlat gateway",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJaSmZvMmd6TTJZZHQ3YjloRUdmLVBDb3lleko2cVVVZmtTbWZXemtWV0xzIn0.eyJleHAiOjE2NTQ2Njc1MTQsImlhdCI6MTY1NDYzMTUxNCwianRpIjoiMGIzMWFmNTktNDEyMC00ZWVkLWIxZTAtZWI3YjA0OWU5M2IxIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9yZXNvdXJjZVNlcnZlciIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJjNGU3MTZlNy02MDRjLTQ0NDMtOTQxNi0wYzJhYzRjYzY5YzkiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJuc2FpLWJhY2tlbmQiLCJzZXNzaW9uX3N0YXRlIjoiNWQ1YjRjYTEtMDgxMC00YmUzLThjNWEtOTJmNzlmODc3N2U5IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsIk1BTkFHRVIiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIlVTRVIiLCJkZWZhdWx0LXJvbGVzLXNwb2xkemllbG5pYSJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6IjVkNWI0Y2ExLTA4MTAtNGJlMy04YzVhLTkyZjc5Zjg3NzdlOSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IlNlYmEgS3J5cyIsInByZWZlcnJlZF91c2VybmFtZSI6InNlYmFrcnlzIiwiZ2l2ZW5fbmFtZSI6IlNlYmEiLCJmYW1pbHlfbmFtZSI6IktyeXMiLCJlbWFpbCI6InNlYmFzdGlhbnBrcnlzQGdtYWlsLmNvbSJ9.B9DjJ1axUVc9W5_ntTLZUCQvyt_Vzwcv7vPmb4YBZ6VTrUqQ-N3pZ7sZT2BCG3zHPAFNPMfkHg13eucPU6tPbmgkmoHspR2mYKd40ODp_1ySsYkOtOPIRlVxr8IX7Iza2WDmcwK2aoxvjoLRBx44suFFJ8t4BWlPKQ86iT9-tO_2I3ftqVka5FfBDKSlACuLiRT76NxiGpImHM3ZsoymHsC33g3Xah3Pni2Ba4BC3kBTrwBlWKKL9clY8wr6-27sIrfeyCb0oYoMCrv9Yk3KBpZLR9_nNUcPu5OSFQvqx0mJVIF47c8-uoYXOf9wVrdiL2TlnU4jOVzd9kKj0OaEJw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/building-flat-service/getFlat/89",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"building-flat-service",
+						"getFlat",
+						"89"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getFlatFlatCharges gateway",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJaSmZvMmd6TTJZZHQ3YjloRUdmLVBDb3lleko2cVVVZmtTbWZXemtWV0xzIn0.eyJleHAiOjE2NTQ2Njc1MTQsImlhdCI6MTY1NDYzMTUxNCwianRpIjoiMGIzMWFmNTktNDEyMC00ZWVkLWIxZTAtZWI3YjA0OWU5M2IxIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9yZXNvdXJjZVNlcnZlciIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJjNGU3MTZlNy02MDRjLTQ0NDMtOTQxNi0wYzJhYzRjYzY5YzkiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJuc2FpLWJhY2tlbmQiLCJzZXNzaW9uX3N0YXRlIjoiNWQ1YjRjYTEtMDgxMC00YmUzLThjNWEtOTJmNzlmODc3N2U5IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsIk1BTkFHRVIiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIlVTRVIiLCJkZWZhdWx0LXJvbGVzLXNwb2xkemllbG5pYSJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6IjVkNWI0Y2ExLTA4MTAtNGJlMy04YzVhLTkyZjc5Zjg3NzdlOSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IlNlYmEgS3J5cyIsInByZWZlcnJlZF91c2VybmFtZSI6InNlYmFrcnlzIiwiZ2l2ZW5fbmFtZSI6IlNlYmEiLCJmYW1pbHlfbmFtZSI6IktyeXMiLCJlbWFpbCI6InNlYmFzdGlhbnBrcnlzQGdtYWlsLmNvbSJ9.B9DjJ1axUVc9W5_ntTLZUCQvyt_Vzwcv7vPmb4YBZ6VTrUqQ-N3pZ7sZT2BCG3zHPAFNPMfkHg13eucPU6tPbmgkmoHspR2mYKd40ODp_1ySsYkOtOPIRlVxr8IX7Iza2WDmcwK2aoxvjoLRBx44suFFJ8t4BWlPKQ86iT9-tO_2I3ftqVka5FfBDKSlACuLiRT76NxiGpImHM3ZsoymHsC33g3Xah3Pni2Ba4BC3kBTrwBlWKKL9clY8wr6-27sIrfeyCb0oYoMCrv9Yk3KBpZLR9_nNUcPu5OSFQvqx0mJVIF47c8-uoYXOf9wVrdiL2TlnU4jOVzd9kKj0OaEJw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/building-flat-service/getFlatFlatCharges/89",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"building-flat-service",
+						"getFlatFlatCharges",
+						"89"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteFlat gateway",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJaSmZvMmd6TTJZZHQ3YjloRUdmLVBDb3lleko2cVVVZmtTbWZXemtWV0xzIn0.eyJleHAiOjE2NTQ4MzMzMjcsImlhdCI6MTY1NDc5NzMyNywianRpIjoiZmQzOWZhNzMtNmE0Yi00OWI5LTk4M2UtMzNjYmE5ZmVjODE1IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9yZXNvdXJjZVNlcnZlciIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJjNGU3MTZlNy02MDRjLTQ0NDMtOTQxNi0wYzJhYzRjYzY5YzkiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJuc2FpLWJhY2tlbmQiLCJzZXNzaW9uX3N0YXRlIjoiNTczNWEwMGQtM2MxNy00OWVkLWJkYjUtODQ5MzQ3MDc0YmFmIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiTUFOQUdFUiIsInVtYV9hdXRob3JpemF0aW9uIiwiVVNFUiIsImRlZmF1bHQtcm9sZXMtc3BvbGR6aWVsbmlhIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwic2lkIjoiNTczNWEwMGQtM2MxNy00OWVkLWJkYjUtODQ5MzQ3MDc0YmFmIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJuYW1lIjoiU2ViYSBLcnlzIiwicHJlZmVycmVkX3VzZXJuYW1lIjoic2ViYWtyeXMiLCJnaXZlbl9uYW1lIjoiU2ViYSIsImZhbWlseV9uYW1lIjoiS3J5cyIsImVtYWlsIjoic2ViYXN0aWFucGtyeXNAZ21haWwuY29tIn0.nB5ytaTwpsunEGuvNASCgczIHvR8r11mgefpjYF7E8t0RBzDNrXnogS-1upl7QvKUYBGpY9dfij1S5XxcGxHao0b_8ZgV79OyR5yUvZpA_EZsE-euscNC0IlGSjqhc0yZlUYN-0bcWX4xdNufssfOuyCYfyKX_sX0KzmlL0ph5kDLb92oR2FtzmNEJ1Dv8fzNXZGTYBMNbjuL9taHLhrlnsD3rSrM2OEm6nRoolW_gy-v-tKXFKnvBTi7tAGjPsxs6AplTAr4HnBU-9wlRmxaDD2eL0K5iSp3MIL8Vq3JyyVDQ4eUBRKp95DJZfzA_vFfHT4XHvFTND_KjI7l-aWdw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/building-flat-service/deleteFlat/89",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"building-flat-service",
+						"deleteFlat",
+						"89"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addFlatCharges gateway",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJaSmZvMmd6TTJZZHQ3YjloRUdmLVBDb3lleko2cVVVZmtTbWZXemtWV0xzIn0.eyJleHAiOjE2NTQ2Njc1MTQsImlhdCI6MTY1NDYzMTUxNCwianRpIjoiMGIzMWFmNTktNDEyMC00ZWVkLWIxZTAtZWI3YjA0OWU5M2IxIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9yZXNvdXJjZVNlcnZlciIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJjNGU3MTZlNy02MDRjLTQ0NDMtOTQxNi0wYzJhYzRjYzY5YzkiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJuc2FpLWJhY2tlbmQiLCJzZXNzaW9uX3N0YXRlIjoiNWQ1YjRjYTEtMDgxMC00YmUzLThjNWEtOTJmNzlmODc3N2U5IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsIk1BTkFHRVIiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIlVTRVIiLCJkZWZhdWx0LXJvbGVzLXNwb2xkemllbG5pYSJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6IjVkNWI0Y2ExLTA4MTAtNGJlMy04YzVhLTkyZjc5Zjg3NzdlOSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IlNlYmEgS3J5cyIsInByZWZlcnJlZF91c2VybmFtZSI6InNlYmFrcnlzIiwiZ2l2ZW5fbmFtZSI6IlNlYmEiLCJmYW1pbHlfbmFtZSI6IktyeXMiLCJlbWFpbCI6InNlYmFzdGlhbnBrcnlzQGdtYWlsLmNvbSJ9.B9DjJ1axUVc9W5_ntTLZUCQvyt_Vzwcv7vPmb4YBZ6VTrUqQ-N3pZ7sZT2BCG3zHPAFNPMfkHg13eucPU6tPbmgkmoHspR2mYKd40ODp_1ySsYkOtOPIRlVxr8IX7Iza2WDmcwK2aoxvjoLRBx44suFFJ8t4BWlPKQ86iT9-tO_2I3ftqVka5FfBDKSlACuLiRT76NxiGpImHM3ZsoymHsC33g3Xah3Pni2Ba4BC3kBTrwBlWKKL9clY8wr6-27sIrfeyCb0oYoMCrv9Yk3KBpZLR9_nNUcPu5OSFQvqx0mJVIF47c8-uoYXOf9wVrdiL2TlnU4jOVzd9kKj0OaEJw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"flat\":{\r\n        \"id\":\"89\"} ,\r\n    \"data\":\"2022-04-14 22:22:22\" ,\r\n    \"accepted\":\"true\" ,\r\n    \"zaplacone\":\"false\",\r\n    \"prad\":\"10\",\r\n    \"gaz\":\"11\",\r\n    \"woda_ciepla\":\"12\",\r\n    \"woda_zimna\":\"13\",\r\n    \"scieki\":\"14\",\r\n    \"ogrzewanie\":\"15\",\r\n    \"funduszRemontowy\":\"16\",\r\n    \"prad_stawka\":\"17\",\r\n    \"gaz_stawka\":\"18\",\r\n    \"woda_ciepla_stawka\":\"19\",\r\n    \"woda_zimna_stawka\":\"20\",\r\n    \"scieki_stawka\":\"21\",\r\n    \"ogrzewanie_stawka\":\"22\",\r\n    \"funduszRemontowy_stawka\":\"23\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/building-flat-service/addNewFlatCharges",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"building-flat-service",
+						"addNewFlatCharges"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateFlatCharges gateway",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJaSmZvMmd6TTJZZHQ3YjloRUdmLVBDb3lleko2cVVVZmtTbWZXemtWV0xzIn0.eyJleHAiOjE2NTQ2Njc1MTQsImlhdCI6MTY1NDYzMTUxNCwianRpIjoiMGIzMWFmNTktNDEyMC00ZWVkLWIxZTAtZWI3YjA0OWU5M2IxIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9yZXNvdXJjZVNlcnZlciIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJjNGU3MTZlNy02MDRjLTQ0NDMtOTQxNi0wYzJhYzRjYzY5YzkiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJuc2FpLWJhY2tlbmQiLCJzZXNzaW9uX3N0YXRlIjoiNWQ1YjRjYTEtMDgxMC00YmUzLThjNWEtOTJmNzlmODc3N2U5IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsIk1BTkFHRVIiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIlVTRVIiLCJkZWZhdWx0LXJvbGVzLXNwb2xkemllbG5pYSJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6IjVkNWI0Y2ExLTA4MTAtNGJlMy04YzVhLTkyZjc5Zjg3NzdlOSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IlNlYmEgS3J5cyIsInByZWZlcnJlZF91c2VybmFtZSI6InNlYmFrcnlzIiwiZ2l2ZW5fbmFtZSI6IlNlYmEiLCJmYW1pbHlfbmFtZSI6IktyeXMiLCJlbWFpbCI6InNlYmFzdGlhbnBrcnlzQGdtYWlsLmNvbSJ9.B9DjJ1axUVc9W5_ntTLZUCQvyt_Vzwcv7vPmb4YBZ6VTrUqQ-N3pZ7sZT2BCG3zHPAFNPMfkHg13eucPU6tPbmgkmoHspR2mYKd40ODp_1ySsYkOtOPIRlVxr8IX7Iza2WDmcwK2aoxvjoLRBx44suFFJ8t4BWlPKQ86iT9-tO_2I3ftqVka5FfBDKSlACuLiRT76NxiGpImHM3ZsoymHsC33g3Xah3Pni2Ba4BC3kBTrwBlWKKL9clY8wr6-27sIrfeyCb0oYoMCrv9Yk3KBpZLR9_nNUcPu5OSFQvqx0mJVIF47c8-uoYXOf9wVrdiL2TlnU4jOVzd9kKj0OaEJw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 90,\r\n    \"flat\":{\r\n        \"id\":\"89\"} ,\r\n    \"data\": \"2022-04-14 22:22:22\",\r\n    \"accepted\": true,\r\n    \"zaplacone\": true,\r\n    \"prad\": 10.0,\r\n    \"gaz\": 11.0,\r\n    \"woda_ciepla\": 12.0,\r\n    \"woda_zimna\": 13.0,\r\n    \"scieki\": 14.0,\r\n    \"ogrzewanie\": 15.0,\r\n    \"funduszRemontowy\": 16.0,\r\n    \"prad_stawka\": 17.0,\r\n    \"gaz_stawka\": 18.0,\r\n    \"woda_ciepla_stawka\": 19.0,\r\n    \"woda_zimna_stawka\": 20.0,\r\n    \"scieki_stawka\": 21.0,\r\n    \"ogrzewanie_stawka\": 22.0,\r\n    \"funduszRemontowy_stawka\": 23.0\r\n}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/building-flat-service/updateFlatCharges",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"building-flat-service",
+						"updateFlatCharges"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllFlatCharges gateway",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJaSmZvMmd6TTJZZHQ3YjloRUdmLVBDb3lleko2cVVVZmtTbWZXemtWV0xzIn0.eyJleHAiOjE2NTQ2Njg0NTQsImlhdCI6MTY1NDYzMjQ1NCwianRpIjoiMjE2Yzc5MDQtNjBmMi00ZjQ0LTk1OTgtMTFjMTkxNDI5OWUwIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9yZXNvdXJjZVNlcnZlciIsImF1ZCI6WyJyZWFsbS1tYW5hZ2VtZW50IiwiYWNjb3VudCJdLCJzdWIiOiJhOGE3MWI0ZS1hN2JlLTRlNDMtOTNlYS0wM2U1MDI2MWEwMmUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJuc2FpLWJhY2tlbmQiLCJzZXNzaW9uX3N0YXRlIjoiY2E1OTEzZmUtNDBhNS00MzYxLWI3YTgtNjdhYmZjMGU0YWQ1IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsIk1BTkFHRVIiLCJBRE1JTiIsInVtYV9hdXRob3JpemF0aW9uIiwiVVNFUiIsImRlZmF1bHQtcm9sZXMtc3BvbGR6aWVsbmlhIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsicmVhbG0tbWFuYWdlbWVudCI6eyJyb2xlcyI6WyJ2aWV3LWlkZW50aXR5LXByb3ZpZGVycyIsInZpZXctcmVhbG0iLCJtYW5hZ2UtaWRlbnRpdHktcHJvdmlkZXJzIiwiaW1wZXJzb25hdGlvbiIsInJlYWxtLWFkbWluIiwiY3JlYXRlLWNsaWVudCIsIm1hbmFnZS11c2VycyIsInF1ZXJ5LXJlYWxtcyIsInZpZXctYXV0aG9yaXphdGlvbiIsInF1ZXJ5LWNsaWVudHMiLCJxdWVyeS11c2VycyIsIm1hbmFnZS1ldmVudHMiLCJtYW5hZ2UtcmVhbG0iLCJ2aWV3LWV2ZW50cyIsInZpZXctdXNlcnMiLCJ2aWV3LWNsaWVudHMiLCJtYW5hZ2UtYXV0aG9yaXphdGlvbiIsIm1hbmFnZS1jbGllbnRzIiwicXVlcnktZ3JvdXBzIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50Iiwidmlldy1hcHBsaWNhdGlvbnMiLCJ2aWV3LWNvbnNlbnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsImRlbGV0ZS1hY2NvdW50IiwibWFuYWdlLWNvbnNlbnQiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJzaWQiOiJjYTU5MTNmZS00MGE1LTQzNjEtYjdhOC02N2FiZmMwZTRhZDUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWRtaW5layJ9.iHPmvToOQPzmWt6kICv1Rw_Yn_gHWD92277d78Zym-AbZ0lWfQH01Jo1GSJ837vsdTx0h5SzX2tqCErXopg2ti1bcigynKU1V_hCFZ9Uhvv28UWip3OAUmyBWLW7YKoM0Q6eM7w81jORF0yxyBMHETOT5-I6OV4ydepN992vKZxahzRbCX0zx3QZw-7jCLkLIO7YEBpS3XvaaOHwA9w5a0-DyZXWGjpDpXBm6Dt-fy8a75_OL8y1U2b8V64Ij5b15DTdQmPoDEBnk5-2LNvK24Au10X9TlmlJm6PppVIFubqVbfduXY5V0nxneaBA4tIg5KllSQhZOA8FMbr2ctQ9A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/building-flat-service/getAllFlatCharges",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"building-flat-service",
+						"getAllFlatCharges"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getFlatCharges gateway",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJaSmZvMmd6TTJZZHQ3YjloRUdmLVBDb3lleko2cVVVZmtTbWZXemtWV0xzIn0.eyJleHAiOjE2NTQ2Njc1MTQsImlhdCI6MTY1NDYzMTUxNCwianRpIjoiMGIzMWFmNTktNDEyMC00ZWVkLWIxZTAtZWI3YjA0OWU5M2IxIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9yZXNvdXJjZVNlcnZlciIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJjNGU3MTZlNy02MDRjLTQ0NDMtOTQxNi0wYzJhYzRjYzY5YzkiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJuc2FpLWJhY2tlbmQiLCJzZXNzaW9uX3N0YXRlIjoiNWQ1YjRjYTEtMDgxMC00YmUzLThjNWEtOTJmNzlmODc3N2U5IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsIk1BTkFHRVIiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIlVTRVIiLCJkZWZhdWx0LXJvbGVzLXNwb2xkemllbG5pYSJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6IjVkNWI0Y2ExLTA4MTAtNGJlMy04YzVhLTkyZjc5Zjg3NzdlOSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IlNlYmEgS3J5cyIsInByZWZlcnJlZF91c2VybmFtZSI6InNlYmFrcnlzIiwiZ2l2ZW5fbmFtZSI6IlNlYmEiLCJmYW1pbHlfbmFtZSI6IktyeXMiLCJlbWFpbCI6InNlYmFzdGlhbnBrcnlzQGdtYWlsLmNvbSJ9.B9DjJ1axUVc9W5_ntTLZUCQvyt_Vzwcv7vPmb4YBZ6VTrUqQ-N3pZ7sZT2BCG3zHPAFNPMfkHg13eucPU6tPbmgkmoHspR2mYKd40ODp_1ySsYkOtOPIRlVxr8IX7Iza2WDmcwK2aoxvjoLRBx44suFFJ8t4BWlPKQ86iT9-tO_2I3ftqVka5FfBDKSlACuLiRT76NxiGpImHM3ZsoymHsC33g3Xah3Pni2Ba4BC3kBTrwBlWKKL9clY8wr6-27sIrfeyCb0oYoMCrv9Yk3KBpZLR9_nNUcPu5OSFQvqx0mJVIF47c8-uoYXOf9wVrdiL2TlnU4jOVzd9kKj0OaEJw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/building-flat-service/getFlatCharges/90",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"building-flat-service",
+						"getFlatCharges",
+						"90"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteFlatCharges gateway",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJaSmZvMmd6TTJZZHQ3YjloRUdmLVBDb3lleko2cVVVZmtTbWZXemtWV0xzIn0.eyJleHAiOjE2NTQ4MzMzMjcsImlhdCI6MTY1NDc5NzMyNywianRpIjoiZmQzOWZhNzMtNmE0Yi00OWI5LTk4M2UtMzNjYmE5ZmVjODE1IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9yZXNvdXJjZVNlcnZlciIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJjNGU3MTZlNy02MDRjLTQ0NDMtOTQxNi0wYzJhYzRjYzY5YzkiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJuc2FpLWJhY2tlbmQiLCJzZXNzaW9uX3N0YXRlIjoiNTczNWEwMGQtM2MxNy00OWVkLWJkYjUtODQ5MzQ3MDc0YmFmIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiTUFOQUdFUiIsInVtYV9hdXRob3JpemF0aW9uIiwiVVNFUiIsImRlZmF1bHQtcm9sZXMtc3BvbGR6aWVsbmlhIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwic2lkIjoiNTczNWEwMGQtM2MxNy00OWVkLWJkYjUtODQ5MzQ3MDc0YmFmIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJuYW1lIjoiU2ViYSBLcnlzIiwicHJlZmVycmVkX3VzZXJuYW1lIjoic2ViYWtyeXMiLCJnaXZlbl9uYW1lIjoiU2ViYSIsImZhbWlseV9uYW1lIjoiS3J5cyIsImVtYWlsIjoic2ViYXN0aWFucGtyeXNAZ21haWwuY29tIn0.nB5ytaTwpsunEGuvNASCgczIHvR8r11mgefpjYF7E8t0RBzDNrXnogS-1upl7QvKUYBGpY9dfij1S5XxcGxHao0b_8ZgV79OyR5yUvZpA_EZsE-euscNC0IlGSjqhc0yZlUYN-0bcWX4xdNufssfOuyCYfyKX_sX0KzmlL0ph5kDLb92oR2FtzmNEJ1Dv8fzNXZGTYBMNbjuL9taHLhrlnsD3rSrM2OEm6nRoolW_gy-v-tKXFKnvBTi7tAGjPsxs6AplTAr4HnBU-9wlRmxaDD2eL0K5iSp3MIL8Vq3JyyVDQ4eUBRKp95DJZfzA_vFfHT4XHvFTND_KjI7l-aWdw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/building-flat-service/deleteFlatCharges/90",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"building-flat-service",
+						"deleteFlatCharges",
+						"90"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

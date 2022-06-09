@@ -62,8 +62,13 @@ public class FlatService {
         System.out.println("Usuwanie mieszkania service "+id);
 
         //usuwanie mieszkanców
-        ResponseEntity re= authService.nExchange("http://localhost:8000/managers-locators-service/deleteAllLocatorsFromFlat/"+id, token);
-        System.out.println(re.getStatusCodeValue());
+        ResponseEntity re= authService.nExchange("http://localhost:8000/managers-locators-service/deleteAllLocatorsFromFlat/"+id, token, HttpMethod.DELETE);
+        try {
+            System.out.println(re.getStatusCodeValue());
+        }catch (Exception e){
+            System.out.println(e);
+        }
+
         if(re.getStatusCodeValue()!=200)return;//jesli nie 200 wycofaj
 
 

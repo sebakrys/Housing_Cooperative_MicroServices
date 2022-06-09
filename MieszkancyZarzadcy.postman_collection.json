@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "07750301-71d8-46d0-a243-9896456f4391",
+		"name": "MieszkancyZarzadcy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19888710"
+	},
+	"item": [
+		{
+			"name": "addManagerBuilding",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJaSmZvMmd6TTJZZHQ3YjloRUdmLVBDb3lleko2cVVVZmtTbWZXemtWV0xzIn0.eyJleHAiOjE2NTQ4MzQ4MjUsImlhdCI6MTY1NDc5ODgyNSwianRpIjoiNmE4ZDJiYTgtZjZjZC00MDIxLTk2NmMtZDFhMDcyYzEyZjE0IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9yZXNvdXJjZVNlcnZlciIsImF1ZCI6WyJyZWFsbS1tYW5hZ2VtZW50IiwiYWNjb3VudCJdLCJzdWIiOiJhOGE3MWI0ZS1hN2JlLTRlNDMtOTNlYS0wM2U1MDI2MWEwMmUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJuc2FpLWJhY2tlbmQiLCJzZXNzaW9uX3N0YXRlIjoiZDJjMTgwZmMtYjdmNy00NDJiLTkxYmMtZTAxYzg5MmQwNWM1IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiTUFOQUdFUiIsIkFETUlOIiwidW1hX2F1dGhvcml6YXRpb24iLCJVU0VSIiwiZGVmYXVsdC1yb2xlcy1zcG9sZHppZWxuaWEiXX0sInJlc291cmNlX2FjY2VzcyI6eyJyZWFsbS1tYW5hZ2VtZW50Ijp7InJvbGVzIjpbInZpZXctaWRlbnRpdHktcHJvdmlkZXJzIiwidmlldy1yZWFsbSIsIm1hbmFnZS1pZGVudGl0eS1wcm92aWRlcnMiLCJpbXBlcnNvbmF0aW9uIiwicmVhbG0tYWRtaW4iLCJjcmVhdGUtY2xpZW50IiwibWFuYWdlLXVzZXJzIiwicXVlcnktcmVhbG1zIiwidmlldy1hdXRob3JpemF0aW9uIiwicXVlcnktY2xpZW50cyIsInF1ZXJ5LXVzZXJzIiwibWFuYWdlLWV2ZW50cyIsIm1hbmFnZS1yZWFsbSIsInZpZXctZXZlbnRzIiwidmlldy11c2VycyIsInZpZXctY2xpZW50cyIsIm1hbmFnZS1hdXRob3JpemF0aW9uIiwibWFuYWdlLWNsaWVudHMiLCJxdWVyeS1ncm91cHMiXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJ2aWV3LWFwcGxpY2F0aW9ucyIsInZpZXctY29uc2VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwiZGVsZXRlLWFjY291bnQiLCJtYW5hZ2UtY29uc2VudCIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6ImQyYzE4MGZjLWI3ZjctNDQyYi05MWJjLWUwMWM4OTJkMDVjNSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiQWRhbSBBZG1pbmVrIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWRtaW5layIsImdpdmVuX25hbWUiOiJBZGFtIiwiZmFtaWx5X25hbWUiOiJBZG1pbmVrIiwiZW1haWwiOiJlbWFpbC5hZG1pbmthQGFkbWluZWsuZXUifQ.P_CeRHur_q4RgR2a7U6A6I4-cS79pqjOfSF5dQY76qYoXnX7YIOo7vr_3ewaItN1dbDbtg63HjlJFzzE5BbLQ6qFQq7DwjL0RTFPrEi89WsYLbsyIrXv6Axm2HWka0y3fj4Y82MOFwZ7DxgWHu3AySHI0-u2tI2tju1yLzOzTwS297mXaKIY3kCcYTY4pW2FlVxqBM3agEjEBYJHlyzXQXl4pmdNWR3tvi79OwSoG9z0F7Fe--u_W2fK6qC92vcUAn5whzkl5AcIAMeSvPzLRwZ2bzUnhcmv-mUT463rM2deOPBDzSsUF5PRN8fTRCVNSvUE_DNe0UHFXFWXg0pZng",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/managers-locators-service/addNewManagerBuilding/39/91",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"managers-locators-service",
+						"addNewManagerBuilding",
+						"39",
+						"91"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteManagerFromBuilding",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJaSmZvMmd6TTJZZHQ3YjloRUdmLVBDb3lleko2cVVVZmtTbWZXemtWV0xzIn0.eyJleHAiOjE2NTQ4MzQ4MjUsImlhdCI6MTY1NDc5ODgyNSwianRpIjoiNmE4ZDJiYTgtZjZjZC00MDIxLTk2NmMtZDFhMDcyYzEyZjE0IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9yZXNvdXJjZVNlcnZlciIsImF1ZCI6WyJyZWFsbS1tYW5hZ2VtZW50IiwiYWNjb3VudCJdLCJzdWIiOiJhOGE3MWI0ZS1hN2JlLTRlNDMtOTNlYS0wM2U1MDI2MWEwMmUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJuc2FpLWJhY2tlbmQiLCJzZXNzaW9uX3N0YXRlIjoiZDJjMTgwZmMtYjdmNy00NDJiLTkxYmMtZTAxYzg5MmQwNWM1IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiTUFOQUdFUiIsIkFETUlOIiwidW1hX2F1dGhvcml6YXRpb24iLCJVU0VSIiwiZGVmYXVsdC1yb2xlcy1zcG9sZHppZWxuaWEiXX0sInJlc291cmNlX2FjY2VzcyI6eyJyZWFsbS1tYW5hZ2VtZW50Ijp7InJvbGVzIjpbInZpZXctaWRlbnRpdHktcHJvdmlkZXJzIiwidmlldy1yZWFsbSIsIm1hbmFnZS1pZGVudGl0eS1wcm92aWRlcnMiLCJpbXBlcnNvbmF0aW9uIiwicmVhbG0tYWRtaW4iLCJjcmVhdGUtY2xpZW50IiwibWFuYWdlLXVzZXJzIiwicXVlcnktcmVhbG1zIiwidmlldy1hdXRob3JpemF0aW9uIiwicXVlcnktY2xpZW50cyIsInF1ZXJ5LXVzZXJzIiwibWFuYWdlLWV2ZW50cyIsIm1hbmFnZS1yZWFsbSIsInZpZXctZXZlbnRzIiwidmlldy11c2VycyIsInZpZXctY2xpZW50cyIsIm1hbmFnZS1hdXRob3JpemF0aW9uIiwibWFuYWdlLWNsaWVudHMiLCJxdWVyeS1ncm91cHMiXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJ2aWV3LWFwcGxpY2F0aW9ucyIsInZpZXctY29uc2VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwiZGVsZXRlLWFjY291bnQiLCJtYW5hZ2UtY29uc2VudCIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6ImQyYzE4MGZjLWI3ZjctNDQyYi05MWJjLWUwMWM4OTJkMDVjNSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiQWRhbSBBZG1pbmVrIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWRtaW5layIsImdpdmVuX25hbWUiOiJBZGFtIiwiZmFtaWx5X25hbWUiOiJBZG1pbmVrIiwiZW1haWwiOiJlbWFpbC5hZG1pbmthQGFkbWluZWsuZXUifQ.P_CeRHur_q4RgR2a7U6A6I4-cS79pqjOfSF5dQY76qYoXnX7YIOo7vr_3ewaItN1dbDbtg63HjlJFzzE5BbLQ6qFQq7DwjL0RTFPrEi89WsYLbsyIrXv6Axm2HWka0y3fj4Y82MOFwZ7DxgWHu3AySHI0-u2tI2tju1yLzOzTwS297mXaKIY3kCcYTY4pW2FlVxqBM3agEjEBYJHlyzXQXl4pmdNWR3tvi79OwSoG9z0F7Fe--u_W2fK6qC92vcUAn5whzkl5AcIAMeSvPzLRwZ2bzUnhcmv-mUT463rM2deOPBDzSsUF5PRN8fTRCVNSvUE_DNe0UHFXFWXg0pZng",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/managers-locators-service/deleteManagerFromBuilding/39/91",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"managers-locators-service",
+						"deleteManagerFromBuilding",
+						"39",
+						"91"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addLocatorFlat",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJaSmZvMmd6TTJZZHQ3YjloRUdmLVBDb3lleko2cVVVZmtTbWZXemtWV0xzIn0.eyJleHAiOjE2NTQ4MzUzMDIsImlhdCI6MTY1NDc5OTMwMiwianRpIjoiYmM3ZmE5MmItMzA1ZS00ZTE2LTkyYzAtMWE0MDU5NjNiYjRhIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9yZXNvdXJjZVNlcnZlciIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJjNGU3MTZlNy02MDRjLTQ0NDMtOTQxNi0wYzJhYzRjYzY5YzkiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJuc2FpLWJhY2tlbmQiLCJzZXNzaW9uX3N0YXRlIjoiYmRhZmYxZjctYTIyYi00YmIyLWE5MGItZTZlOTU0YTk1ODc4IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiTUFOQUdFUiIsInVtYV9hdXRob3JpemF0aW9uIiwiVVNFUiIsImRlZmF1bHQtcm9sZXMtc3BvbGR6aWVsbmlhIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwic2lkIjoiYmRhZmYxZjctYTIyYi00YmIyLWE5MGItZTZlOTU0YTk1ODc4IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJuYW1lIjoiU2ViYSBLcnlzIiwicHJlZmVycmVkX3VzZXJuYW1lIjoic2ViYWtyeXMiLCJnaXZlbl9uYW1lIjoiU2ViYSIsImZhbWlseV9uYW1lIjoiS3J5cyIsImVtYWlsIjoic2ViYXN0aWFucGtyeXNAZ21haWwuY29tIn0.kVqu3Hqkf6FYCuXKg0VoaWomxrirL_sNZoO3cEnCMrMu_fpQjmAzB-5OkmBjktLLUttqd88Biq879zLzNjzrMgX0YrZW1Py4-zZ529i1atUkZ0c8ZWctZV4ArR7SVsPdS3qrIpAvDa7HqwuOVK3ByFVnB7USNKH3fcjGeZQDyxJ7NeoRT1CKUw9mbRRQqad0OqwSaj5vxS23J1A33W2SszNsXXbbflH6mY-3XLgzP8A58SBL0uLRawnmJaRRtDp59tNJ0UY1-MVTLBSlN37NZ9wDtUPCjCIx0ZhCrdYvQW7x7dHh6P-VCfyuAkTwZiuDOnCLbSXOwtoqzgwjANzpSw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/managers-locators-service/addNewLocatorFlat/39/93",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"managers-locators-service",
+						"addNewLocatorFlat",
+						"39",
+						"93"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteLocatorFromFlat",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJaSmZvMmd6TTJZZHQ3YjloRUdmLVBDb3lleko2cVVVZmtTbWZXemtWV0xzIn0.eyJleHAiOjE2NTQ4MzQ4MjUsImlhdCI6MTY1NDc5ODgyNSwianRpIjoiNmE4ZDJiYTgtZjZjZC00MDIxLTk2NmMtZDFhMDcyYzEyZjE0IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9yZXNvdXJjZVNlcnZlciIsImF1ZCI6WyJyZWFsbS1tYW5hZ2VtZW50IiwiYWNjb3VudCJdLCJzdWIiOiJhOGE3MWI0ZS1hN2JlLTRlNDMtOTNlYS0wM2U1MDI2MWEwMmUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJuc2FpLWJhY2tlbmQiLCJzZXNzaW9uX3N0YXRlIjoiZDJjMTgwZmMtYjdmNy00NDJiLTkxYmMtZTAxYzg5MmQwNWM1IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiTUFOQUdFUiIsIkFETUlOIiwidW1hX2F1dGhvcml6YXRpb24iLCJVU0VSIiwiZGVmYXVsdC1yb2xlcy1zcG9sZHppZWxuaWEiXX0sInJlc291cmNlX2FjY2VzcyI6eyJyZWFsbS1tYW5hZ2VtZW50Ijp7InJvbGVzIjpbInZpZXctaWRlbnRpdHktcHJvdmlkZXJzIiwidmlldy1yZWFsbSIsIm1hbmFnZS1pZGVudGl0eS1wcm92aWRlcnMiLCJpbXBlcnNvbmF0aW9uIiwicmVhbG0tYWRtaW4iLCJjcmVhdGUtY2xpZW50IiwibWFuYWdlLXVzZXJzIiwicXVlcnktcmVhbG1zIiwidmlldy1hdXRob3JpemF0aW9uIiwicXVlcnktY2xpZW50cyIsInF1ZXJ5LXVzZXJzIiwibWFuYWdlLWV2ZW50cyIsIm1hbmFnZS1yZWFsbSIsInZpZXctZXZlbnRzIiwidmlldy11c2VycyIsInZpZXctY2xpZW50cyIsIm1hbmFnZS1hdXRob3JpemF0aW9uIiwibWFuYWdlLWNsaWVudHMiLCJxdWVyeS1ncm91cHMiXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJ2aWV3LWFwcGxpY2F0aW9ucyIsInZpZXctY29uc2VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwiZGVsZXRlLWFjY291bnQiLCJtYW5hZ2UtY29uc2VudCIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6ImQyYzE4MGZjLWI3ZjctNDQyYi05MWJjLWUwMWM4OTJkMDVjNSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiQWRhbSBBZG1pbmVrIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWRtaW5layIsImdpdmVuX25hbWUiOiJBZGFtIiwiZmFtaWx5X25hbWUiOiJBZG1pbmVrIiwiZW1haWwiOiJlbWFpbC5hZG1pbmthQGFkbWluZWsuZXUifQ.P_CeRHur_q4RgR2a7U6A6I4-cS79pqjOfSF5dQY76qYoXnX7YIOo7vr_3ewaItN1dbDbtg63HjlJFzzE5BbLQ6qFQq7DwjL0RTFPrEi89WsYLbsyIrXv6Axm2HWka0y3fj4Y82MOFwZ7DxgWHu3AySHI0-u2tI2tju1yLzOzTwS297mXaKIY3kCcYTY4pW2FlVxqBM3agEjEBYJHlyzXQXl4pmdNWR3tvi79OwSoG9z0F7Fe--u_W2fK6qC92vcUAn5whzkl5AcIAMeSvPzLRwZ2bzUnhcmv-mUT463rM2deOPBDzSsUF5PRN8fTRCVNSvUE_DNe0UHFXFWXg0pZng",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/managers-locators-service/deleteLocatorFromFlat/39/93",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"managers-locators-service",
+						"deleteLocatorFromFlat",
+						"39",
+						"93"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

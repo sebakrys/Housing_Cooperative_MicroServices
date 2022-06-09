@@ -67,7 +67,7 @@ public class BuildingService {
 
 
         //usuwanie zarządców
-        ResponseEntity re= authService.nExchange("http://localhost:8000/managers-locators-service/deleteAllManagersFromBuilding/"+id, token);
+        ResponseEntity re= authService.nExchange("http://localhost:8000/managers-locators-service/deleteAllManagersFromBuilding/"+id, token, HttpMethod.DELETE);
         System.out.println(re.getStatusCodeValue());
         if(re.getStatusCodeValue()!=200)return;//jesli nie 200 wycofaj
 

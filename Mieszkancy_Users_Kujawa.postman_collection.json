@@ -1,0 +1,294 @@
+{
+	"info": {
+		"_postman_id": "6d1ca6ba-91f2-45e3-915f-f9841527b02e",
+		"name": "Mieszkancy_Users_Kujawa",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19888710"
+	},
+	"item": [
+		{
+			"name": "PDF2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/pdf-service/rachunek?year=2022&month=9&ryczalt=true&flatid=1&buildingid=2&street=3&bNr=4&fNr=5&postalcode=6&city=7&fr=8&fr_rate=9&g=10&g_rate=11&og=12&og_rate=13&pr=14&pr_rate=15&sc=16&sc_rate=17&cw=18&cw_rate=19&zw=20&zw_rate=21&usr_names=Sebastian Kryś&otherLocators=Maria Nowakowska, Adam Nowak\n",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"pdf-service",
+						"rachunek"
+					],
+					"query": [
+						{
+							"key": "year",
+							"value": "2022"
+						},
+						{
+							"key": "month",
+							"value": "9"
+						},
+						{
+							"key": "ryczalt",
+							"value": "true"
+						},
+						{
+							"key": "flatid",
+							"value": "1"
+						},
+						{
+							"key": "buildingid",
+							"value": "2"
+						},
+						{
+							"key": "street",
+							"value": "3"
+						},
+						{
+							"key": "bNr",
+							"value": "4"
+						},
+						{
+							"key": "fNr",
+							"value": "5"
+						},
+						{
+							"key": "postalcode",
+							"value": "6"
+						},
+						{
+							"key": "city",
+							"value": "7"
+						},
+						{
+							"key": "fr",
+							"value": "8"
+						},
+						{
+							"key": "fr_rate",
+							"value": "9"
+						},
+						{
+							"key": "g",
+							"value": "10"
+						},
+						{
+							"key": "g_rate",
+							"value": "11"
+						},
+						{
+							"key": "og",
+							"value": "12"
+						},
+						{
+							"key": "og_rate",
+							"value": "13"
+						},
+						{
+							"key": "pr",
+							"value": "14"
+						},
+						{
+							"key": "pr_rate",
+							"value": "15"
+						},
+						{
+							"key": "sc",
+							"value": "16"
+						},
+						{
+							"key": "sc_rate",
+							"value": "17"
+						},
+						{
+							"key": "cw",
+							"value": "18"
+						},
+						{
+							"key": "cw_rate",
+							"value": "19"
+						},
+						{
+							"key": "zw",
+							"value": "20"
+						},
+						{
+							"key": "zw_rate",
+							"value": "21"
+						},
+						{
+							"key": "usr_names",
+							"value": "Sebastian Kryś"
+						},
+						{
+							"key": "otherLocators",
+							"value": "Maria Nowakowska, Adam Nowak\n"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBuildings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/building-flat-service/getBuildings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"building-flat-service",
+						"getBuildings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FirstUserTOKENS",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "user",
+							"value": "sebas",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "pwd",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8082/JWTokens/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"JWTokens",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddPerson",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJaSmZvMmd6TTJZZHQ3YjloRUdmLVBDb3lleko2cVVVZmtTbWZXemtWV0xzIn0.eyJleHAiOjE2NTQ2NjU5MTcsImlhdCI6MTY1NDYyOTkxNywianRpIjoiNTkyYmQwZmQtMzE4My00MDQ3LWIyYjYtNGQ5NWU3MzM0MDFhIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9yZXNvdXJjZVNlcnZlciIsImF1ZCI6WyJyZWFsbS1tYW5hZ2VtZW50IiwiYWNjb3VudCJdLCJzdWIiOiJhOGE3MWI0ZS1hN2JlLTRlNDMtOTNlYS0wM2U1MDI2MWEwMmUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJuc2FpLWJhY2tlbmQiLCJzZXNzaW9uX3N0YXRlIjoiOGZjMjcwOGYtNjUyZi00MDIxLWFiNzQtMzExOThjMDI4YmRkIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsIk1BTkFHRVIiLCJBRE1JTiIsInVtYV9hdXRob3JpemF0aW9uIiwiVVNFUiIsImRlZmF1bHQtcm9sZXMtc3BvbGR6aWVsbmlhIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsicmVhbG0tbWFuYWdlbWVudCI6eyJyb2xlcyI6WyJ2aWV3LWlkZW50aXR5LXByb3ZpZGVycyIsInZpZXctcmVhbG0iLCJtYW5hZ2UtaWRlbnRpdHktcHJvdmlkZXJzIiwiaW1wZXJzb25hdGlvbiIsInJlYWxtLWFkbWluIiwiY3JlYXRlLWNsaWVudCIsIm1hbmFnZS11c2VycyIsInF1ZXJ5LXJlYWxtcyIsInZpZXctYXV0aG9yaXphdGlvbiIsInF1ZXJ5LWNsaWVudHMiLCJxdWVyeS11c2VycyIsIm1hbmFnZS1ldmVudHMiLCJtYW5hZ2UtcmVhbG0iLCJ2aWV3LWV2ZW50cyIsInZpZXctdXNlcnMiLCJ2aWV3LWNsaWVudHMiLCJtYW5hZ2UtYXV0aG9yaXphdGlvbiIsIm1hbmFnZS1jbGllbnRzIiwicXVlcnktZ3JvdXBzIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50Iiwidmlldy1hcHBsaWNhdGlvbnMiLCJ2aWV3LWNvbnNlbnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsImRlbGV0ZS1hY2NvdW50IiwibWFuYWdlLWNvbnNlbnQiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJzaWQiOiI4ZmMyNzA4Zi02NTJmLTQwMjEtYWI3NC0zMTE5OGMwMjhiZGQiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWRtaW5layJ9.wMZxbAMUKGvQQ7X3my_Lu70ytQ2oeQCRi39DKL-CorjIeyTl3hRw6vYZRQ_Wsbm2hO52KETMlG3O0BOwW8fMtv-Euy833iukIpTXR9_Vykaub0WDHriE194vfdEpDSivS6jw8q8IH3h4BXp46UipZ4ttlya6PmH1oxZU0YoFzOE_whmv1iYOd4XLbNkhleHrrKm-7C9DV966qIPwq0TQnzp2SdhxDwCyMnlQwQCZ_PoWFmSv2Zu-3wJ00MPSD4273uCfthU-GBVxWgRhbBNXknER84e4HT7MRqGnRnwo4cw6XQNq-t01NUQO8Grq_MMFCZQ1mfDKUDQt3gORwHRQig",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Seba\",\r\n    \"lastName\": \"Krys\",\r\n    \"email\": \"sebastianpkrys@gmail.com\",\r\n    \"telephone\": \"123456789\",\r\n    \"login\" : \"sebakrys\",\r\n    \"password\" : \"sebakrys\",\r\n    \"enabled\" : true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/residents-flat-service/addPerson",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"residents-flat-service",
+						"addPerson"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getEmail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EditPerson",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/building-flat-service",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"building-flat-service"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeletePerson",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJaSmZvMmd6TTJZZHQ3YjloRUdmLVBDb3lleko2cVVVZmtTbWZXemtWV0xzIn0.eyJleHAiOjE2NTQ2NjM5MjgsImlhdCI6MTY1NDYyNzkyOCwianRpIjoiNmRhMDMyODAtMjE2MC00NjA5LWE0N2ItOTgzYTk4OGJiZTdjIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9yZXNvdXJjZVNlcnZlciIsImF1ZCI6WyJyZWFsbS1tYW5hZ2VtZW50IiwiYWNjb3VudCJdLCJzdWIiOiJhOGE3MWI0ZS1hN2JlLTRlNDMtOTNlYS0wM2U1MDI2MWEwMmUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJuc2FpLWJhY2tlbmQiLCJzZXNzaW9uX3N0YXRlIjoiYmViMTIyMzEtOTc2Ny00ODc2LWE5OGYtMTA0NzY5OWY2N2M0IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsIk1BTkFHRVIiLCJBRE1JTiIsInVtYV9hdXRob3JpemF0aW9uIiwiVVNFUiIsImRlZmF1bHQtcm9sZXMtc3BvbGR6aWVsbmlhIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsicmVhbG0tbWFuYWdlbWVudCI6eyJyb2xlcyI6WyJ2aWV3LWlkZW50aXR5LXByb3ZpZGVycyIsInZpZXctcmVhbG0iLCJtYW5hZ2UtaWRlbnRpdHktcHJvdmlkZXJzIiwiaW1wZXJzb25hdGlvbiIsInJlYWxtLWFkbWluIiwiY3JlYXRlLWNsaWVudCIsIm1hbmFnZS11c2VycyIsInF1ZXJ5LXJlYWxtcyIsInZpZXctYXV0aG9yaXphdGlvbiIsInF1ZXJ5LWNsaWVudHMiLCJxdWVyeS11c2VycyIsIm1hbmFnZS1ldmVudHMiLCJtYW5hZ2UtcmVhbG0iLCJ2aWV3LWV2ZW50cyIsInZpZXctdXNlcnMiLCJ2aWV3LWNsaWVudHMiLCJtYW5hZ2UtYXV0aG9yaXphdGlvbiIsIm1hbmFnZS1jbGllbnRzIiwicXVlcnktZ3JvdXBzIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50Iiwidmlldy1hcHBsaWNhdGlvbnMiLCJ2aWV3LWNvbnNlbnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsImRlbGV0ZS1hY2NvdW50IiwibWFuYWdlLWNvbnNlbnQiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJzaWQiOiJiZWIxMjIzMS05NzY3LTQ4NzYtYTk4Zi0xMDQ3Njk5ZjY3YzQiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWRtaW5layJ9.Tnc-kK4gdsx5xuwrwdo3PW6SzXQICulBR8yoJzGaq6K4aGJlkCqdBF_rszlcZ6KJiTms6_aLyMcEjC6rHmcvyy5BG21aEGm0r8hwdivQujoZt8HlTteBJNso5VuxX3weRuu8pzUUlJr5v4nOcCy3sCpeecTWDppu91zMZltpFpD4Qttou7Wl8soWxqUxYxNP7Ly2oOjYUGy4YYg63DySNXvQd7AO7EWbYSeQ5SYxphzQuXZ1GHQ8yiFFGA-tmU3e8_hVgFZlaDyqZ1nw2mjBd229lrhP072W9-AZaoNWtBZyGopcayURY34BPjOMAqVbSS2zQzO4vXradfwFmC0ahg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/residents-flat-service/deletePerson/fe98871f-889c-4311-8b3e-8626edebcba2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"residents-flat-service",
+						"deletePerson",
+						"fe98871f-889c-4311-8b3e-8626edebcba2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

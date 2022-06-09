@@ -155,12 +155,12 @@ public class AuthService {
 
     }
 
-    public ResponseEntity<String> nExchange(String url, String JWT_Token){
+    public ResponseEntity<String> nExchange(String url, String JWT_Token, HttpMethod httpMethod){
         HttpHeaders headers = new HttpHeaders();
         headers.add("Authorization", JWT_Token);
         HttpEntity<String> request = new HttpEntity<String>(headers);
         try {
-            ResponseEntity<String> lreq = new RestTemplate().exchange(url, HttpMethod.GET, request, String.class);
+            ResponseEntity<String> lreq = new RestTemplate().exchange(url, httpMethod, request, String.class);
             return lreq;
         }catch (Exception e){
             System.out.println(e);

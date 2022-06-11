@@ -18,6 +18,9 @@ const NavbarSecured = () => {
                     <NavLink to="/user" activeStyle>
                         User
                     </NavLink>
+                    <NavLink to="/users" activeStyle>
+                        Users
+                    </NavLink>
                     <NavLink to="/register" activeStyle>
                         Register
                     </NavLink>

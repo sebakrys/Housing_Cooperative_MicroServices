@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="Dzialajacy FrontEnd">
-      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Service/BuildingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Service/BuildingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Service/FlatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BudMiesz/src/main/java/com/nsai/spoldzielnia/Service/FlatService.java" afterDir="false" />
+    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="Potestowane z Postmanem - GOTOWE">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Logout.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Logout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Navbar/indexNavbarSecured.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Navbar/indexNavbarSecured.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Zawartosc.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Zawartosc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/pages/BuildingsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/pages/BuildingsPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/services/BuildingService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/services/BuildingService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/services/withRouter.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,20 +77,22 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="corretto-11" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../frontend/src/components/Navbar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../frontend/src/services" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.5321839" />
-    <property name="settings.editor.selected.configurable" value="preferences.toDoOptions" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\STUDIA_informatyka\S2\NSAI\Projekt\frontend\src\services" />
+      <recent name="D:\STUDIA_informatyka\S2\NSAI\Projekt\frontend\src\pages" />
       <recent name="D:\STUDIA_informatyka\S2\NSAI\Projekt\frontend\src\components\Navbar" />
       <recent name="D:\STUDIA_informatyka\S2\NSAI\Projekt\BudMiesz\src\main\java\com\nsai\spoldzielnia\Entity" />
     </key>
@@ -212,6 +219,8 @@
     </configuration>
     <list>
       <item itemvalue="npm.start" />
+      <item itemvalue="npm.start (1)" />
+      <item itemvalue="npm.build" />
       <item itemvalue="Spring Boot.BudMieszApplication" />
       <item itemvalue="Spring Boot.EurekaServerApplication" />
       <item itemvalue="Spring Boot.GatewayApplication" />
@@ -221,8 +230,6 @@
       <item itemvalue="Spring Boot.MieszkancyApplication" />
       <item itemvalue="Spring Boot.MieszkancyZarzadcyApplication" />
       <item itemvalue="Spring Boot.PdfServiceApplication" />
-      <item itemvalue="npm.start (1)" />
-      <item itemvalue="npm.build" />
     </list>
     <recent_temporary>
       <list>
@@ -265,6 +272,9 @@
       <workItem from="1654458917993" duration="8005000" />
       <workItem from="1654617043397" duration="8194000" />
       <workItem from="1654671026009" duration="28466000" />
+      <workItem from="1654840378258" duration="1289000" />
+      <workItem from="1654932932550" duration="27000" />
+      <workItem from="1654957687962" duration="7158000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit - Eureka">
       <created>1649598456859</created>
@@ -469,7 +479,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654788128592</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Potestowane z Postmanem - GOTOWE">
+      <created>1654799880602</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1654799880602</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -486,7 +503,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="pdf_service" />
+                        <option value="github/master" />
                       </list>
                     </value>
                   </entry>
@@ -504,8 +521,6 @@
       <path value="$PROJECT_DIR$/../PDF" />
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="pdf service added" />
-    <MESSAGE value="pdf service added&#10;without eureca client" />
     <MESSAGE value="Eureca + pdf service added&#10;without eureca client" />
     <MESSAGE value="Pdf service as eureka client" />
     <MESSAGE value="Gateway first init" />
@@ -529,6 +544,8 @@
     <MESSAGE value="Front z keycloackiem - Dziala pokazywanie budynkow" />
     <MESSAGE value="backup front logout" />
     <MESSAGE value="Dzialajacy FrontEnd" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dzialajacy FrontEnd" />
+    <MESSAGE value="Potestowane z Postmanem" />
+    <MESSAGE value="Potestowane z Postmanem - GOTOWE" />
+    <option name="LAST_COMMIT_MESSAGE" value="Potestowane z Postmanem - GOTOWE" />
   </component>
 </project>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {withRouter} from "../services/withRouter";
 import Zawartosc from "./Zawartosc";
 import App from "../App";
 import axios from "axios";

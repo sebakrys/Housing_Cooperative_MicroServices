@@ -49,7 +49,7 @@ class BuildingsPage extends React.Component{
                         this.state.buildings.map(
                             building =>
                                 <tr key={building.id}>
-                                    <td>{building.nazwa}</td>
+                                    <td><a href={"/flats/"+building.id}>{building.nazwa}</a></td>
                                     <td>{building.city}</td>
                                     <td>{building.street}</td>
                                     <td>{building.buildingNumber}</td>

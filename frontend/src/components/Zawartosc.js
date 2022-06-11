@@ -14,6 +14,8 @@ import Keycloak from "keycloak-js";
 import UserInfo from "./UserInfo";
 import Logout from "./Logout";
 import {useNavigate} from "react-router";
+import Users from "../pages/Users";
+import FlatsPage from "../pages/FlatsPage";
 
 
 
@@ -69,12 +71,14 @@ class Zawartosc extends React.Component{
                             <Routes>
                                 <Route exact path='/' exact element={<Welcome/>}/>
                                 <Route path="/user" element={<UserInfo keycloak={this.state.keycloak}/>}/>
+                                <Route path="/users" element={<Users/>}/>
                                 <Route path="/public" element={<Welcome/>}/>
                                 <Route path="/secured" element={<Secured/>}/>
                                 <Route path='/login' element={<LoginPage/>}/>
                                 <Route path='/register' element={<RegisterPage/>}/>
                                 <Route path='/buildings' element={<BuildingsPage/>}/>
                                 <Route path='/addbuilding' element={<AddBuildingPage/>}/>
+                                <Route path='/flats/:id' element={<FlatsPage/>}/>
                             </Routes>
                         </div>
                     );

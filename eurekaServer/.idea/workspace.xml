@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="Potestowane z Postmanem - GOTOWE">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Logout.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Logout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Navbar/indexNavbarSecured.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Navbar/indexNavbarSecured.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Zawartosc.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Zawartosc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/pages/BuildingsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/pages/BuildingsPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/services/BuildingService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/services/BuildingService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/services/withRouter.js" beforeDir="false" />
-    </list>
+    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="Dodany widok wszytskich uzytkonikow oraz mieszkan dla danego budynku" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -274,7 +264,7 @@
       <workItem from="1654671026009" duration="28466000" />
       <workItem from="1654840378258" duration="1289000" />
       <workItem from="1654932932550" duration="27000" />
-      <workItem from="1654957687962" duration="7158000" />
+      <workItem from="1654957687962" duration="7487000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit - Eureka">
       <created>1649598456859</created>
@@ -486,7 +476,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654799880602</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Dodany widok wszytskich uzytkonikow oraz mieszkan dla danego budynku">
+      <created>1654965018163</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1654965018163</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -521,7 +518,6 @@
       <path value="$PROJECT_DIR$/../PDF" />
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="Eureca + pdf service added&#10;without eureca client" />
     <MESSAGE value="Pdf service as eureka client" />
     <MESSAGE value="Gateway first init" />
     <MESSAGE value="Building, Flat, FlatCharges - service added&#10;- Building CRUD&#10;- missing Flat CRUD&#10;- missing FlatCharges CRUD" />
@@ -546,6 +542,7 @@
     <MESSAGE value="Dzialajacy FrontEnd" />
     <MESSAGE value="Potestowane z Postmanem" />
     <MESSAGE value="Potestowane z Postmanem - GOTOWE" />
-    <option name="LAST_COMMIT_MESSAGE" value="Potestowane z Postmanem - GOTOWE" />
+    <MESSAGE value="Dodany widok wszytskich uzytkonikow oraz mieszkan dla danego budynku" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dodany widok wszytskich uzytkonikow oraz mieszkan dla danego budynku" />
   </component>
 </project>

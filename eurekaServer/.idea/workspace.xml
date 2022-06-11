@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="Dodany widok wszytskich uzytkonikow oraz mieszkan dla danego budynku" />
+    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="Dodany widok wszytskich uzytkonikow oraz mieszkan dla danego budynku">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Zawartosc.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Zawartosc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/pages/FlatsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/pages/FlatsPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/services/FlatService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/services/FlatService.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,7 +72,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="corretto-11" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../frontend/src/services" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../frontend/src/pages" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -81,8 +86,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\STUDIA_informatyka\S2\NSAI\Projekt\frontend\src\services" />
       <recent name="D:\STUDIA_informatyka\S2\NSAI\Projekt\frontend\src\pages" />
+      <recent name="D:\STUDIA_informatyka\S2\NSAI\Projekt\frontend\src\services" />
       <recent name="D:\STUDIA_informatyka\S2\NSAI\Projekt\frontend\src\components\Navbar" />
       <recent name="D:\STUDIA_informatyka\S2\NSAI\Projekt\BudMiesz\src\main\java\com\nsai\spoldzielnia\Entity" />
     </key>
@@ -264,7 +269,8 @@
       <workItem from="1654671026009" duration="28466000" />
       <workItem from="1654840378258" duration="1289000" />
       <workItem from="1654932932550" duration="27000" />
-      <workItem from="1654957687962" duration="7487000" />
+      <workItem from="1654957687962" duration="7558000" />
+      <workItem from="1654968706844" duration="1038000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit - Eureka">
       <created>1649598456859</created>
@@ -483,7 +489,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654965018163</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Dodany widok wszytskich uzytkonikow oraz mieszkan dla danego budynku">
+      <created>1654965287163</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1654965287163</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

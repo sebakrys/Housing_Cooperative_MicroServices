@@ -69,7 +69,7 @@ constructor(props) {
                         this.state.flats.map(
                             flat =>
                                 <tr key={flat.id}>
-                                    <td>{flat.flatNumber}</td>
+                                    <td><a href={"/flatCharges/"+flat.id}>{flat.flatNumber}</a></td>
                                 </tr>
                         )
                     }

@@ -16,6 +16,7 @@ import Logout from "./Logout";
 import {useNavigate} from "react-router";
 import Users from "../pages/Users";
 import FlatsPage from "../pages/FlatsPage";
+import FlatChargesPage from "../pages/FlatChargesPage";
 
 
 
@@ -79,6 +80,7 @@ class Zawartosc extends React.Component{
                                 <Route path='/buildings' element={<BuildingsPage/>}/>
                                 <Route path='/addbuilding' element={<AddBuildingPage/>}/>
                                 <Route path='/flats/:id' element={<FlatsPage/>}/>
+                                <Route path='/flatCharges/:id' element={<FlatChargesPage/>}/>
                             </Routes>
                         </div>
                     );

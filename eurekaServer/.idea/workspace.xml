@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="Dodany widok wszytskich uzytkonikow oraz mieszkan dla danego budynku">
+    <list default="true" id="ea193bfe-85ec-4184-9893-4b8486a885b2" name="Changes" comment="Dodany widok odczytów dla mieszkania">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Zawartosc.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Zawartosc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/pages/FlatsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/pages/FlatsPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/services/FlatService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/services/FlatService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,7 +267,8 @@
       <workItem from="1654840378258" duration="1289000" />
       <workItem from="1654932932550" duration="27000" />
       <workItem from="1654957687962" duration="7558000" />
-      <workItem from="1654968706844" duration="1038000" />
+      <workItem from="1654968706844" duration="1362000" />
+      <workItem from="1655042708701" duration="3071000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit - Eureka">
       <created>1649598456859</created>
@@ -496,7 +494,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654965287163</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Dodany widok odczytów dla mieszkania">
+      <created>1654970042104</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1654970042104</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -531,7 +536,6 @@
       <path value="$PROJECT_DIR$/../PDF" />
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="Pdf service as eureka client" />
     <MESSAGE value="Gateway first init" />
     <MESSAGE value="Building, Flat, FlatCharges - service added&#10;- Building CRUD&#10;- missing Flat CRUD&#10;- missing FlatCharges CRUD" />
     <MESSAGE value="- added FlatCharges CRUD&#10;- missing Flat CRUD" />
@@ -556,6 +560,7 @@
     <MESSAGE value="Potestowane z Postmanem" />
     <MESSAGE value="Potestowane z Postmanem - GOTOWE" />
     <MESSAGE value="Dodany widok wszytskich uzytkonikow oraz mieszkan dla danego budynku" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dodany widok wszytskich uzytkonikow oraz mieszkan dla danego budynku" />
+    <MESSAGE value="Dodany widok odczytów dla mieszkania" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dodany widok odczytów dla mieszkania" />
   </component>
 </project>

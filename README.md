@@ -1,57 +1,51 @@
-# Housing Cooperative Management System
+# Housing Cooperative Microservices
 
-## Project Description
+## Project Overview
 
-This project is a housing cooperative management system based on microservices architecture. The application enables the management of buildings, premises, tenants, meter readings, and bill generation. It also supports PDF bill generation and offers email notifications and a user interface in its advanced versions.
+Housing Cooperative Microservices is a distributed system based on microservices, designed to manage the operations of a housing cooperative. Each module in the system is responsible for a specific functionality, ensuring modularity and scalability.
 
-## Features
+## Project Structure
 
-- **Management of buildings, premises, and tenants** (CRUD)
-- **Meter readings**: electricity, gas, water (hot, cold), sewage, heating
-- **Bill issuance and management**
-- **PDF bill generation**
-- **User authentication and roles**:
-  - Administrator
-  - Manager
-  - Tenant
-- **Service registration in Eureka**
-- **Request routing through Gateway with load balancing**
-- **Validation of key data fields**
+### Microservices
+- **BudMiesz**: Module for managing buildings.
+- **EmailNotification**: Handles email notifications.
+- **JWTokens**: Manages JWT tokens for authentication and authorization.
+- **Keycloak**: Integrates with Keycloak for identity and access management.
+- **Mieszkancy**: Service for managing resident data.
+- **MieszkancyZarzadcy**: Facilitates interactions between residents and managers.
+- **PDF**: Generates PDF documents such as reports and invoices.
+- **eurekaServer**: Service registry using Eureka.
+- **gateway**: API gateway for routing requests between clients and microservices.
 
-### Additional Features:
-- **Email notifications** using asynchronous communication between services (Notification Service)
-- **User interface** for registration, login, and basic views (e.g., building list)
+### Frontend
+- **frontend**: The user interface of the application, providing access to system features.
 
-## System Architecture
+### Auxiliary Files
+- **Postman Collections**: API testing collections:
+  - `BudMiesz.postman_collection.json`
+  - `KeyCloak.postman_collection.json`
+  - `MieszkancyZarzadcy.postman_collection.json`
+  - `Mieszkancy_Users_Kujawa.postman_collection.json`
 
-The system consists of the following microservices:
-1. **Eureka Server** - service registration
-2. **API Gateway** - load balancing, request routing
-3. **BudMiesz Service** - management of buildings and premises
-4. **Mieszkancy Service** - management of tenants
-5. **MieszkancyZarzadcy Service** - management of managers
-6. **PDF Service** - PDF bill generation
-7. **Notification Service** (optional) - email notifications
+## Technologies Used
 
-## Technologies
+- **Java (Spring Boot)**: Core framework for most microservices.
+- **Keycloak**: Identity and access management.
+- **Eureka Server**: Service registry.
+- **React**: Frontend framework.
+- **PostgreSQL**: Relational database.
+- **Docker**: Containerization.
+- **Postman**: API testing and documentation.
 
-- **Backend**: Java, Spring Boot, Spring Cloud (Eureka, Gateway)
-- **Database**: PostgreSQL / MongoDB
-- **Frontend**: Angular (optional)
-- **Version control**: GitLab
+## Installation and Setup
 
-## Setup Instructions
+### Prerequisites
+- **Java 17+**
+- **Node.js 20+**
+- **Docker & Docker Compose**
+- **Postman** (optional for API testing)
 
-### Requirements
-
-- Java 17+
-- Maven
-- PostgreSQL
-- Docker (optional)
-
-
-
-#STATUS
+# STATUS
 ```
 https://drive.google.com/file/d/1kJ0EVnnp95BDB1iPOW6q3_b9Sz18h2E6/view?usp=sharing
 ```
